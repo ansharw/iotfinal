@@ -29,7 +29,7 @@ class Auth extends Admin_Controller {
                 if($login) {
                     $logged_in_sess = [
                         'user_id' => $login['user_id'],
-                        'user_name' => $login['username'],
+                        'user_name' => $login['user_name'],
                         'name' => $login['name'],
                         'logged_in' => TRUE
                     ];
