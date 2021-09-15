@@ -1,0 +1,54 @@
+/**
+ *
+ * You can write your CSS code here, DO NOT touch the default JavaScript file
+ * because it will make it harder for you to update.
+ * 
+ */
+
+/*# sourceMappingURL=custom.css.map */
+
+.lingkaran1{
+	width: 20px;
+	height: 20px;
+	background: #f67575;
+	border-radius: 100%;
+}
+
+.lingkaran2{
+	width: 20px;
+	height: 20px;
+	background: #ffa34d;
+	border-radius: 100%;
+}
+
+.lingkaran3{
+	width: 20px;
+	height: 20px;
+	background: #1eb2a6;
+	border-radius: 100%;
+}
+
+.lingkaran4{
+	width: 20px;
+	height: 20px;
+	background: #7f78d2;
+	border-radius: 100%;
+}
+
+.lingkaran5{
+	width: 20px;
+	height: 20px;
+	background: #721b65;
+	border-radius: 100%;
+}
+
+.lingkaran6{
+	width: 20px;
+	height: 20px;
+	background: #7d5e2a;
+	border-radius: 100%;
+}
+
+.blockk{
+  display: inline-block;
+}
