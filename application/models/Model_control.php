@@ -8,23 +8,23 @@ class Model_control extends CI_Model
         parent::__construct();
     }
 
-    public function sendtoDB($data)
-    {
-        if ($data) {
-            $insert = $this->db->insert('SensorData', $data);
-            return ($insert == true) ? true : false;
-        }
-    }
+    // public function sendtoDB($data)
+    // {
+    //     if ($data) {
+    //         $insert = $this->db->insert('SensorData', $data);
+    //         return ($insert == true) ? true : false;
+    //     }
+    // }
 
     public function getSuhu($id = null)
     {
         if ($id) {
-            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar FROM SensorData WHERE id = ?";
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData WHERE id = ?";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar FROM SensorData ORDER BY id DESC";
+        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData ORDER BY id DESC";
         $query = $this->db->query($sql);
         return $query->result_array();
 
@@ -43,12 +43,12 @@ class Model_control extends CI_Model
     public function getKelembaban($id = null)
     {
         if ($id) {
-            $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar FROM SensorData WHERE id = ?";
+            $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, waktu FROM SensorData WHERE id = ?";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar FROM SensorData ORDER BY id DESC";
+        $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, waktu FROM SensorData ORDER BY id DESC";
         $query = $this->db->query($sql);
         return $query->result_array();
         
@@ -67,12 +67,12 @@ class Model_control extends CI_Model
     public function getLampuKipas($id = null)
     {
         if ($id) {
-            $sql = "SELECT outLampu, outKipas FROM SensorData WHERE id = ?";
+            $sql = "SELECT outLampu, outKipas, waktu FROM SensorData WHERE id = ?";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT outLampu, outKipas FROM SensorData ORDER BY id DESC";
+        $sql = "SELECT outLampu, outKipas, waktu FROM SensorData ORDER BY id DESC";
         $query = $this->db->query($sql);
         return $query->result_array();
         

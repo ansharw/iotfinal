@@ -17,9 +17,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
   <!-- CSS Libraries -->
   <?php
+  // dashboard
   if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/chart.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/canvasjs/canvasjs.min.js"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/modules/chart.min.js"></script> -->
+    <!-- <script src="<?php echo base_url(); ?>assets/modules/canvasjs/canvasjs.min.js"></script> -->
     <!-- <script src="<?php echo base_url(); ?>assets/modules/canvasjs/jquery.canvasjs.min.js"></script> -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
     <!-- Datatable -->
@@ -28,9 +29,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
   <?php
+    // suhu kelembaban
   } elseif ($this->uri->segment(1) == "suhukelembaban") { ?>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-    <script src="<?php echo base_url(); ?>assets/modules/canvasjs/canvasjs.min.js"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/modules/canvasjs/canvasjs.min.js"></script> --> 
+    <!-- chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script>
+    <!-- datatable -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
@@ -56,7 +64,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <?php
     } ?>
   <?php
-  } elseif ($this->uri->segment(1) == "pertukaran") { ?>
+  } elseif ($this->uri->segment(1) == "kipaslampu") { ?>
 
     <?php
     if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>

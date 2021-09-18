@@ -7,7 +7,7 @@ class Suhukelembaban extends Admin_Controller
     {
         parent::__construct();
         $this->not_logged_in();
-        $this->data['title'] = 'Temperature and humidity';
+        $this->data['title'] = 'Suhu and Kelembaban';
         $this->load->model('model_control');
     }
 

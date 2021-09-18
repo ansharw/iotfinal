@@ -39,7 +39,7 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
 
     <script>
@@ -379,6 +379,26 @@ if ($this->uri->segment(1) == "dashboard") { ?>
   <script>
     $(document).ready(function() {
       $("#suhuKelembabanNav").addClass('active');
+      $("#table1").DataTable({
+        "processing": true,
+        // "serverSide": true,
+        "order": [
+          [0, "desc"]
+        ],
+      });
+      setInterval(function() {
+        $("#table1").DataTable().draw();
+      }, 60000);
+      $("#table2").DataTable({
+        "processing": true,
+        // "serverSide": true,
+        "order": [
+          [0, "desc"]
+        ],
+      });
+      setInterval(function() {
+        $("#table2").DataTable().draw();
+      }, 60000);
     });
 
     function deleteM(url) {
