@@ -11,9 +11,11 @@ class Suhukelembaban extends Admin_Controller
         $this->load->model('model_control');
     }
 
-    public function index($suhu_id = null, $kelembaban_id = null)
+    public function index($suhu_id = null, $kelembaban_id = null, $setpoint_id = null)
     {
         $this->data['suhu'] = $this->model_control->getSuhu($suhu_id);
+        $this->data['suhuchart'] = $this->model_control->getSuhuChart($suhu_id);
+        $this->data['setpointsuhu'] = $this->model_control->getSetPointChart($setpoint_id);
         $this->data['kelembaban'] = $this->model_control->getKelembaban($kelembaban_id);  
         $this->render_template('suhukelembaban', $this->data);
     }

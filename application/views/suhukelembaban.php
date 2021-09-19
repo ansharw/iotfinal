@@ -151,269 +151,377 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </div>
 <script type="text/javascript">
     var ctx = document.getElementById('myChart');
-    var ctx2 = document.getElementById('myChart2');
+    // var ctx2 = document.getElementById('myChart2');
     var myChart = new Chart(ctx, {
-        // setup
         data: {
+            labels: [<?php foreach ($suhuchart as $row) : ?>
+                    <?= "'" . $row['waktu'] . "'" . "," ?>
+                <?php endforeach; ?>
+            ],
             datasets: [{
-                    type: 'line',
                     label: 'suhu',
+                    data: [<?php foreach ($suhuchart as $row) : ?>
+                            <?= $row['suhu'] . "," ?>
+                        <?php endforeach; ?>
+                    ],
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgba(255, 99, 132, 1)',
-                    cubicInterpolationMode: 'monotone',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($suhu as $s) {
-                                $s1 = $s['suhu'];
-                            }
-                            ?>]
+                    borderWidth: 2
                 },
                 {
-                    type: 'line',
                     label: 'suhu1',
+                    data: [<?php foreach ($suhuchart as $row) : ?>
+                            <?= $row['suhu1'] . "," ?>
+                        <?php endforeach; ?>
+                    ],
                     backgroundColor: 'rgba(125, 109, 12, 0.2)',
                     borderColor: 'rgba(125, 109, 12, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($suhu as $s) {
-                                $s2 = $s['suhu'];
-                            }
-                            ?>]
+                    borderWidth: 2
                 },
                 {
-                    type: 'line',
                     label: 'suhu2',
+                    data: [<?php foreach ($suhuchart as $row) : ?>
+                            <?= $row['suhu2'] . "," ?>
+                        <?php endforeach; ?>
+                    ],
                     backgroundColor: 'rgba(207, 0, 15, 0.2)',
                     borderColor: 'rgba(207, 0, 15, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($suhu as $s) {
-                                $s3 = $s['suhu'];
-                            }
-                            ?>]
+                    borderWidth: 2
                 },
                 {
-                    type: 'line',
                     label: 'suhu3',
+                    data: [<?php foreach ($suhuchart as $row) : ?>
+                            <?= $row['suhu3'] . "," ?>
+                        <?php endforeach; ?>
+                    ],
                     backgroundColor: 'rgba(34, 167, 240, 0.2)',
                     borderColor: 'rgba(34, 167, 240, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($suhu as $s) {
-                                $s4 = $s['suhu'];
-                            }
-                            ?>]
+                    borderWidth: 2
                 },
                 {
-                    type: 'line',
                     label: 'suhu4',
+                    data: [<?php foreach ($suhuchart as $row) : ?>
+                            <?= $row['suhu4'] . "," ?>
+                        <?php endforeach; ?>
+                    ],
                     backgroundColor: 'rgba(42, 187, 155, 0.2)',
                     borderColor: 'rgba(42, 187, 155, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($suhu as $s) {
-                                $s5 = $s['suhu'];
-                            }
-                            ?>]
+                    borderWidth: 2
                 },
                 {
-                    type: 'line',
                     label: 'suhu5',
+                    data: [<?php foreach ($suhuchart as $row) : ?>
+                            <?= $row['suhu5'] . "," ?>
+                        <?php endforeach; ?>
+                    ],
                     backgroundColor: 'rgba(247, 202, 24, 0.2)',
                     borderColor: 'rgba(247, 202, 24, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($suhu as $s) {
-                                $s6 = $s['suhu'];
-                            }
-                            ?>]
+                    borderWidth: 2
+
                 },
                 {
-                    type: 'line',
                     label: 'set point suhu',
+                    borderDash: [5, 2],
+                    data: [<?php foreach ($setpointsuhu as $row) : ?>
+                            <?= $row['setPointSuhu'] . "," ?>
+                        <?php endforeach; ?>
+                    ],
                     backgroundColor: 'rgba(0, 0, 0, 0.2)',
                     borderColor: 'rgba(0, 0, 0, 1)',
-                    borderWidth: 2,
-                    borderDash: [5, 2],
-                    data: [<?php
-                            foreach ($suhu as $s) {
-                                $sp = $s['suhu'];
-                            }
-                            ?>]
+                    borderWidth: 2
                 }
-            ],
+            ]
         },
-        // config
         options: {
-            plugins: {
-                // Change options for ALL axes of THIS CHART
-                streaming: {
-                    duration: 60000,
-                }
-            },
             scales: {
-                x: {
-                    type: 'realtime',
-                    realtime: {
-                        duration: 60000,
-                        refresh: 1000,
-                        delay: 2000,
-                        onRefresh: chart => {
-                            chart.data.datasets.forEach(dataset => {
-                                dataset.data.push({
-                                    x: Date.now(),
-                                    y: Math.random(),
-                                });
-                            });
-
-                        }
-                    }
-                },
-                y: {
-                    // beginAtZero: true
-                    title: {
-                        display: true,
-                        text: 'Value'
-                    }
-                }
-            },
-            interaction: {
-                mode: 'nearest',
-                intersect: false
+                // x:{
+                //     type: 'time',
+                //     time: {
+                //         displayFormats: {
+                //             quarter: 'MMM YYYY'
+                //         }
+                //     }
+                // },
+                // y: {
+                //     beginAtZero: true
+                // }
             }
         }
-    });
-    var myChart2 = new Chart(ctx2, {
         // setup
-        data: {
-            datasets: [{
-                    type: 'line',
-                    label: 'kelembaban',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    cubicInterpolationMode: 'monotone',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($kelembaban as $s) {
-                                $s1 = $s['kelembaban'];
-                            }
-                            ?>]
-                },
-                {
-                    type: 'line',
-                    label: 'kelembaban1',
-                    backgroundColor: 'rgba(125, 109, 12, 0.2)',
-                    borderColor: 'rgba(125, 109, 12, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($kelembaban as $s) {
-                                $s2 = $s['kelembaban'];
-                            }
-                            ?>]
-                },
-                {
-                    type: 'line',
-                    label: 'kelembaban2',
-                    backgroundColor: 'rgba(207, 0, 15, 0.2)',
-                    borderColor: 'rgba(207, 0, 15, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($kelembaban as $s) {
-                                $s3 = $s['kelembaban'];
-                            }
-                            ?>]
-                },
-                {
-                    type: 'line',
-                    label: 'kelembaban3',
-                    backgroundColor: 'rgba(34, 167, 240, 0.2)',
-                    borderColor: 'rgba(34, 167, 240, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($kelembaban as $s) {
-                                $s4 = $s['kelembaban'];
-                            }
-                            ?>]
-                },
-                {
-                    type: 'line',
-                    label: 'kelembaban4',
-                    backgroundColor: 'rgba(42, 187, 155, 0.2)',
-                    borderColor: 'rgba(42, 187, 155, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($kelembaban as $s) {
-                                $s5 = $s['kelembaban'];
-                            }
-                            ?>]
-                },
-                {
-                    type: 'line',
-                    label: 'kelembaban5',
-                    backgroundColor: 'rgba(247, 202, 24, 0.2)',
-                    borderColor: 'rgba(247, 202, 24, 1)',
-                    borderWidth: 2,
-                    data: [<?php
-                            foreach ($kelembaban as $s) {
-                                $s6 = $s['kelembaban'];
-                            }
-                            ?>]
-                },
-                {
-                    type: 'line',
-                    label: 'set point kelembaban',
-                    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-                    borderColor: 'rgba(0, 0, 0, 1)',
-                    borderWidth: 2,
-                    borderDash: [5, 2],
-                    data: [<?php
-                            foreach ($kelembaban as $s) {
-                                $sp = $s['kelembaban'];
-                            }
-                            ?>]
-                }
-            ],
-        },
+        // data: {
+        //     datasets: [{
+        //             type: 'line',
+        //             label: 'suhu',
+        //             backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        //             borderColor: 'rgba(255, 99, 132, 1)',
+        //             cubicInterpolationMode: 'monotone',
+        //             borderWidth: 2,
+        //             data: [<?php
+                                //                     foreach ($suhu as $s) {
+                                //                         $s1 = $s['suhu'];
+                                //                     }
+                                //                     
+                                ?>]
+        //         },
+        //         {
+        //             type: 'line',
+        //             label: 'suhu1',
+        //             backgroundColor: 'rgba(125, 109, 12, 0.2)',
+        //             borderColor: 'rgba(125, 109, 12, 1)',
+        //             borderWidth: 2,
+        //             data: [<?php
+                                //                     foreach ($suhu as $s) {
+                                //                         $s2 = $s['suhu'];
+                                //                     }
+                                //                     
+                                ?>]
+        //         },
+        //         {
+        //             type: 'line',
+        //             label: 'suhu2',
+        //             backgroundColor: 'rgba(207, 0, 15, 0.2)',
+        //             borderColor: 'rgba(207, 0, 15, 1)',
+        //             borderWidth: 2,
+        //             data: [<?php
+                                //                     foreach ($suhu as $s) {
+                                //                         $s3 = $s['suhu'];
+                                //                     }
+                                //                     
+                                ?>]
+        //         },
+        //         {
+        //             type: 'line',
+        //             label: 'suhu3',
+        //             backgroundColor: 'rgba(34, 167, 240, 0.2)',
+        //             borderColor: 'rgba(34, 167, 240, 1)',
+        //             borderWidth: 2,
+        //             data: [<?php
+                                //                     foreach ($suhu as $s) {
+                                //                         $s4 = $s['suhu'];
+                                //                     }
+                                //                     
+                                ?>]
+        //         },
+        //         {
+        //             type: 'line',
+        //             label: 'suhu4',
+        //             backgroundColor: 'rgba(42, 187, 155, 0.2)',
+        //             borderColor: 'rgba(42, 187, 155, 1)',
+        //             borderWidth: 2,
+        //             data: [<?php
+                                //                     foreach ($suhu as $s) {
+                                //                         $s5 = $s['suhu'];
+                                //                     }
+                                //                     
+                                ?>]
+        //         },
+        //         {
+        //             type: 'line',
+        //             label: 'suhu5',
+        //             backgroundColor: 'rgba(247, 202, 24, 0.2)',
+        //             borderColor: 'rgba(247, 202, 24, 1)',
+        //             borderWidth: 2,
+        //             data: [<?php
+                                //                     foreach ($suhu as $s) {
+                                //                         $s6 = $s['suhu'];
+                                //                     }
+                                //                     
+                                ?>]
+        //         },
+        //         {
+        //             type: 'line',
+        //             label: 'set point suhu',
+        //             backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        //             borderColor: 'rgba(0, 0, 0, 1)',
+        //             borderWidth: 2,
+        //             borderDash: [5, 2],
+        //             data: [<?php
+                                //                     foreach ($suhu as $s) {
+                                //                         $sp = $s['suhu'];
+                                //                     }
+                                //                     
+                                ?>]
+        //         }
+        //     ],
+        // },
         // config
-        options: {
-            plugins: {
-                // Change options for ALL axes of THIS CHART
-                streaming: {
-                    duration: 60000,
-                }
-            },
-            scales: {
-                x: {
-                    type: 'realtime',
-                    realtime: {
-                        duration: 60000,
-                        refresh: 1000,
-                        delay: 2000,
-                        onRefresh: chart => {
-                            chart.data.datasets.forEach(dataset => {
-                                dataset.data.push({
-                                    x: Date.now(),
-                                    y: Math.random(),
-                                });
-                            });
+        // options: {
+        //     plugins: {
+        //         // Change options for ALL axes of THIS CHART
+        //         streaming: {
+        //             duration: 60000,
+        //         }
+        //     },
+        //     scales: {
+        //         x: {
+        //             type: 'realtime',
+        //             realtime: {
+        //                 duration: 60000,
+        //                 refresh: 1000,
+        //                 delay: 2000,
+        //                 onRefresh: chart => {
+        //                     chart.data.datasets.forEach(dataset => {
+        //                         dataset.data.push({
+        //                             x: Date.now(),
+        //                             y: Math.random(),
+        //                         });
+        //                     });
 
-                        }
-                    }
-                },
-                y: {
-                    // beginAtZero: true
-                    title: {
-                        display: true,
-                        text: 'Value'
-                    }
-                }
-            },
-            interaction: {
-                mode: 'nearest',
-                intersect: false
-            }
-        }
+        //                 }
+        //             }
+        //         },
+        //         y: {
+        //             // beginAtZero: true
+        //             title: {
+        //                 display: true,
+        //                 text: 'Value'
+        //             }
+        //         }
+        //     },
+        //     interaction: {
+        //         mode: 'nearest',
+        //         intersect: false
+        //     }
+        // }
     });
+    // var myChart2 = new Chart(ctx2, {
+    //     // setup
+    //     data: {
+    //         datasets: [{
+    //                 type: 'line',
+    //                 label: 'kelembaban',
+    //                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    //                 borderColor: 'rgba(255, 99, 132, 1)',
+    //                 cubicInterpolationMode: 'monotone',
+    //                 borderWidth: 2,
+    //                 data: [<?php
+                                //                         foreach ($kelembaban as $s) {
+                                //                             $s1 = $s['kelembaban'];
+                                //                         }
+                                //                         
+                                ?>]
+    //             },
+    //             {
+    //                 type: 'line',
+    //                 label: 'kelembaban1',
+    //                 backgroundColor: 'rgba(125, 109, 12, 0.2)',
+    //                 borderColor: 'rgba(125, 109, 12, 1)',
+    //                 borderWidth: 2,
+    //                 data: [<?php
+                                //                         foreach ($kelembaban as $s) {
+                                //                             $s2 = $s['kelembaban'];
+                                //                         }
+                                //                         
+                                ?>]
+    //             },
+    //             {
+    //                 type: 'line',
+    //                 label: 'kelembaban2',
+    //                 backgroundColor: 'rgba(207, 0, 15, 0.2)',
+    //                 borderColor: 'rgba(207, 0, 15, 1)',
+    //                 borderWidth: 2,
+    //                 data: [<?php
+                                //                         foreach ($kelembaban as $s) {
+                                //                             $s3 = $s['kelembaban'];
+                                //                         }
+                                //                         
+                                ?>]
+    //             },
+    //             {
+    //                 type: 'line',
+    //                 label: 'kelembaban3',
+    //                 backgroundColor: 'rgba(34, 167, 240, 0.2)',
+    //                 borderColor: 'rgba(34, 167, 240, 1)',
+    //                 borderWidth: 2,
+    //                 data: [<?php
+                                //                         foreach ($kelembaban as $s) {
+                                //                             $s4 = $s['kelembaban'];
+                                //                         }
+                                //                         
+                                ?>]
+    //             },
+    //             {
+    //                 type: 'line',
+    //                 label: 'kelembaban4',
+    //                 backgroundColor: 'rgba(42, 187, 155, 0.2)',
+    //                 borderColor: 'rgba(42, 187, 155, 1)',
+    //                 borderWidth: 2,
+    //                 data: [<?php
+                                //                         foreach ($kelembaban as $s) {
+                                //                             $s5 = $s['kelembaban'];
+                                //                         }
+                                //                         
+                                ?>]
+    //             },
+    //             {
+    //                 type: 'line',
+    //                 label: 'kelembaban5',
+    //                 backgroundColor: 'rgba(247, 202, 24, 0.2)',
+    //                 borderColor: 'rgba(247, 202, 24, 1)',
+    //                 borderWidth: 2,
+    //                 data: [<?php
+                                //                         foreach ($kelembaban as $s) {
+                                //                             $s6 = $s['kelembaban'];
+                                //                         }
+                                //                         
+                                ?>]
+    //             },
+    //             {
+    //                 type: 'line',
+    //                 label: 'set point kelembaban',
+    //                 backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    //                 borderColor: 'rgba(0, 0, 0, 1)',
+    //                 borderWidth: 2,
+    //                 borderDash: [5, 2],
+    //                 data: [<?php
+                                //                         foreach ($kelembaban as $s) {
+                                //                             $sp = $s['kelembaban'];
+                                //                         }
+                                //                         
+                                ?>]
+    //             }
+    //         ],
+    //     },
+    //     // config
+    //     options: {
+    //         plugins: {
+    //             // Change options for ALL axes of THIS CHART
+    //             streaming: {
+    //                 duration: 60000,
+    //             }
+    //         },
+    //         scales: {
+    //             x: {
+    //                 type: 'realtime',
+    //                 realtime: {
+    //                     duration: 60000,
+    //                     refresh: 1000,
+    //                     delay: 2000,
+    //                     onRefresh: chart => {
+    //                         chart.data.datasets.forEach(dataset => {
+    //                             dataset.data.push({
+    //                                 x: Date.now(),
+    //                                 y: Math.random(),
+    //                             });
+    //                         });
+
+    //                     }
+    //                 }
+    //             },
+    //             y: {
+    //                 // beginAtZero: true
+    //                 title: {
+    //                     display: true,
+    //                     text: 'Value'
+    //                 }
+    //             }
+    //         },
+    //         interaction: {
+    //             mode: 'nearest',
+    //             intersect: false
+    //         }
+    //     }
+    // });
     // window.onload = function() {
     //     // suhu
     //     let chart1 = new CanvasJS.Chart("chart1", {

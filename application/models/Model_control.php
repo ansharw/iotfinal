@@ -40,6 +40,19 @@ class Model_control extends CI_Model
         // return $query->result_array();
     }
 
+    public function getSuhuChart($id = null)
+    {
+        if ($id) {
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData WHERE id = ?";
+            $query = $this->db->query($sql, array($id));
+            return $query->row_array();
+        }
+
+        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData ORDER BY id ASC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function getKelembaban($id = null)
     {
         if ($id) {
@@ -110,6 +123,19 @@ class Model_control extends CI_Model
         // $sql = "SELECT setPointSuhu, setPointKelembaban FROM temhumkiplam ORDER BY temp_hum_id DESC";
         // $query = $this->db->query($sql);
         // return $query->result_array();
+    }
+
+    public function getSetPointChart($id = null)
+    {
+        if ($id) {
+            $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData WHERE id = ?";
+            $query = $this->db->query($sql, array($id));
+            return $query->row_array();
+        }
+
+        $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData ORDER BY id ASC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
     }
 }
 ?>
