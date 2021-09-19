@@ -207,18 +207,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     backgroundColor: 'rgba(42, 187, 155, 0.2)',
                     borderColor: 'rgba(42, 187, 155, 1)',
                     borderWidth: 2
-                },
-                {
-                    label: 'suhu5',
-                    data: [<?php foreach ($suhuchart as $row) : ?>
-                            <?= $row['suhu5'] . "," ?>
-                        <?php endforeach; ?>
-                    ],
-                    backgroundColor: 'rgba(247, 202, 24, 0.2)',
-                    borderColor: 'rgba(247, 202, 24, 1)',
-                    borderWidth: 2
-
-                },
+                },               
                 {
                     label: 'set point suhu',
                     borderDash: [5, 2],
