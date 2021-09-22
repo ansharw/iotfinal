@@ -12,6 +12,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="card">
                         <div class="card-header">
                             <h4>Sensor Suhu</h4>
+                            <div class="card-header-action">
+                                <form class="card-header-form" id="date-picker" action="<?php base_url('suhukelembaban'); ?>" method="POST">
+                                    <div class="input-group">
+                                        <!-- <input type="text" name="search" id="search" class="form-control" placeholder="Tahun (contoh: 2020)"> -->
+                                        <input type="text" class="form-control datepicker" name="dates" id="dates">
+                                        <div class="input-group-btn">
+                                            <input class="btn btn-primary btn-icon" type="submit" value="Cari">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                         <!-- <div class="card-body">
                             <div id="chart1" style="height: 400px;"></div>
@@ -127,15 +138,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                 <td><?= $row['kelembabanLuar'] ?></td>
                                             </tr>
                                         <?php endforeach; ?>
-                                        <tr>
-                                            <td>2018-01-16 - 07.22</td>
-                                            <td>32 %</td>
-                                            <td>30 %</td>
-                                            <td>30 %</td>
-                                            <td>30 %</td>
-                                            <td>30 %</td>
-                                            <td>30 %</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -150,616 +152,59 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </section>
 </div>
 <script type="text/javascript">
-    var ctx = document.getElementById('myChart');
-    // var ctx2 = document.getElementById('myChart2');
-    var myChart = new Chart(ctx, {
-        data: {
-            labels: [<?php foreach ($suhuchart as $row) : ?>
-                    <?= "'" . $row['waktu'] . "'" . "," ?>
+    // setup block  
+    const data = {
+        datasets: [{
+            label: 'set point suhu',
+            data: [
+                <?php foreach ($setpointsuhu as $row) : ?> {
+                        x: '<?= $row['waktu'] ?>',
+                        y: <?= $row['setPointSuhu'] ?>
+                    },
                 <?php endforeach; ?>
             ],
-            datasets: [{
-                    label: 'suhu',
-                    data: [<?php foreach ($suhuchart as $row) : ?>
-                            <?= $row['suhu'] . "," ?>
-                        <?php endforeach; ?>
-                    ],
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 2
-                },
-                {
-                    label: 'suhu1',
-                    data: [<?php foreach ($suhuchart as $row) : ?>
-                            <?= $row['suhu1'] . "," ?>
-                        <?php endforeach; ?>
-                    ],
-                    backgroundColor: 'rgba(125, 109, 12, 0.2)',
-                    borderColor: 'rgba(125, 109, 12, 1)',
-                    borderWidth: 2
-                },
-                {
-                    label: 'suhu2',
-                    data: [<?php foreach ($suhuchart as $row) : ?>
-                            <?= $row['suhu2'] . "," ?>
-                        <?php endforeach; ?>
-                    ],
-                    backgroundColor: 'rgba(207, 0, 15, 0.2)',
-                    borderColor: 'rgba(207, 0, 15, 1)',
-                    borderWidth: 2
-                },
-                {
-                    label: 'suhu3',
-                    data: [<?php foreach ($suhuchart as $row) : ?>
-                            <?= $row['suhu3'] . "," ?>
-                        <?php endforeach; ?>
-                    ],
-                    backgroundColor: 'rgba(34, 167, 240, 0.2)',
-                    borderColor: 'rgba(34, 167, 240, 1)',
-                    borderWidth: 2
-                },
-                {
-                    label: 'suhu4',
-                    data: [<?php foreach ($suhuchart as $row) : ?>
-                            <?= $row['suhu4'] . "," ?>
-                        <?php endforeach; ?>
-                    ],
-                    backgroundColor: 'rgba(42, 187, 155, 0.2)',
-                    borderColor: 'rgba(42, 187, 155, 1)',
-                    borderWidth: 2
-                },               
-                {
-                    label: 'set point suhu',
-                    borderDash: [5, 2],
-                    data: [<?php foreach ($setpointsuhu as $row) : ?>
-                            <?= $row['setPointSuhu'] . "," ?>
-                        <?php endforeach; ?>
-                    ],
-                    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-                    borderColor: 'rgba(0, 0, 0, 1)',
-                    borderWidth: 2
-                }
-            ]
-        },
+            borderDash: [5, 2],
+            backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            borderColor: 'rgba(0, 0, 0, 1)',
+            borderWidth: 2
+        }, ]
+    };
+    // const onRefresh = (chart, label, data) => {
+    //     chart.data.labels.push(label);
+    //     chart.data.datasets.forEach(dataset => {
+    //         dataset.data.push({data});
+    //     });
+    // };
+    // congig block
+    const config = {
+        type: 'line',
+        data: data,
         options: {
+            showLines: true,
+            animation: {
+                duration: 0
+            },
             scales: {
-                // x:{
-                //     type: 'time',
-                //     time: {
-                //         displayFormats: {
-                //             quarter: 'MMM YYYY'
-                //         }
-                //     }
-                // },
-                // y: {
-                //     beginAtZero: true
-                // }
-            }
+                x: {
+                    type: 'timeseries',
+                    time: {
+                        unit: 'hour'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Suhu'
+                    }
+                }
+            },
+            interaction: {
+                intersect: false
+            },
+
         }
-        // setup
-        // data: {
-        //     datasets: [{
-        //             type: 'line',
-        //             label: 'suhu',
-        //             backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        //             borderColor: 'rgba(255, 99, 132, 1)',
-        //             cubicInterpolationMode: 'monotone',
-        //             borderWidth: 2,
-        //             data: [<?php
-                                //                     foreach ($suhu as $s) {
-                                //                         $s1 = $s['suhu'];
-                                //                     }
-                                //                     
-                                ?>]
-        //         },
-        //         {
-        //             type: 'line',
-        //             label: 'suhu1',
-        //             backgroundColor: 'rgba(125, 109, 12, 0.2)',
-        //             borderColor: 'rgba(125, 109, 12, 1)',
-        //             borderWidth: 2,
-        //             data: [<?php
-                                //                     foreach ($suhu as $s) {
-                                //                         $s2 = $s['suhu'];
-                                //                     }
-                                //                     
-                                ?>]
-        //         },
-        //         {
-        //             type: 'line',
-        //             label: 'suhu2',
-        //             backgroundColor: 'rgba(207, 0, 15, 0.2)',
-        //             borderColor: 'rgba(207, 0, 15, 1)',
-        //             borderWidth: 2,
-        //             data: [<?php
-                                //                     foreach ($suhu as $s) {
-                                //                         $s3 = $s['suhu'];
-                                //                     }
-                                //                     
-                                ?>]
-        //         },
-        //         {
-        //             type: 'line',
-        //             label: 'suhu3',
-        //             backgroundColor: 'rgba(34, 167, 240, 0.2)',
-        //             borderColor: 'rgba(34, 167, 240, 1)',
-        //             borderWidth: 2,
-        //             data: [<?php
-                                //                     foreach ($suhu as $s) {
-                                //                         $s4 = $s['suhu'];
-                                //                     }
-                                //                     
-                                ?>]
-        //         },
-        //         {
-        //             type: 'line',
-        //             label: 'suhu4',
-        //             backgroundColor: 'rgba(42, 187, 155, 0.2)',
-        //             borderColor: 'rgba(42, 187, 155, 1)',
-        //             borderWidth: 2,
-        //             data: [<?php
-                                //                     foreach ($suhu as $s) {
-                                //                         $s5 = $s['suhu'];
-                                //                     }
-                                //                     
-                                ?>]
-        //         },
-        //         {
-        //             type: 'line',
-        //             label: 'suhu5',
-        //             backgroundColor: 'rgba(247, 202, 24, 0.2)',
-        //             borderColor: 'rgba(247, 202, 24, 1)',
-        //             borderWidth: 2,
-        //             data: [<?php
-                                //                     foreach ($suhu as $s) {
-                                //                         $s6 = $s['suhu'];
-                                //                     }
-                                //                     
-                                ?>]
-        //         },
-        //         {
-        //             type: 'line',
-        //             label: 'set point suhu',
-        //             backgroundColor: 'rgba(0, 0, 0, 0.2)',
-        //             borderColor: 'rgba(0, 0, 0, 1)',
-        //             borderWidth: 2,
-        //             borderDash: [5, 2],
-        //             data: [<?php
-                                //                     foreach ($suhu as $s) {
-                                //                         $sp = $s['suhu'];
-                                //                     }
-                                //                     
-                                ?>]
-        //         }
-        //     ],
-        // },
-        // config
-        // options: {
-        //     plugins: {
-        //         // Change options for ALL axes of THIS CHART
-        //         streaming: {
-        //             duration: 60000,
-        //         }
-        //     },
-        //     scales: {
-        //         x: {
-        //             type: 'realtime',
-        //             realtime: {
-        //                 duration: 60000,
-        //                 refresh: 1000,
-        //                 delay: 2000,
-        //                 onRefresh: chart => {
-        //                     chart.data.datasets.forEach(dataset => {
-        //                         dataset.data.push({
-        //                             x: Date.now(),
-        //                             y: Math.random(),
-        //                         });
-        //                     });
-
-        //                 }
-        //             }
-        //         },
-        //         y: {
-        //             // beginAtZero: true
-        //             title: {
-        //                 display: true,
-        //                 text: 'Value'
-        //             }
-        //         }
-        //     },
-        //     interaction: {
-        //         mode: 'nearest',
-        //         intersect: false
-        //     }
-        // }
-    });
-    // var myChart2 = new Chart(ctx2, {
-    //     // setup
-    //     data: {
-    //         datasets: [{
-    //                 type: 'line',
-    //                 label: 'kelembaban',
-    //                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
-    //                 borderColor: 'rgba(255, 99, 132, 1)',
-    //                 cubicInterpolationMode: 'monotone',
-    //                 borderWidth: 2,
-    //                 data: [<?php
-                                //                         foreach ($kelembaban as $s) {
-                                //                             $s1 = $s['kelembaban'];
-                                //                         }
-                                //                         
-                                ?>]
-    //             },
-    //             {
-    //                 type: 'line',
-    //                 label: 'kelembaban1',
-    //                 backgroundColor: 'rgba(125, 109, 12, 0.2)',
-    //                 borderColor: 'rgba(125, 109, 12, 1)',
-    //                 borderWidth: 2,
-    //                 data: [<?php
-                                //                         foreach ($kelembaban as $s) {
-                                //                             $s2 = $s['kelembaban'];
-                                //                         }
-                                //                         
-                                ?>]
-    //             },
-    //             {
-    //                 type: 'line',
-    //                 label: 'kelembaban2',
-    //                 backgroundColor: 'rgba(207, 0, 15, 0.2)',
-    //                 borderColor: 'rgba(207, 0, 15, 1)',
-    //                 borderWidth: 2,
-    //                 data: [<?php
-                                //                         foreach ($kelembaban as $s) {
-                                //                             $s3 = $s['kelembaban'];
-                                //                         }
-                                //                         
-                                ?>]
-    //             },
-    //             {
-    //                 type: 'line',
-    //                 label: 'kelembaban3',
-    //                 backgroundColor: 'rgba(34, 167, 240, 0.2)',
-    //                 borderColor: 'rgba(34, 167, 240, 1)',
-    //                 borderWidth: 2,
-    //                 data: [<?php
-                                //                         foreach ($kelembaban as $s) {
-                                //                             $s4 = $s['kelembaban'];
-                                //                         }
-                                //                         
-                                ?>]
-    //             },
-    //             {
-    //                 type: 'line',
-    //                 label: 'kelembaban4',
-    //                 backgroundColor: 'rgba(42, 187, 155, 0.2)',
-    //                 borderColor: 'rgba(42, 187, 155, 1)',
-    //                 borderWidth: 2,
-    //                 data: [<?php
-                                //                         foreach ($kelembaban as $s) {
-                                //                             $s5 = $s['kelembaban'];
-                                //                         }
-                                //                         
-                                ?>]
-    //             },
-    //             {
-    //                 type: 'line',
-    //                 label: 'kelembaban5',
-    //                 backgroundColor: 'rgba(247, 202, 24, 0.2)',
-    //                 borderColor: 'rgba(247, 202, 24, 1)',
-    //                 borderWidth: 2,
-    //                 data: [<?php
-                                //                         foreach ($kelembaban as $s) {
-                                //                             $s6 = $s['kelembaban'];
-                                //                         }
-                                //                         
-                                ?>]
-    //             },
-    //             {
-    //                 type: 'line',
-    //                 label: 'set point kelembaban',
-    //                 backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    //                 borderColor: 'rgba(0, 0, 0, 1)',
-    //                 borderWidth: 2,
-    //                 borderDash: [5, 2],
-    //                 data: [<?php
-                                //                         foreach ($kelembaban as $s) {
-                                //                             $sp = $s['kelembaban'];
-                                //                         }
-                                //                         
-                                ?>]
-    //             }
-    //         ],
-    //     },
-    //     // config
-    //     options: {
-    //         plugins: {
-    //             // Change options for ALL axes of THIS CHART
-    //             streaming: {
-    //                 duration: 60000,
-    //             }
-    //         },
-    //         scales: {
-    //             x: {
-    //                 type: 'realtime',
-    //                 realtime: {
-    //                     duration: 60000,
-    //                     refresh: 1000,
-    //                     delay: 2000,
-    //                     onRefresh: chart => {
-    //                         chart.data.datasets.forEach(dataset => {
-    //                             dataset.data.push({
-    //                                 x: Date.now(),
-    //                                 y: Math.random(),
-    //                             });
-    //                         });
-
-    //                     }
-    //                 }
-    //             },
-    //             y: {
-    //                 // beginAtZero: true
-    //                 title: {
-    //                     display: true,
-    //                     text: 'Value'
-    //                 }
-    //             }
-    //         },
-    //         interaction: {
-    //             mode: 'nearest',
-    //             intersect: false
-    //         }
-    //     }
-    // });
-    // window.onload = function() {
-    //     // suhu
-    //     let chart1 = new CanvasJS.Chart("chart1", {
-    //         zoomEnabled: true,
-    //         axisY: {
-    //             title: "Suhu Kandang Ayam (℃)",
-    //             titleFontFamily: "Nunito"
-    //         },
-    //         axisX: {
-    //             valueFormatString: "DD-MMM",
-    //         },
-    //         legend: {
-    //             fontFamily: "Nunito",
-    //         },
-    //         toolTip: {
-    //             shared: true,
-    //             contentFormatter: function(e) {
-    //                 let content = " ";
-    //                 for (let i = 0; i < e.entries.length; i++) {
-    //                     content += e.entries[i].dataSeries.name + " " + "<strong>" + e.entries[i].dataPoint.y + "℃</strong>";
-    //                     content += "<br/>";
-    //                 }
-    //                 return content;
-    //             }
-    //         },
-    //         data: [{
-    //                 type: "spline",
-    //                 showInLegend: true,
-    //                 name: "Sensor 1",
-    //                 dataPoints: [{
-    //                         x: new Date(2021, 01, 10),
-    //                         y: 100
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 11),
-    //                         y: 80
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 12),
-    //                         y: 60
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 13),
-    //                         y: 70
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 14),
-    //                         y: 50
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 15),
-    //                         y: 90
-    //                     },
-    //                 ]
-    //             },
-    //             {
-    //                 type: "spline",
-    //                 showInLegend: true,
-    //                 name: "Limit",
-    //                 dataPoints: [{
-    //                         x: new Date(2021, 01, 10),
-    //                         y: 100
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 11),
-    //                         y: 90
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 12),
-    //                         y: 80
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 13),
-    //                         y: 70
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 14),
-    //                         y: 60
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 01, 15),
-    //                         y: 50
-    //                     },
-    //                 ]
-    //             },
-    //         ]
-    //     });
-    //     chart1.render();
-    //     $("#table1").dataTable({
-    //         "columnDefs": [{
-    //             "sortable": false,
-    //             "targets": [1, 2, 3, 4]
-    //         }]
-    //     });
-
-    //     // kelembaban
-    //     let chart2 = new CanvasJS.Chart("chart2", {
-    //         zoomEnabled: true,
-    //         axisY: {
-    //             title: "Kelembaban Kandang Ayam (%)",
-    //             titleFontFamily: "Nunito"
-    //         },
-    //         axisX: {
-    //             valueFormatString: "DD-MMM",
-    //             interval: 10,
-    //             intervalType: "day",
-    //         },
-    //         legend: {
-    //             fontFamily: "Nunito",
-    //         },
-    //         toolTip: {
-    //             shared: true,
-    //             contentFormatter: function(e) {
-    //                 let content = " ";
-    //                 for (let i = 0; i < e.entries.length; i++) {
-    //                     content += e.entries[i].dataSeries.name + " " + "<strong>" + e.entries[i].dataPoint.y + "%</strong>";
-    //                     content += "<br/>";
-    //                 }
-    //                 return content;
-    //             }
-    //         },
-    //         data: [{
-    //                 type: "spline",
-    //                 showInLegend: true,
-    //                 name: "Sensor 1",
-    //                 dataPoints: [{
-    //                         x: new Date(2021, 01, 12),
-    //                         y: 100
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 02, 12),
-    //                         y: 80
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 03, 12),
-    //                         y: 60
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 04, 12),
-    //                         y: 70
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 05, 12),
-    //                         y: 50
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 06, 12),
-    //                         y: 90
-    //                     },
-    //                 ]
-    //             },
-    //             {
-    //                 type: "spline",
-    //                 showInLegend: true,
-    //                 name: "Sensor 2",
-    //                 dataPoints: [{
-    //                         x: new Date(2021, 01, 12),
-    //                         y: 20
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 02, 12),
-    //                         y: 10
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 03, 12),
-    //                         y: 30
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 04, 12),
-    //                         y: 70
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 05, 12),
-    //                         y: 80
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 06, 12),
-    //                         y: 30
-    //                     },
-    //                 ]
-    //             },
-    //             {
-    //                 type: "spline",
-    //                 showInLegend: true,
-    //                 name: "Sensor 3",
-    //                 dataPoints: [{
-    //                         x: new Date(2021, 01, 12),
-    //                         y: 22
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 02, 12),
-    //                         y: 30
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 03, 12),
-    //                         y: 20
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 04, 12),
-    //                         y: 50
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 05, 12),
-    //                         y: 44
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 06, 12),
-    //                         y: 54
-    //                     },
-    //                 ]
-    //             },
-    //             {
-    //                 type: "spline",
-    //                 showInLegend: true,
-    //                 name: "Sensor 4",
-    //                 dataPoints: [{
-    //                         x: new Date(2021, 01, 12),
-    //                         y: 35
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 02, 12),
-    //                         y: 67
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 03, 12),
-    //                         y: 84
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 04, 12),
-    //                         y: 65
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 05, 12),
-    //                         y: 89
-    //                     },
-    //                     {
-    //                         x: new Date(2021, 06, 12),
-    //                         y: 23
-    //                     },
-    //                 ]
-    //             }
-    //         ]
-    //     });
-    //     chart2.render();
-    //     $("#table2").dataTable({
-    //         "columnDefs": [{
-    //             "sortable": false,
-    //             "targets": [1, 2, 3, 4]
-    //         }]
-    //     });
-    // }
+    };
+    // render init block
+    const myChart = new Chart(document.getElementById('myChart'), config);
+    
 </script>

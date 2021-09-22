@@ -30,6 +30,7 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
     <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 
     <!-- toast fitur -->
     <script src="<?php echo base_url(); ?>assets/modules/izitoast/js/iziToast.min.js"></script>

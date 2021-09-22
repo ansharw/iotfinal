@@ -14,6 +14,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/all.min.css">
   <!-- <script src="<?php echo base_url(); ?>assets/modules/canvasjs.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script> 
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script> -->
+
 
   <!-- CSS Libraries -->
   <?php

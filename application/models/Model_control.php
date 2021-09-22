@@ -128,12 +128,29 @@ class Model_control extends CI_Model
     public function getSetPointChart($id = null)
     {
         if ($id) {
-            $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData WHERE id = ?";
+            $sql = "SELECT setPointSuhu, setPointKelembaban, waktu FROM SensorData WHERE id = ?";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData ORDER BY id ASC";
+        $sql = "SELECT setPointSuhu, setPointKelembaban, waktu FROM SensorData ORDER BY id ASC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function get_data_tanggal($dates, $datesf)
+    {
+        if ($dates) {
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu, setPointSuhu FROM SensorData WHERE waktu LIKE $dates . '%'";
+            $query = $this->db->query($sql);
+            return $query->row_array();
+        } elseif($dates && $datesf) { 
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu, setPointSuhu FROM SensorData WHERE waktu BETWEEN $dates . '%' AND $datesf . '%'";
+            $query = $this->db->query($sql);
+            return $query->row_array();
+        }
+
+        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu, setPointSuhu FROM SensorData";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
