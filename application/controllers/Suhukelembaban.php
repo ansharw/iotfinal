@@ -18,10 +18,26 @@ class Suhukelembaban extends Admin_Controller
         $this->data['setpointsuhu'] = $this->model_control->getSetPointChart($setpoint_id);
         $this->data['kelembaban'] = $this->model_control->getKelembaban($kelembaban_id);  
 
-        $dates = $this->input->post('search');
-        $this->data['tanggal'] = $this->model_control->get_data_tanggal($dates, $datesf);
-        
+        // $dates = $this->input->post('search');
+        // $this->data['tanggal'] = $this->model_control->get_data_tanggal($dates, $datesf);
+
         $this->render_template('suhukelembaban', $this->data);
+    }
+
+    public function fetchData()
+    {
+        $result = [];
+
+        $dates = $this->input->post('dates');
+        $data = $this->model_control->get_data_tanggal($dates);
+
+        foreach ($data as $key => $value) {
+            $result[$key] = [
+                $value['waktu'],
+                $value['setPointSuhu']
+            ];
+        }
+        echo json_encode($result);
     }
 
     // public function sendData()

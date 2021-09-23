@@ -37,29 +37,29 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
     <!-- bates -->
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script> -->
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
-                 https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+                     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script> -->
 
-    <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      var firebaseConfig = {
-        apiKey: "AIzaSyC0n3BR8aR1owo0ntSeFQorP0uJWdakIsY",
-        authDomain: "brooding-598d9.firebaseapp.com",
-        databaseURL: "https://brooding-598d9-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "brooding-598d9",
-        storageBucket: "brooding-598d9.appspot.com",
-        messagingSenderId: "421806965706",
-        appId: "1:421806965706:web:15f9a087a597cb595f0533",
-        measurementId: "G-SRHHF0W04L"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
+    <!-- <script>
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          var firebaseConfig = {
+            apiKey: "AIzaSyC0n3BR8aR1owo0ntSeFQorP0uJWdakIsY",
+            authDomain: "brooding-598d9.firebaseapp.com",
+            databaseURL: "https://brooding-598d9-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "brooding-598d9",
+            storageBucket: "brooding-598d9.appspot.com",
+            messagingSenderId: "421806965706",
+            appId: "1:421806965706:web:15f9a087a597cb595f0533",
+            measurementId: "G-SRHHF0W04L"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script> -->
 
   <?php
   } elseif ($this->uri->segment(2) == "create") { ?>
@@ -380,6 +380,96 @@ if ($this->uri->segment(1) == "dashboard") { ?>
   <script>
     $(document).ready(function() {
       $("#suhuKelembabanNav").addClass('active');
+
+      if (jQuery().daterangepicker) {
+        if ($(".datepicker").length) {
+          $('.datepicker').daterangepicker({
+            locale: {
+              format: 'YYYY-MM-DD'
+            },
+            singleDatePicker: true,
+          });
+        }
+      };
+
+      var base_url = "<?php echo base_url(); ?>";
+
+      $("#cari").click(function() {
+        let from_date = $(".datepicker").val();
+        if (from_date != '') {
+          console.log(from_date);
+          $.ajax({
+            url: base_url + 'fetchdata',
+            data: {
+              from_date: from_date
+            },
+            success: function(data) {
+              console.log(data[0]);
+              console.log(data[1]);
+              console.log(data[2]);
+              console.log(data[3]);
+              console.log(data[4]);
+              console.log(data[5]);
+              console.log(data[6]);
+              console.log(data[7]);
+              console.log(data[8]);
+              console.log(data[9]);
+              console.log(data[10]);
+              console.log(data[11]);
+              console.log(data[12]);
+              let time = data[0].waktu;
+              let setps = data[0].setPointSuhu;
+
+              const datas = {
+                datasets: [{
+                  label: 'set point suhu',
+                  data: [{
+                    x: time,
+                    y: setps
+                  }],
+                  borderDash: [5, 2],
+                  backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                  borderColor: 'rgba(0, 0, 0, 1)',
+                  borderWidth: 2
+                }, ]
+              };
+              const config = {
+                type: 'line',
+                data: datas,
+                options: {
+                  showLines: true,
+                  animation: {
+                    duration: 0
+                  },
+                  scales: {
+                    x: {
+                      type: 'timeseries',
+                      time: {
+                        unit: 'hour'
+                      }
+                    },
+                    y: {
+                      title: {
+                        display: true,
+                        text: 'Suhu'
+                      }
+                    }
+                  },
+                  interaction: {
+                    intersect: false
+                  },
+
+                }
+              };
+              // render init block
+              const myChart = new Chart(document.getElementById('myChart'), config);
+            }
+          })
+        } else {
+          alert("Please Select Date");
+        }
+      });
+
       $("#table1").DataTable({
         "processing": true,
         // "serverSide": true,

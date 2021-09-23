@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <!-- <input type="text" name="search" id="search" class="form-control" placeholder="Tahun (contoh: 2020)"> -->
                                         <input type="text" class="form-control datepicker" name="dates" id="dates">
                                         <div class="input-group-btn">
-                                            <input class="btn btn-primary btn-icon" type="submit" value="Cari">
+                                            <input class="btn btn-primary btn-icon" type="submit" value="Cari" id="cari">
                                         </div>
                                     </div>
                                 </form>
@@ -27,9 +27,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <!-- <div class="card-body">
                             <div id="chart1" style="height: 400px;"></div>
                         </div> -->
-                        <div class="card-body">
+                        <!-- <div class="card-body">
                             <canvas id="myChart" height="130px"></canvas>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -206,5 +206,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
     };
     // render init block
     const myChart = new Chart(document.getElementById('myChart'), config);
-    
+
 </script>

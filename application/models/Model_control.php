@@ -19,12 +19,12 @@ class Model_control extends CI_Model
     public function getSuhu($id = null)
     {
         if ($id) {
-            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData WHERE id = ?";
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData WHERE id = ? LIMIT 10";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData ORDER BY id DESC";
+        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData ORDER BY id DESC LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
 
@@ -43,12 +43,12 @@ class Model_control extends CI_Model
     public function getSuhuChart($id = null)
     {
         if ($id) {
-            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData WHERE id = ?";
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData WHERE id = ? LIMIT 10";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData ORDER BY id ASC";
+        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData ORDER BY id ASC LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -56,12 +56,12 @@ class Model_control extends CI_Model
     public function getKelembaban($id = null)
     {
         if ($id) {
-            $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, waktu FROM SensorData WHERE id = ?";
+            $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, waktu FROM SensorData WHERE id = ? LIMIT 10";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, waktu FROM SensorData ORDER BY id DESC";
+        $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, waktu FROM SensorData ORDER BY id DESC LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
         
@@ -80,12 +80,12 @@ class Model_control extends CI_Model
     public function getLampuKipas($id = null)
     {
         if ($id) {
-            $sql = "SELECT outLampu, outKipas, waktu FROM SensorData WHERE id = ?";
+            $sql = "SELECT outLampu, outKipas, waktu FROM SensorData WHERE id = ? LIMIT 10";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT outLampu, outKipas, waktu FROM SensorData ORDER BY id DESC";
+        $sql = "SELECT outLampu, outKipas, waktu FROM SensorData ORDER BY id DESC LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
         
@@ -104,12 +104,12 @@ class Model_control extends CI_Model
     public function getSetPoint($id = null)
     {
         if ($id) {
-            $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData WHERE id = ?";
+            $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData WHERE id = ? LIMIT 10";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData ORDER BY id DESC";
+        $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData ORDER BY id DESC LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
         
@@ -128,12 +128,12 @@ class Model_control extends CI_Model
     public function getSetPointChart($id = null)
     {
         if ($id) {
-            $sql = "SELECT setPointSuhu, setPointKelembaban, waktu FROM SensorData WHERE id = ?";
+            $sql = "SELECT setPointSuhu, setPointKelembaban, waktu FROM SensorData WHERE id = ? LIMIT 10";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT setPointSuhu, setPointKelembaban, waktu FROM SensorData ORDER BY id ASC";
+        $sql = "SELECT setPointSuhu, setPointKelembaban, waktu FROM SensorData ORDER BY id ASC LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -141,16 +141,16 @@ class Model_control extends CI_Model
     public function get_data_tanggal($dates, $datesf)
     {
         if ($dates) {
-            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu, setPointSuhu FROM SensorData WHERE waktu LIKE $dates . '%'";
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu, setPointSuhu FROM SensorData WHERE waktu LIKE $dates . '%' LIMIT 10";
             $query = $this->db->query($sql);
             return $query->row_array();
         } elseif($dates && $datesf) { 
-            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu, setPointSuhu FROM SensorData WHERE waktu BETWEEN $dates . '%' AND $datesf . '%'";
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu, setPointSuhu FROM SensorData WHERE waktu BETWEEN $dates . '%' AND $datesf . '%' LIMIT 10";
             $query = $this->db->query($sql);
             return $query->row_array();
         }
 
-        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu, setPointSuhu FROM SensorData";
+        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu, setPointSuhu FROM SensorData LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

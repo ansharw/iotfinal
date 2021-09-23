@@ -1,19 +1,19 @@
 "use strict";
 
 // ChartJS
-if(window.Chart) {
-  Chart.defaults.global.defaultFontFamily = "'Nunito', 'Segoe UI', 'Arial'";
-  Chart.defaults.global.defaultFontSize = 11;
-  Chart.defaults.global.defaultFontStyle = 500;
-  Chart.defaults.global.defaultFontColor = "#999";
-  Chart.defaults.global.tooltips.backgroundColor = '#000';
-  Chart.defaults.global.tooltips.titleFontFamily = "'Nunito', 'Segoe UI', 'Arial'";
-  Chart.defaults.global.tooltips.titleFontColor = '#fff';
-  Chart.defaults.global.tooltips.titleFontSize = 20;
-  Chart.defaults.global.tooltips.xPadding = 10;
-  Chart.defaults.global.tooltips.yPadding = 10;
-  Chart.defaults.global.tooltips.cornerRadius = 3;
-}
+// if(window.Chart) {
+//   Chart.defaults.global.defaultFontFamily = "'Nunito', 'Segoe UI', 'Arial'";
+//   Chart.defaults.global.defaultFontSize = 11;
+//   Chart.defaults.global.defaultFontStyle = 500;
+//   Chart.defaults.global.defaultFontColor = "#999";
+//   Chart.defaults.global.tooltips.backgroundColor = '#000';
+//   Chart.defaults.global.tooltips.titleFontFamily = "'Nunito', 'Segoe UI', 'Arial'";
+//   Chart.defaults.global.tooltips.titleFontColor = '#fff';
+//   Chart.defaults.global.tooltips.titleFontSize = 20;
+//   Chart.defaults.global.tooltips.xPadding = 10;
+//   Chart.defaults.global.tooltips.yPadding = 10;
+//   Chart.defaults.global.tooltips.cornerRadius = 3;
+// }
 
 // DropzoneJS
 if(window.Dropzone) {
@@ -549,12 +549,12 @@ $(function() {
 
   // Daterangepicker
   if(jQuery().daterangepicker) {
-    if($(".datepicker").length) {
-      $('.datepicker').daterangepicker({
-        locale: {format: 'YYYY-MM-DD'},
-        singleDatePicker: true,
-      });
-    }
+    // if($(".datepicker").length) {
+    //   $('.datepicker').daterangepicker({
+    //     locale: {format: 'YYYY-MM-DD'},
+    //     singleDatePicker: true,
+    //   });
+    // }
     if($(".datetimepicker").length) {
       $('.datetimepicker').daterangepicker({
         locale: {format: 'YYYY-MM-DD hh:mm'},
