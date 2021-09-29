@@ -19,7 +19,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script> 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script>
 
 
   <!-- CSS Libraries -->

@@ -158,7 +158,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     //         label: 'set point suhu',
     //         data: [
     //             <?php // foreach ($setpointsuhu as $row) : 
-                    ?> {
+    //                    ?> {
     //                     x: '<?php // echo $row['waktu'] 
                                 ?>',
     //                     y: <?php // echo $row['setPointSuhu'] 
@@ -229,14 +229,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 labels: labelServer,
                 datasets: [{
                         label: 'Kandang 1',
-                        data: dataS1,
+                        data: [],
                         fill: false,
                         borderColor: 'rgb(75, 192, 192)',
                         tension: 0.5
                     },
                     {
                         label: 'Kandang 1',
-                        data: dataS2,
+                        data: [],
                         fill: false,
                         borderColor: 'rgb(75, 192, 192)',
                         // tension: 0.5
@@ -248,6 +248,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 type: 'line',
                 data: dataChart,
                 options: {
+                    scales:{
+                        x: {
+                            type: 'realtime',
+                            realtime: {
+                                delay: 10000,
+                                onRefresh: chart => {
+                                    chart.data.datasets.forEach(dataset => {
+                                        dataset.data.push({
+                                            x: labelServer,
+                                            y: dataS1
+                                        });
+                                    });
+                                }
+                            }
+                        }
+                    },
                     animation: false,
                 }
             };
