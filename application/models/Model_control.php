@@ -18,7 +18,7 @@ class Model_control extends CI_Model
 
     public function getAllData()
     {
-        $sql = "SELECT * FROM SensorData ORDER BY id ASC";
+        $sql = "SELECT * FROM SensorData ORDER BY id ASC LIMIT 30";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
