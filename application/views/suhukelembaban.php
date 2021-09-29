@@ -233,7 +233,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         fill: false,
                         borderColor: 'rgb(75, 192, 192)',
                         tension: 0.5,
-                        position: 'right'
+                        position: 'left'
                     },
                     {
                         label: 'Kandang 1',
