@@ -394,81 +394,81 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 
       var base_url = "<?php echo base_url(); ?>";
 
-      $("#cari").click(function() {
-        let from_date = $(".datepicker").val();
-        if (from_date != '') {
-          console.log(from_date);
-          $.ajax({
-            url: base_url + 'fetchdata',
-            data: {
-              from_date: from_date
-            },
-            success: function(data) {
-              console.log(data[0]);
-              console.log(data[1]);
-              console.log(data[2]);
-              console.log(data[3]);
-              console.log(data[4]);
-              console.log(data[5]);
-              console.log(data[6]);
-              console.log(data[7]);
-              console.log(data[8]);
-              console.log(data[9]);
-              console.log(data[10]);
-              console.log(data[11]);
-              console.log(data[12]);
-              let time = data[0].waktu;
-              let setps = data[0].setPointSuhu;
+      // $("#cari").click(function() {
+      //   let from_date = $(".datepicker").val();
+      //   if (from_date != '') {
+      //     console.log(from_date);
+      //     $.ajax({
+      //       url: base_url + 'fetchdata',
+      //       data: {
+      //         from_date: from_date
+      //       },
+      //       success: function(data) {
+      //         console.log(data[0]);
+      //         console.log(data[1]);
+      //         console.log(data[2]);
+      //         console.log(data[3]);
+      //         console.log(data[4]);
+      //         console.log(data[5]);
+      //         console.log(data[6]);
+      //         console.log(data[7]);
+      //         console.log(data[8]);
+      //         console.log(data[9]);
+      //         console.log(data[10]);
+      //         console.log(data[11]);
+      //         console.log(data[12]);
+      //         let time = data[0].waktu;
+      //         let setps = data[0].setPointSuhu;
 
-              const datas = {
-                datasets: [{
-                  label: 'set point suhu',
-                  data: [{
-                    x: time,
-                    y: setps
-                  }],
-                  borderDash: [5, 2],
-                  backgroundColor: 'rgba(0, 0, 0, 0.2)',
-                  borderColor: 'rgba(0, 0, 0, 1)',
-                  borderWidth: 2
-                }, ]
-              };
-              const config = {
-                type: 'line',
-                data: datas,
-                options: {
-                  showLines: true,
-                  animation: {
-                    duration: 0
-                  },
-                  scales: {
-                    x: {
-                      type: 'timeseries',
-                      time: {
-                        unit: 'hour'
-                      }
-                    },
-                    y: {
-                      title: {
-                        display: true,
-                        text: 'Suhu'
-                      }
-                    }
-                  },
-                  interaction: {
-                    intersect: false
-                  },
+      //         const datas = {
+      //           datasets: [{
+      //             label: 'set point suhu',
+      //             data: [{
+      //               x: time,
+      //               y: setps
+      //             }],
+      //             borderDash: [5, 2],
+      //             backgroundColor: 'rgba(0, 0, 0, 0.2)',
+      //             borderColor: 'rgba(0, 0, 0, 1)',
+      //             borderWidth: 2
+      //           }, ]
+      //         };
+      //         const config = {
+      //           type: 'line',
+      //           data: datas,
+      //           options: {
+      //             showLines: true,
+      //             animation: {
+      //               duration: 0
+      //             },
+      //             scales: {
+      //               x: {
+      //                 type: 'timeseries',
+      //                 time: {
+      //                   unit: 'hour'
+      //                 }
+      //               },
+      //               y: {
+      //                 title: {
+      //                   display: true,
+      //                   text: 'Suhu'
+      //                 }
+      //               }
+      //             },
+      //             interaction: {
+      //               intersect: false
+      //             },
 
-                }
-              };
-              // render init block
-              const myChart = new Chart(document.getElementById('myChart'), config);
-            }
-          })
-        } else {
-          alert("Please Select Date");
-        }
-      });
+      //           }
+      //         };
+      //         // render init block
+      //         const myChart = new Chart(document.getElementById('myChart'), config);
+      //       }
+      //     })
+      //   } else {
+      //     alert("Please Select Date");
+      //   }
+      // });
 
       $("#table1").DataTable({
         "processing": true,

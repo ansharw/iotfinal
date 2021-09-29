@@ -27,9 +27,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <!-- <div class="card-body">
                             <div id="chart1" style="height: 400px;"></div>
                         </div> -->
-                        <!-- <div class="card-body">
-                            <canvas id="myChart" height="130px"></canvas>
-                        </div> -->
+                        <div class="card-body">
+                            <canvas id="myChart1" height="130px"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,22 +153,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </div>
 <script type="text/javascript">
     // setup block  
-    const data = {
-        datasets: [{
-            label: 'set point suhu',
-            data: [
-                <?php foreach ($setpointsuhu as $row) : ?> {
-                        x: '<?= $row['waktu'] ?>',
-                        y: <?= $row['setPointSuhu'] ?>
-                    },
-                <?php endforeach; ?>
-            ],
-            borderDash: [5, 2],
-            backgroundColor: 'rgba(0, 0, 0, 0.2)',
-            borderColor: 'rgba(0, 0, 0, 1)',
-            borderWidth: 2
-        }, ]
-    };
+    // const data = {
+    //     datasets: [{
+    //         label: 'set point suhu',
+    //         data: [
+    //             <?php // foreach ($setpointsuhu as $row) : 
+                    ?> {
+    //                     x: '<?php // echo $row['waktu'] 
+                                ?>',
+    //                     y: <?php // echo $row['setPointSuhu'] 
+                                ?>
+    //                 },
+    //             <?php // endforeach; 
+                    ?>
+    //         ],
+    //         borderDash: [5, 2],
+    //         backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    //         borderColor: 'rgba(0, 0, 0, 1)',
+    //         borderWidth: 2
+    //     }, ]
+    // };
     // const onRefresh = (chart, label, data) => {
     //     chart.data.labels.push(label);
     //     chart.data.datasets.forEach(dataset => {
@@ -176,35 +180,87 @@ defined('BASEPATH') or exit('No direct script access allowed');
     //     });
     // };
     // congig block
-    const config = {
-        type: 'line',
-        data: data,
-        options: {
-            showLines: true,
-            animation: {
-                duration: 0
-            },
-            scales: {
-                x: {
-                    type: 'timeseries',
-                    time: {
-                        unit: 'hour'
+    // const config = {
+    //     type: 'line',
+    //     data: data,
+    //     options: {
+    //         showLines: true,
+    //         animation: {
+    //             duration: 0
+    //         },
+    //         scales: {
+    //             x: {
+    //                 type: 'timeseries',
+    //                 time: {
+    //                     unit: 'hour'
+    //                 }
+    //             },
+    //             y: {
+    //                 title: {
+    //                     display: true,
+    //                     text: 'Suhu'
+    //                 }
+    //             }
+    //         },
+    //         interaction: {
+    //             intersect: false
+    //         },
+
+    //     }
+    // };
+    // // render init block
+    // const myChart = new Chart(document.getElementById('myChart'), config);
+
+    let base_url = "<?php echo base_url(); ?>";
+
+    function reloadChart() {
+        let labelServer = [];
+        let dataS1 = [];
+        let dataS2 = [];
+
+        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+            $.each(data, function(key, val) {
+                labelServer.push(val.waktu);
+                dataS1.push(val.suhu);
+                dataS2.push(val.suhu1);
+            });
+
+            const dataChart = {
+                labels: labelServer,
+                datasets: [{
+                        label: 'Kandang 1',
+                        data: dataS1,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.5
+                    },
+                    {
+                        label: 'Kandang 1',
+                        data: dataS2,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.5
                     }
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: 'Suhu'
-                    }
+                ]
+            };
+
+            let config = {
+                type: 'line',
+                data: dataChart,
+                options: {
+                    animation: false,
                 }
-            },
-            interaction: {
-                intersect: false
-            },
+            };
 
-        }
-    };
-    // render init block
-    const myChart = new Chart(document.getElementById('myChart'), config);
+            if (window.myLine !== undefined) {
+                window.myLine.destroy();
+            }
+            let ctx = document.getElementById("myChart2").getContext("2d");
+            window.myLine = new Chart(ctx, config);
+        });
+    }
 
+    setInterval(function() {
+        reloadChart()
+    }, 1000);
 </script>

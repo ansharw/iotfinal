@@ -16,6 +16,13 @@ class Model_control extends CI_Model
     //     }
     // }
 
+    public function getAllData()
+    {
+        $sql = "SELECT * FROM SensorData ORDER BY id ASC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function getSuhu($id = null)
     {
         if ($id) {
