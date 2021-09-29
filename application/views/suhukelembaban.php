@@ -262,5 +262,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     setInterval(function() {
         reloadChart()
-    }, 1000);
+    }, 10000);
 </script>
