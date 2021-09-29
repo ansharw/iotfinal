@@ -233,7 +233,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         fill: false,
                         borderColor: 'rgb(75, 192, 192)',
                         tension: 0.5,
-                        position: 'left'
                     },
                     {
                         label: 'Kandang 1',
@@ -249,6 +248,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 type: 'line',
                 data: dataChart,
                 options: {
+                    scales: {
+                        yAxis: {
+                            position: 'left'
+                        }
+                    },
                     animation: false,
                 }
             };
