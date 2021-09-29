@@ -44,9 +44,8 @@ class Suhukelembaban extends Admin_Controller
     public function ambilData()
     {
         $data = $this->model_control->getAllData();
-        $reverse = array_reverse($data);
         header('Content-Type: application/json');
-        echo json_encode($reverse);  
+        echo json_encode($data);  
     }
 
     // public function sendData()
