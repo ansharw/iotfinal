@@ -273,6 +273,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
         let labelServer = [];
         let dataS1 = [];
         let dataS2 = [];
+        let dataS3 = [];
+        let dataS4 = [];
+        let dataS5 = [];
+        let dataS6 = [];
+        let dataSetPoint = [];
 
         $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
             $.each(data, function(key, val) {
