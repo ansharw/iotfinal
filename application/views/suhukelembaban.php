@@ -279,25 +279,70 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 labelServer.unshift(val.waktu);
                 dataS1.unshift(val.suhu);
                 dataS2.unshift(val.suhu1);
+                dataS3.unshift(val.suhu2);
+                dataS4.unshift(val.suhu3);
+                dataS5.unshift(val.suhu4);
+                dataS6.unshift(val.suhuLuar);
+                dataSetPoint.unshift(val.setPointSuhu)
             });
-            console.log(labelServer);
-            console.log(dataS1);
-            console.log(dataS2);
             const dataChart = {
                 labels: labelServer,
                 datasets: [{
-                        label: 'Kandang 1',
+                        label: 'Suhu 1',
                         data: dataS1,
                         fill: false,
-                        borderColor: 'rgb(75, 192, 192)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
                         tension: 0.5
                     },
                     {
-                        label: 'Kandang 1',
+                        label: 'Suhu 2',
                         data: dataS2,
                         fill: false,
-                        borderColor: 'rgb(75, 192, 192)',
-                        // tension: 0.5
+                        backgroundColor: 'rgba(125, 109, 12, 0.2)',
+                        borderColor: 'rgba(125, 109, 12, 1)',
+                        tension: 0.5
+                    },
+                    {
+                        label: 'Suhu 3',
+                        data: dataS3,
+                        fill: false,
+                        backgroundColor: 'rgba(207, 0, 15, 0.2)',
+                        borderColor: 'rgba(207, 0, 15, 1)',
+                        tension: 0.5
+                    },
+                    {
+                        label: 'Suhu 4',
+                        data: dataS4,
+                        fill: false,
+                        backgroundColor: 'rgba(34, 167, 240, 0.2)',
+                        borderColor: 'rgba(34, 167, 240, 1)',
+                        tension: 0.5
+                    },
+                    {
+                        label: 'Suhu 5',
+                        data: dataS5,
+                        fill: false,
+                        backgroundColor: 'rgba(42, 187, 155, 0.2)',
+                        borderColor: 'rgba(42, 187, 155, 1)',
+                        tension: 0.5
+                    },
+                    {
+                        label: 'Suhu 6',
+                        data: dataS6,
+                        fill: false,
+                        backgroundColor: 'rgba(247, 202, 24, 0.2)',
+                        borderColor: 'rgba(247, 202, 24, 1)',
+                        tension: 0.5
+                    },
+                    {
+                        label: 'Set Point Suhu',
+                        data: dataSetPoint,
+                        fill: false,
+                        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                        borderColor: 'rgba(0, 0, 0, 1)',
+                        borderDash: [5, 2],
+                        tension: 0.5
                     }
                 ]
             };
