@@ -230,6 +230,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 dataS1.push(val.suhu);
                 dataS2.push(val.suhu1);
             });
+            console.log(labelServer);
+            console.log(dataS1);
+            console.log(dataS2);
 
             const dataChart = {
                 labels: labelServer,
