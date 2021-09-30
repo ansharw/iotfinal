@@ -276,37 +276,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
             $.each(data, function(key, val) {
-                labelServer.push(val.waktu);
-                dataS1.push(val.suhu);
-                dataS2.push(val.suhu1);
+                labelServer.unshift(val.waktu);
+                dataS1.unshift(val.suhu);
+                dataS2.unshift(val.suhu1);
             });
             const dataChart = {
                 labels: labelServer,
-                datasets: []
+                datasets: [{
+                        label: 'Kandang 1',
+                        data: dataS1,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.5
+                    },
+                    {
+                        label: 'Kandang 1',
+                        data: dataS2,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        // tension: 0.5
+                    }
+                ]
             };
 
             let config = {
                 type: 'line',
                 data: dataChart,
                 options: {
-                    scales: {
-                        type: 'realtime',
-                        x: {
-                            realtime: {
-                                duration: 10000,
-                                refresh: 10000,
-
-                                onRefresh: chart => {
-                                    fetch(base_url + 'suhukelembaban/ambildata')
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            chart.data.datasets[0].data.push(...data);
-                                            chart.update('quite');
-                                        });
-                                }
-                            }
-                        }
-                    },
                     animation: false,
                     responsive: true,
                 }
@@ -318,7 +314,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             let ctx = document.getElementById("myChart2").getContext("2d");
             window.myLine = new Chart(ctx, config);
         });
-
     }
     setInterval(function() {
         reloadChart()
