@@ -282,21 +282,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             });
             const dataChart = {
                 labels: labelServer,
-                datasets: [{
-                        label: 'Kandang 1',
-                        data: dataS1,
-                        fill: false,
-                        borderColor: 'rgb(75, 192, 192)',
-                        tension: 0.5
-                    },
-                    {
-                        label: 'Kandang 1',
-                        data: dataS2,
-                        fill: false,
-                        borderColor: 'rgb(75, 192, 192)',
-                        // tension: 0.5
-                    }
-                ]
+                datasets: []
             };
 
             let config = {
@@ -309,7 +295,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             realtime: {
                                 duration: 10000,
                                 refresh: 10000,
-                                
+
                                 onRefresh: chart => {
                                     fetch(base_url + 'suhukelembaban/ambildata')
                                         .then(response => response.json())
