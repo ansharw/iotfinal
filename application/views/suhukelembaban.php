@@ -361,6 +361,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     plugins: {
                         legend: {
                             position: 'bottom',
+                        },
+                        chartAreaBorder: {
+                            borderColor: 'black',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            borderDashOffset: 2,
                         }
                     }
                 },
