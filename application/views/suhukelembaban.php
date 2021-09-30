@@ -362,41 +362,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         legend: {
                             position: 'bottom',
                         },
-                        chartAreaBorder: {
-                            borderColor: 'red',
-                            borderWidth: 2,
-                            borderDash: [5, 5],
-                            borderDashOffset: 2,
-                        }
                     }
                 },
-                plugins: [chartAreaBorder],
                 interaction: {
                     mode: 'index',
                     intersect: false
                 },
-            };
-
-            const chartAreaBorder = {
-                id: 'chartAreaBorder',
-                beforeDraw(chart, args, options) {
-                    const {
-                        ctx,
-                        chartArea: {
-                            left,
-                            top,
-                            width,
-                            height
-                        }
-                    } = chart;
-                    ctx.save();
-                    ctx.strokeStyle = options.borderColor;
-                    ctx.lineWidth = options.borderWidth;
-                    ctx.setLineDash(options.borderDash || []);
-                    ctx.lineDashOffset = options.borderDashOffset;
-                    ctx.strokeRect(left, top, width, height);
-                    ctx.restore();
-                }
             };
 
             if (window.myLine !== undefined) {
