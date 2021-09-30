@@ -276,9 +276,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
             $.each(data, function(key, val) {
-                labelServer.push(val.waktu);
-                dataS1.push(val.suhu);
-                dataS2.push(val.suhu1);
+                labelServer.unshift(val.waktu);
+                dataS1.unshift(val.suhu);
+                dataS2.unshift(val.suhu1);
             });
             console.log(labelServer);
             console.log(dataS1);
