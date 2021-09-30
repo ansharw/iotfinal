@@ -14,7 +14,7 @@ class Data extends CI_Controller
         
         // $api_key = $suhu = $suhu1 = $suhu2 = $suhu3 = $suhu4 = $suhuLuar = $kelembaban = $kelembaban1 = $kelembaban2 = $kelembaban3 = $kelembaban4 = $kelembabanLuar = "";
         
-        $api_key = $suhu = $suhu1 = $suhu2 = $suhu3 = $suhu4 = $suhuLuar = $kelembaban = $kelembaban1 = $kelembaban2 = $kelembaban3 = $kelembaban4 = $kelembabanLuar = $setPointSuhu = $setPointKelembaban = $outLampu = $outKipas = "";
+        $api_key = $suhu = $suhu1 = $suhu2 = $suhu3 = $suhu4 = $suhuLuar = $kelembaban = $kelembaban1 = $kelembaban2 = $kelembaban3 = $kelembaban4 = $kelembabanLuar = $setPointSuhu = $setPointKelembaban = $outLampu = $outKipas = $outPompa = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $api_key = $this->input->post("api_key");
@@ -38,6 +38,7 @@ class Data extends CI_Controller
                 $setPointSuhu = $this->input->post('setPointSuhu');
                 $outLampu = $this->input->post('outLampu');
                 $outKipas = $this->input->post('outKipas');
+                $outPompa = $this->input->post('outPompa');
 
                 // $data = [
                 //     'suhu' => $suhu,
@@ -61,7 +62,7 @@ class Data extends CI_Controller
                 // $this->model_control->sendtoDB($data);
                 // $add = $this->model_control->sendtoDB($data);
                 
-                $sql = "INSERT INTO SensorData (suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, setPointKelembaban, setPointSuhu, outLampu, outKipas) VALUES ('" . $suhu . "', '" . $suhu1 . "', '" . $suhu2 . "', '" . $suhu3 . "', '" . $suhu4 . "', '" . $suhuLuar . "', '" . $kelembaban . "', '" . $kelembaban1 . "', '" . $kelembaban2 . "', '" . $kelembaban3 . "', '" . $kelembaban4 . "', '" . $kelembabanLuar . "', '" . $setPointKelembaban . "', '" . $setPointSuhu . "', '" . $outLampu . "', '" . $outKipas . "')";
+                $sql = "INSERT INTO SensorData2 (suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, setPointKelembaban, setPointSuhu, outLampu, outKipas, outPompa) VALUES ('" . $suhu . "', '" . $suhu1 . "', '" . $suhu2 . "', '" . $suhu3 . "', '" . $suhu4 . "', '" . $suhuLuar . "', '" . $kelembaban . "', '" . $kelembaban1 . "', '" . $kelembaban2 . "', '" . $kelembaban3 . "', '" . $kelembaban4 . "', '" . $kelembabanLuar . "', '" . $setPointKelembaban . "', '" . $setPointSuhu . "', '" . $outLampu . "', '" . $outKipas . "', '" . $outPompa . "')";
                 
                 if ($this->db->query($sql) === TRUE) {
                     echo "New record created successfully";
