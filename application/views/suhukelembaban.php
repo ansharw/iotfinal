@@ -152,6 +152,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </section>
 </div>
 <script type="text/javascript">
+    // show all data chart
+
     // setup block  
     // const data = {
     //     datasets: [{
@@ -180,7 +182,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     //         dataset.data.push({data});
     //     });
     // };
-    // congig block
+    // config block
     // const config = {
     //     type: 'line',
     //     data: data,
@@ -211,6 +213,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     // };
     // // render init block
     // const myChart = new Chart(document.getElementById('myChart'), config);
+
+    // getjson with realtime chart ASC / DESC
+    // DESC is running and show ticks data from right to left, but ASC is stopped at the lastest array
 
     let base_url = "<?php echo base_url(); ?>";
 
@@ -254,14 +259,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 }
             };
 
-            if (this.dataChart.datasets[0].data.length > 10) {
-                this.dataChart.labels.shift()
-                this.dataChart.datasets.forEach(dataset => {
-                    dataset.data[0] = dataset.data[1]
-                    dataset.data.splice(1, 1)
-                })
-            }
-
             if (window.myLine !== undefined) {
                 window.myLine.destroy();
             }
@@ -269,7 +266,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             window.myLine = new Chart(ctx, config);
         });
     }
-
     setInterval(function() {
         reloadChart()
     }, 10000);
