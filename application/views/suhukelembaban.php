@@ -333,7 +333,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         tension: 0.5
                     },
                     {
-                        label: 'Suhu 6',
+                        label: 'Suhu Luar',
                         data: dataS6,
                         fill: false,
                         backgroundColor: 'rgba(247, 202, 24, 0.2)',
@@ -358,7 +358,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 options: {
                     animation: false,
                     responsive: true,
-                }
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        }
+                    }
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
             };
 
             if (window.myLine !== undefined) {

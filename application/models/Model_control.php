@@ -18,7 +18,7 @@ class Model_control extends CI_Model
 
     public function getAllData()
     {
-        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, setPointSuhu, setPointKelembaban, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData2 ORDER BY waktu DESC LIMIT 10";
+        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, setPointSuhu, setPointKelembaban, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData2 ORDER BY waktu DESC LIMIT 20";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
