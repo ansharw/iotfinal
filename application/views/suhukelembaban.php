@@ -219,6 +219,56 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     let base_url = "<?php echo base_url(); ?>";
 
+    // function reloadChart() {
+    //     let labelServer = [];
+    //     let dataS1 = [];
+    //     let dataS2 = [];
+
+    //     $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+    //         $.each(data, function(key, val) {
+    //             labelServer.push(val.waktu);
+    //             dataS1.push(val.suhu);
+    //             dataS2.push(val.suhu1);
+    //         });
+    //         const dataChart = {
+    //             labels: labelServer,
+    //             datasets: [{
+    //                     label: 'Kandang 1',
+    //                     data: dataS1,
+    //                     fill: false,
+    //                     borderColor: 'rgb(75, 192, 192)',
+    //                     tension: 0.5
+    //                 },
+    //                 {
+    //                     label: 'Kandang 1',
+    //                     data: dataS2,
+    //                     fill: false,
+    //                     borderColor: 'rgb(75, 192, 192)',
+    //                     // tension: 0.5
+    //                 }
+    //             ]
+    //         };
+
+    //         let config = {
+    //             type: 'line',
+    //             data: dataChart,
+    //             options: {
+    //                 animation: false,
+    //                 responsive: true,
+    //             }
+    //         };
+
+    //         if (window.myLine !== undefined) {
+    //             window.myLine.destroy();
+    //         }
+    //         let ctx = document.getElementById("myChart2").getContext("2d");
+    //         window.myLine = new Chart(ctx, config);
+    //     });
+    // }
+    // setInterval(function() {
+    //     reloadChart()
+    // }, 10000);
+
     function reloadChart() {
         let labelServer = [];
         let dataS1 = [];
@@ -230,10 +280,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 dataS1.push(val.suhu);
                 dataS2.push(val.suhu1);
             });
-            console.log(labelServer);
-            console.log(dataS1);
-            console.log(dataS2);
-
             const dataChart = {
                 labels: labelServer,
                 datasets: [{
@@ -257,6 +303,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 type: 'line',
                 data: dataChart,
                 options: {
+                    scales: {
+                        type: 'realtime',
+                        x: {
+                            realtime: {
+                                duration: 10000,
+                                refresh: 10000,
+                                
+                                onRefresh: chart => {
+                                    fetch(base_url + 'suhukelembaban/ambildata')
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            chart.data.datasets[0].data.push(...data);
+                                            chart.update('quite');
+                                        });
+                                }
+                            }
+                        }
+                    },
                     animation: false,
                     responsive: true,
                 }
@@ -268,6 +332,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             let ctx = document.getElementById("myChart2").getContext("2d");
             window.myLine = new Chart(ctx, config);
         });
+
     }
     setInterval(function() {
         reloadChart()
