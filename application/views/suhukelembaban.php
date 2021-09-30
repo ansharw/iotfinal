@@ -158,7 +158,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
     //         label: 'set point suhu',
     //         data: [
     //             <?php // foreach ($setpointsuhu as $row) : 
-    //                    ?> {
+                    //                    
+                    ?> {
     //                     x: '<?php // echo $row['waktu'] 
                                 ?>',
     //                     y: <?php // echo $row['setPointSuhu'] 
@@ -252,6 +253,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     responsive: true,
                 }
             };
+
+            if (this.dataChart.datasets[0].data.length > 10) {
+                this.dataChart.labels.shift()
+                this.dataChart.datasets.forEach(dataset => {
+                    dataset.data[0] = dataset.data[1]
+                    dataset.data.splice(1, 1)
+                })
+            }
 
             if (window.myLine !== undefined) {
                 window.myLine.destroy();
