@@ -269,8 +269,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
     //     reloadChart()
     // }, 10000);
 
-    function reloadChart() {
-        let labelServer = [];
+    function reloadChart1() {
+        let label = [];
         let dataS1 = [];
         let dataS2 = [];
         let dataS3 = [];
@@ -281,7 +281,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
             $.each(data, function(key, val) {
-                labelServer.unshift(val.waktu);
+                label.unshift(val.waktu);
                 dataS1.unshift(val.suhu);
                 dataS2.unshift(val.suhu1);
                 dataS3.unshift(val.suhu2);
@@ -291,68 +291,61 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 dataSetPoint.unshift(val.setPointSuhu)
             });
             const dataChart = {
-                labels: labelServer,
+                labels: label,
                 datasets: [{
                         label: 'Suhu 1',
                         data: dataS1,
-                        fill: false,
                         backgroundColor: 'rgba(255, 99, 132, 0.2)',
                         borderColor: 'rgba(255, 99, 132, 1)',
-                        tension: 0.5
+                        tension: 0.2
                     },
                     {
                         label: 'Suhu 2',
                         data: dataS2,
-                        fill: false,
                         backgroundColor: 'rgba(125, 109, 12, 0.2)',
                         borderColor: 'rgba(125, 109, 12, 1)',
-                        tension: 0.5
+                        tension: 0.2
                     },
                     {
                         label: 'Suhu 3',
                         data: dataS3,
-                        fill: false,
                         backgroundColor: 'rgba(207, 0, 15, 0.2)',
                         borderColor: 'rgba(207, 0, 15, 1)',
-                        tension: 0.5
+                        tension: 0.2
                     },
                     {
                         label: 'Suhu 4',
                         data: dataS4,
-                        fill: false,
                         backgroundColor: 'rgba(34, 167, 240, 0.2)',
                         borderColor: 'rgba(34, 167, 240, 1)',
-                        tension: 0.5
+                        tension: 0.2
                     },
                     {
                         label: 'Suhu 5',
                         data: dataS5,
-                        fill: false,
                         backgroundColor: 'rgba(42, 187, 155, 0.2)',
                         borderColor: 'rgba(42, 187, 155, 1)',
-                        tension: 0.5
+                        tension: 0.2
                     },
                     {
                         label: 'Suhu Luar',
                         data: dataS6,
-                        fill: false,
                         backgroundColor: 'rgba(247, 202, 24, 0.2)',
                         borderColor: 'rgba(247, 202, 24, 1)',
-                        tension: 0.5
+                        tension: 0.2
                     },
                     {
                         label: 'Set Point Suhu',
                         data: dataSetPoint,
-                        fill: false,
                         backgroundColor: 'rgba(0, 0, 0, 0.2)',
                         borderColor: 'rgba(0, 0, 0, 1)',
                         borderDash: [5, 2],
-                        tension: 0.5
+                        tension: 0.2
                     }
                 ]
             };
 
-            let config = {
+            let config1 = {
                 type: 'line',
                 data: dataChart,
                 options: {
@@ -360,7 +353,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     responsive: true,
                     plugins: {
                         legend: {
-                            position: 'bottom',
+                            position: 'top',
                         },
                     }
                 },
@@ -370,14 +363,118 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 },
             };
 
-            if (window.myLine !== undefined) {
-                window.myLine.destroy();
+            if (window.myLine1 !== undefined) {
+                window.myLine1.destroy();
             }
-            let ctx = document.getElementById("myChart2").getContext("2d");
-            window.myLine = new Chart(ctx, config);
+            let ctx = document.getElementById("myChart1").getContext("2d");
+            window.myLine1 = new Chart(ctx, config1);
         });
     }
+
+    function reloadChart2() {
+        let label = [];
+        let dataK1 = [];
+        let dataK2 = [];
+        let dataK3 = [];
+        let dataK4 = [];
+        let dataK5 = [];
+        let dataK6 = [];
+        let dataSetPoint = [];
+
+        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+            $.each(data, function(key, val) {
+                label.unshift(val.waktu);
+                dataK1.unshift(val.kelembaban);
+                dataK2.unshift(val.kelembaban1);
+                dataK3.unshift(val.kelembaban2);
+                dataK4.unshift(val.kelembaban3);
+                dataK5.unshift(val.kelembaban4);
+                dataK6.unshift(val.kelembabanLuar);
+                dataSetPoint.unshift(val.setPointKelembaban)
+            });
+            const dataChart = {
+                labels: label,
+                datasets: [{
+                        label: 'Kelembaban 1',
+                        data: dataK1,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Kelembaban 2',
+                        data: dataK2,
+                        backgroundColor: 'rgba(125, 109, 12, 0.2)',
+                        borderColor: 'rgba(125, 109, 12, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Kelembaban 3',
+                        data: dataK3,
+                        backgroundColor: 'rgba(207, 0, 15, 0.2)',
+                        borderColor: 'rgba(207, 0, 15, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Kelembaban 4',
+                        data: dataK4,
+                        backgroundColor: 'rgba(34, 167, 240, 0.2)',
+                        borderColor: 'rgba(34, 167, 240, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Kelembaban 5',
+                        data: dataK5,
+                        backgroundColor: 'rgba(42, 187, 155, 0.2)',
+                        borderColor: 'rgba(42, 187, 155, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Kelembaban Luar',
+                        data: dataK6,
+                        backgroundColor: 'rgba(247, 202, 24, 0.2)',
+                        borderColor: 'rgba(247, 202, 24, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Set Point Kelembaban',
+                        data: dataSetPoint,
+                        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                        borderColor: 'rgba(0, 0, 0, 1)',
+                        borderDash: [5, 2],
+                        tension: 0.2
+                    }
+                ]
+            };
+
+            let config2 = {
+                type: 'line',
+                data: dataChart,
+                options: {
+                    animation: false,
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                    }
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
+            };
+
+            if (window.myLine2 !== undefined) {
+                window.myLine2.destroy();
+            }
+            let ctx = document.getElementById("myChart2").getContext("2d");
+            window.myLine2 = new Chart(ctx, config2);
+        });
+    }
+
     setInterval(function() {
-        reloadChart()
+        reloadChart1();
+        reloadChart2();
     }, 10000);
 </script>
