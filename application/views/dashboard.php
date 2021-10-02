@@ -9,66 +9,59 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <div class="section-body">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-md-8 col-lg-8">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Desain Kandang Ayam</h4>
+                            <h4>Rancangan Sistem</h4>
                         </div>
                         <div class="card-body">
-                            <div class="chocolat-parent">
-                                <div data-crop-image="450">
-                                    <img alt="image" src="<?php echo base_url(); ?>assets/image/desain-kandang.png" class="img-fluid">
+                            <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+                                    <li data-target="#carouselExampleIndicators3" data-slide-to="3"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/slide1.png" alt="First slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/slide2.png" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/slide3.png" alt="Third slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/slide4.png" alt="Fourth slide">
+                                    </div>
                                 </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Keterangan</h4>
+                            <h4>Keterangan Gambar</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <ul class="list-unstyled list-unstyled-border list-unstyled-noborder mb-0">
-                                        <li class="media">
-                                            <img class="img-fluid mt-1 img-shadow" src="<?php echo base_url(); ?>assets/image/ket1.png" alt="image" width="40">
-                                            <div class="media-body ml-3 mt-3">
-                                                <div class="media-title">Cooling Pad</div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <img class="img-fluid mt-1 img-shadow" src="<?php echo base_url(); ?>assets/image/ket2.png" alt="image" width="40">
-                                            <div class="media-body ml-3 mt-3">
-                                                <div class="media-title">Tempat Pakan</div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <img class="img-fluid mt-1 img-shadow" src="<?php echo base_url(); ?>assets/image/ket3.png" alt="image" width="40">
-                                            <div class="media-body ml-3 mt-3">
-                                                <div class="media-title">Sensor Suhu dan Kelembaban</div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <img class="img-fluid mt-1 img-shadow" src="<?php echo base_url(); ?>assets/image/ket4.png" alt="image" width="40">
-                                            <div class="media-body ml-3 mt-3">
-                                                <div class="media-title">Lampu</div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <img class="img-fluid mt-1 img-shadow" src="<?php echo base_url(); ?>assets/image/ket5.png" alt="image" width="40">
-                                            <div class="media-body ml-3 mt-3">
-                                                <div class="media-title">Kipas</div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <img class="img-fluid mt-1 img-shadow" src="<?php echo base_url(); ?>assets/image/ket6.png" alt="image" width="40">
-                                            <div class="media-body ml-3 mt-3">
-                                                <div class="media-title">Air Flow</div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                <div class="col-12">
+                                    <div class="list-group" id="list-tab" role="tablist">
+                                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-kandang" role="tab">Slide 1 &rsaquo; Desain kandang ayam</a>
+                                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-alat" role="tab">Slide 2 &rsaquo; Integrasi sistem</a>
+                                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-diagram" role="tab">Slide 3 &rsaquo; Desain Sistem</a>
+                                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-foto" role="tab">Slide 4 &rsaquo; Foto Kandang Ayam</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -80,39 +73,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="card-icon">
                                 <i class="fas fa-thermometer-three-quarters"></i>
                             </div>
-                            <h3>Suhu</h3>
+                            <h5>Suhu</h5>
                             <div class="card-description">Recently Temperature</div>
                         </div>
                         <div class="card-body p-0">
                             <div class="tickets-list">
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h4>20 C</h4>
+                                        <h3>20 &degC</h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>Rizal Fakhri</div>
-                                        <div class="bullet"></div>
-                                        <div class="text-primary">1 min ago</div>
+                                        <div>1 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h4>21 C</h4>
+                                        <h3>21 &degC</h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>Rizal Fakhri</div>
-                                        <div class="bullet"></div>
-                                        <div>2 hours ago</div>
+                                        <div>2 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h4>18 C</h4>
+                                        <h3>22 &degC</h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>Syahdan Ubaidillah</div>
-                                        <div class="bullet"></div>
-                                        <div>6 hours ago</div>
+                                        <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
@@ -128,39 +115,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="card-icon">
                                 <i class="fas fa-circle-notch"></i>
                             </div>
-                            <h3>Kelembaban</h3>
+                            <h5>Kelembaban</h5>
                             <div class="card-description">Recently Humidity</div>
                         </div>
                         <div class="card-body p-0">
                             <div class="tickets-list">
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h4>30 C</h4>
+                                        <h3>60 %</h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>Laila Tazkiah</div>
-                                        <div class="bullet"></div>
-                                        <div class="text-primary">1 min ago</div>
+                                        <div>1 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h4>40 C</h4>
+                                        <h3>61 %</h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>Rizal Fakhri</div>
-                                        <div class="bullet"></div>
-                                        <div>2 hours ago</div>
+                                        <div>2 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h4>33 C</h4>
+                                        <h3>62 %</h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>Syahdan Ubaidillah</div>
-                                        <div class="bullet"></div>
-                                        <div>6 hours ago</div>
+                                        <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
@@ -176,39 +157,117 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="card-icon">
                                 <i class="fas fa-wind"></i>
                             </div>
-                            <h3>Kipas</h3>
-                            <div class="card-description">Recently Fan Speed</div>
+                            <h5>Kipas</h5>
+                            <div class="card-description">Recently Fan</div>
                         </div>
                         <div class="card-body p-0">
                             <div class="tickets-list">
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h4>32 C</h4>
+                                        <h3>112</h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>Laila Tazkiah</div>
-                                        <div class="bullet"></div>
-                                        <div class="text-primary">1 min ago</div>
+                                        <div>1 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h4>40 C</h4>
+                                        <h3>123</h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>Rizal Fakhri</div>
-                                        <div class="bullet"></div>
-                                        <div>2 hours ago</div>
+                                        <div>2 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h4>33 C</h4>
+                                        <h3>104</h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>Syahdan Ubaidillah</div>
-                                        <div class="bullet"></div>
-                                        <div>6 hours ago</div>
+                                        <div>3 menit yang lalu</div>
+                                    </div>
+                                </a>
+                                <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
+                                    View All <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="card card-hero">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <h5>Pompa</h5>
+                            <div class="card-description">Recently Pump</div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="tickets-list">
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3>100</h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div>1 menit yang lalu</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3>120</h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div>2 menit yang lalu</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3>110</h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div>3 menit yang lalu</div>
+                                    </div>
+                                </a>
+                                <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
+                                    View All <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="card card-hero">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="far fa-lightbulb"></i>
+                            </div>
+                            <h5>Lampu</h5>
+                            <div class="card-description">Recently Lamp</div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="tickets-list">
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3>100</h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div>1 menit yang lalu</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3>120</h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div>2 menit yang lalu</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3>110</h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
@@ -222,160 +281,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </section>
 </div>
 <script type="text/javascript">
-    window.onload = function() {
-        let chart1 = new CanvasJS.Chart("chart1", {
-            zoomEnabled: true,
-            axisY: {
-                title: "Suhu Kandang Ayam (℃)",
-                titleFontFamily: "Nunito"
-            },
-            axisX: {
-                valueFormatString: "DD-MMM",
-                interval: 10,
-                intervalType: "day",
-            },
-            legend: {
-                fontFamily: "Nunito",
-            },
-            toolTip: {
-                shared: true,
-                contentFormatter: function(e) {
-                    let content = " ";
-                    for (let i = 0; i < e.entries.length; i++) {
-                        content += e.entries[i].dataSeries.name + " " + "<strong>" + e.entries[i].dataPoint.y + "℃</strong>";
-                        content += "<br/>";
-                    }
-                    return content;
-                }
-            },
-            data: [{
-                    type: "spline",
-                    showInLegend: true,
-                    name: "Sensor 1",
-                    dataPoints: [{
-                            x: new Date(2021, 01, 12),
-                            y: 100
-                        },
-                        {
-                            x: new Date(2021, 02, 12),
-                            y: 80
-                        },
-                        {
-                            x: new Date(2021, 03, 12),
-                            y: 60
-                        },
-                        {
-                            x: new Date(2021, 04, 12),
-                            y: 70
-                        },
-                        {
-                            x: new Date(2021, 05, 12),
-                            y: 50
-                        },
-                        {
-                            x: new Date(2021, 06, 12),
-                            y: 90
-                        },
-                    ]
-                },
-                {
-                    type: "spline",
-                    showInLegend: true,
-                    name: "Sensor 2",
-                    dataPoints: [{
-                            x: new Date(2021, 01, 12),
-                            y: 20
-                        },
-                        {
-                            x: new Date(2021, 02, 12),
-                            y: 10
-                        },
-                        {
-                            x: new Date(2021, 03, 12),
-                            y: 30
-                        },
-                        {
-                            x: new Date(2021, 04, 12),
-                            y: 70
-                        },
-                        {
-                            x: new Date(2021, 05, 12),
-                            y: 80
-                        },
-                        {
-                            x: new Date(2021, 06, 12),
-                            y: 30
-                        },
-                    ]
-                },
-                {
-                    type: "spline",
-                    showInLegend: true,
-                    name: "Sensor 3",
-                    dataPoints: [{
-                            x: new Date(2021, 01, 12),
-                            y: 22
-                        },
-                        {
-                            x: new Date(2021, 02, 12),
-                            y: 30
-                        },
-                        {
-                            x: new Date(2021, 03, 12),
-                            y: 20
-                        },
-                        {
-                            x: new Date(2021, 04, 12),
-                            y: 50
-                        },
-                        {
-                            x: new Date(2021, 05, 12),
-                            y: 44
-                        },
-                        {
-                            x: new Date(2021, 06, 12),
-                            y: 54
-                        },
-                    ]
-                },
-                {
-                    type: "spline",
-                    showInLegend: true,
-                    name: "Sensor 4",
-                    dataPoints: [{
-                            x: new Date(2021, 01, 12),
-                            y: 35
-                        },
-                        {
-                            x: new Date(2021, 02, 12),
-                            y: 67
-                        },
-                        {
-                            x: new Date(2021, 03, 12),
-                            y: 84
-                        },
-                        {
-                            x: new Date(2021, 04, 12),
-                            y: 65
-                        },
-                        {
-                            x: new Date(2021, 05, 12),
-                            y: 89
-                        },
-                        {
-                            x: new Date(2021, 06, 12),
-                            y: 23
-                        },
-                    ]
-                }
-            ]
-        });
-        chart1.render();
-        $("#table1").dataTable({
-            "columnDefs": [{
-                "sortable": false,
-                "targets": [1, 2, 3, 4]
-            }]
-        });
-    }
+
 </script>

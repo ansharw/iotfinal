@@ -24,9 +24,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </form>
                             </div>
                         </div>
-                        <!-- <div class="card-body">
-                            <div id="chart1" style="height: 400px;"></div>
-                        </div> -->
                         <div class="card-body">
                             <canvas id="myChart1" height="130px"></canvas>
                         </div>
@@ -476,5 +473,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
     setInterval(function() {
         reloadChart1();
         reloadChart2();
-    }, 10000);
+    }, 60000);
 </script>

@@ -18,6 +18,7 @@ class Model_control extends CI_Model
 
     public function getAllData()
     {
+        // tambahin outLampu, outKipas, outPompa
         $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, setPointSuhu, setPointKelembaban, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData2 ORDER BY waktu DESC LIMIT 20";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -26,12 +27,12 @@ class Model_control extends CI_Model
     public function getSuhu($id = null)
     {
         if ($id) {
-            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData WHERE id = ? LIMIT 10";
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ? LIMIT 10";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData ORDER BY id DESC LIMIT 10";
+        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
 
@@ -63,12 +64,12 @@ class Model_control extends CI_Model
     public function getKelembaban($id = null)
     {
         if ($id) {
-            $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, waktu FROM SensorData WHERE id = ? LIMIT 10";
+            $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ? LIMIT 10";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, waktu FROM SensorData ORDER BY id DESC LIMIT 10";
+        $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
         
