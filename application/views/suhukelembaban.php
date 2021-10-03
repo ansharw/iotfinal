@@ -25,6 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                         </div>
                         <div class="card-body">
+                            <div id="clear">Tunggu sebentar <span id="time">01:00</span> minutes!</div>
                             <canvas id="myChart1" height="130px"></canvas>
                             <progress id="initialProgress" max="1" value="1" style="width:100%;"></progress>
                         </div>
@@ -492,4 +493,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
         reloadChart1();
         reloadChart2();
     }, 60000);
+
+    function startTimer(duration, display) {
+        var timer = duration,
+            minutes, seconds;
+        setInterval(function() {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+    var oneMinutes = 60 * 1, display = document.querySelector('#time');
+    startTimer(oneMinutes, display);
 </script>
