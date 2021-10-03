@@ -60,7 +60,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-kandang" role="tab">Slide 1 &rsaquo; Desain kandang ayam</a>
                                         <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-alat" role="tab">Slide 2 &rsaquo; Integrasi sistem</a>
                                         <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-diagram" role="tab">Slide 3 &rsaquo; Desain Sistem</a>
-                                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-foto" role="tab">Slide 4 &rsaquo; Foto Kandang Ayam</a>
+                                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-foto" role="tab">Slide 4 &rsaquo; Activity Diagram</a>
                                     </div>
                                 </div>
                             </div>
