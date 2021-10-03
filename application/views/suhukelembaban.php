@@ -27,7 +27,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="card-body">
                             <div id="clear">Tunggu sebentar <span id="time">01:00</span> minutes!</div>
                             <canvas id="myChart1" height="130px"></canvas>
-                            <progress id="initialProgress" max="1" value="1" style="width:100%;"></progress>
                         </div>
                     </div>
                 </div>
