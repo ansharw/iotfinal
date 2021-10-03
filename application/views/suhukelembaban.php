@@ -26,6 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                         <div class="card-body">
                             <canvas id="myChart1" height="130px"></canvas>
+                            <progress id="initialProgress" max="1" value="1" style="width:100%;"></progress>
                         </div>
                     </div>
                 </div>
@@ -214,6 +215,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     // getjson with realtime chart ASC / DESC
     // DESC is running and show ticks data from right to left, but ASC is stopped at the lastest array
 
+    var progress = document.getElementById('initialProgress');
     let base_url = "<?php echo base_url(); ?>";
 
     // function reloadChart() {
@@ -448,7 +450,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 type: 'line',
                 data: dataChart,
                 options: {
-                    animation: false,
+                    animation: {
+                        duration: 60000,
+                        onProgress: function(context) {
+                            if (context.initial) {
+                                initProgress.value = context.currentStep / context.numSteps;
+                            } else {
+                                progress.value = context.currentStep / context.numSteps;
+                            }
+                        },
+                        onComplete: function(context) {
+                            if (context.initial) {
+                                console.log('Initial animation finished');
+                            } else {
+                                console.log('animation finished');
+                            }
+                        }
+                    },
                     responsive: true,
                     plugins: {
                         legend: {
