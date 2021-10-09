@@ -27,12 +27,12 @@ class Model_control extends CI_Model
     public function getSuhu($id = null)
     {
         if ($id) {
-            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ? LIMIT 10";
+            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ?";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC LIMIT 10";
+        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC";
         $query = $this->db->query($sql);
         return $query->result_array();
 
@@ -48,28 +48,28 @@ class Model_control extends CI_Model
         // return $query->result_array();
     }
 
-    public function getSuhuChart($id = null)
-    {
-        if ($id) {
-            $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData WHERE id = ? LIMIT 10";
-            $query = $this->db->query($sql, array($id));
-            return $query->row_array();
-        }
+    // public function getSuhuChart($id = null)
+    // {
+    //     if ($id) {
+    //         $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ?";
+    //         $query = $this->db->query($sql, array($id));
+    //         return $query->row_array();
+    //     }
 
-        $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, waktu FROM SensorData ORDER BY id ASC LIMIT 10";
-        $query = $this->db->query($sql);
-        return $query->result_array();
-    }
+    //     $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC";
+    //     $query = $this->db->query($sql);
+    //     return $query->result_array();
+    // }
 
     public function getKelembaban($id = null)
     {
         if ($id) {
-            $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ? LIMIT 10";
+            $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ?";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC LIMIT 10";
+        $sql = "SELECT kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC";
         $query = $this->db->query($sql);
         return $query->result_array();
         
