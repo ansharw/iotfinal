@@ -115,7 +115,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php if (empty($suhu)) : ?>
+                                        <?php if (empty($kelembaban)) : ?>
                                             <tr>
                                                 <td colspan="7">
                                                     <div class="alert alert-danger">
@@ -450,23 +450,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 type: 'line',
                 data: dataChart,
                 options: {
-                    animation: {
-                        duration: 60000,
-                        onProgress: function(context) {
-                            if (context.initial) {
-                                initProgress.value = context.currentStep / context.numSteps;
-                            } else {
-                                progress.value = context.currentStep / context.numSteps;
-                            }
-                        },
-                        onComplete: function(context) {
-                            if (context.initial) {
-                                console.log('Initial animation finished');
-                            } else {
-                                console.log('animation finished');
-                            }
-                        }
-                    },
+                    animation: false,
                     responsive: true,
                     plugins: {
                         legend: {
@@ -512,5 +496,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
     }
 
     var oneMinutes = 60 * 1, display = document.querySelector('#time');
-    startTimer(oneMinutes, display);
+    startTimer(oneMinutes, display);    
 </script>

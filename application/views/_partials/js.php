@@ -480,6 +480,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
       setInterval(function() {
         $("#table1").DataTable().draw();
       }, 60000);
+      
       $("#table2").DataTable({
         "processing": true,
         // "serverSide": true,
