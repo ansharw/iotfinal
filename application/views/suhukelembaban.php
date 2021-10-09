@@ -567,36 +567,48 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             realtime: {
                                 delay: 3000,
                                 onRefresh: chart => {
-                                    chart.data.datasets.forEach(dataset => {
-                                        dataset[0].data.push({
+                                    chart.data.datasets[0].forEach(dataset => {
+                                        dataset.data.push({
                                             x: Date.now(),
-                                            y: 2
+                                            y: Math.random() * 3
                                         });
-                                        dataset[1].data.push({
+                                    });
+                                    chart.data.datasets[1].forEach(dataset => {
+                                        dataset.data.push({
                                             x: Date.now(),
-                                            y: 4
+                                            y: Math.random() * 2
                                         });
-                                        dataset[2].data.push({
+                                    }); 
+                                    chart.data.datasets[2].forEach(dataset => {
+                                        dataset.data.push({
                                             x: Date.now(),
-                                            y: 8
+                                            y: Math.random() * 4
                                         });
-                                        dataset[3].data.push({
+                                    }); 
+                                    chart.data.datasets[3].forEach(dataset => {
+                                        dataset.data.push({
                                             x: Date.now(),
-                                            y: 5
+                                            y: Math.random() * 5
                                         });
-                                        dataset[4].data.push({
+                                    });  
+                                    chart.data.datasets[4].forEach(dataset => {
+                                        dataset.data.push({
                                             x: Date.now(),
-                                            y: 7
+                                            y: Math.random() * 7
                                         });
-                                        dataset[5].data.push({
+                                    });  
+                                    chart.data.datasets[5].forEach(dataset => {
+                                        dataset.data.push({
                                             x: Date.now(),
-                                            y: 6
+                                            y: Math.random() * 8
                                         });
-                                        dataset[6].data.push({
+                                    }); 
+                                    chart.data.datasets[6].forEach(dataset => {
+                                        dataset.data.push({
                                             x: Date.now(),
-                                            y: 10
+                                            y: Math.random() * 9
                                         });
-                                    });   
+                                    });     
                                 }
                             }
                         }
