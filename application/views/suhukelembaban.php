@@ -584,11 +584,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 },
             };
 
-            if (window.myLine2 !== undefined) {
-                window.myLine2.destroy();
+            if (window.myLine3 !== undefined) {
+                window.myLine3.destroy();
             }
-            let ctx = document.getElementById("myChart2").getContext("2d");
-            window.myLine2 = new Chart(ctx, config2);
+            let ctx = document.getElementById("myChart3").getContext("2d");
+            window.myLine3 = new Chart(ctx, config2);
         });
     }
 
