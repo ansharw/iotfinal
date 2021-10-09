@@ -476,25 +476,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     function reloadChart3() {
         // let label = [];
-        let dataS1 = [];
-        let dataS2 = [];
-        let dataS3 = [];
-        let dataS4 = [];
-        let dataS5 = [];
-        let dataS6 = [];
-        let dataSetPoint = [];
+        // let dataS1 = [];
+        // let dataS2 = [];
+        // let dataS3 = [];
+        // let dataS4 = [];
+        // let dataS5 = [];
+        // let dataS6 = [];
+        // let dataSetPoint = [];
 
-        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
-            $.each(data, function(key, val) {
-                label.unshift(val.waktu);
-                dataS1.unshift(val.suhu);
-                dataS2.unshift(val.suhu1);
-                dataS3.unshift(val.suhu2);
-                dataS4.unshift(val.suhu3);
-                dataS5.unshift(val.suhu4);
-                dataS6.unshift(val.suhuLuar);
-                dataSetPoint.unshift(val.setPointSuhu)
-            });
+        // $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+        //     $.each(data, function(key, val) {
+        //         label.unshift(val.waktu);
+        //         dataS1.unshift(val.suhu);
+        //         dataS2.unshift(val.suhu1);
+        //         dataS3.unshift(val.suhu2);
+        //         dataS4.unshift(val.suhu3);
+        //         dataS5.unshift(val.suhu4);
+        //         dataS6.unshift(val.suhuLuar);
+        //         dataSetPoint.unshift(val.setPointSuhu)
+        //     });
             const dataChart = {
                 // labels: label,
                 datasets: [{
@@ -554,18 +554,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 type: 'line',
                 data: dataChart,
                 options: {
-                    animation: false,
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                    },
+                    // animation: false,
+                    // responsive: true,
+                    // plugins: {
+                    //     legend: {
+                    //         position: 'top',
+                    //     },
+                    // },
                     scales: {
                         x: {
                             type: 'realtime',
                             realtime: {
-                                delay: 10000,
+                                delay: 3000,
                                 onRefresh: chart => {
                                     chart.data.datasets.forEach(dataset => {
                                         dataset.data.push({
@@ -589,7 +589,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
             let ctx = document.getElementById("myChart3").getContext("2d");
             window.myLine3 = new Chart(ctx, config2);
-        });
+        // });
     }
 
     setInterval(function() {

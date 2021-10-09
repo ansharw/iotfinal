@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
     <footer class="main-footer">
       <div class="footer-left">
-        Copyright &copy; <?= date('Y'); ?> <div class="bullet"></div> Design By <a href="http://fbs.unnes.ac.id/">TIM IT Fakultas Bahasa dan Seni</a>
+        Copyright &copy; <?= date('Y'); ?> <div class="bullet"></div> Design By Ansharullah Widiansyah
       </div>
       <div class="footer-right">
 
