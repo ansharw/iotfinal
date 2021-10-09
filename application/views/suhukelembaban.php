@@ -618,4 +618,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
     var oneMinutes = 60 * 1,
         display = document.querySelector('#time');
     startTimer(oneMinutes, display);
+    reloadChart3();
 </script>
