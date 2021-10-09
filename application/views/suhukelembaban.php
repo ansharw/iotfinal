@@ -588,15 +588,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 window.myLine3.destroy();
             }
             let ctx = document.getElementById("myChart3").getContext("2d");
-            window.myLine3 = new Chart(ctx, config2);
+            window.myLine3 = new Chart(ctx, config3);
         // });
     }
-
+    
     setInterval(function() {
         reloadChart1();
         reloadChart2();
     }, 60000);
-
+    reloadChart3();
+    
     function startTimer(duration, display) {
         var timer = duration,
             minutes, seconds;
@@ -618,5 +619,4 @@ defined('BASEPATH') or exit('No direct script access allowed');
     var oneMinutes = 60 * 1,
         display = document.querySelector('#time');
     startTimer(oneMinutes, display);
-    reloadChart3();
 </script>
