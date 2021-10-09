@@ -568,9 +568,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 delay: 3000,
                                 onRefresh: chart => {
                                     chart.data.datasets.forEach(dataset => {
-                                        dataset.data.push({
+                                        dataset[0].data.push({
                                             x: Date.now(),
-                                            y: Math.random()
+                                            y: 2
+                                        });
+                                        dataset[1].data.push({
+                                            x: Date.now(),
+                                            y: 4
+                                        });
+                                        dataset[2].data.push({
+                                            x: Date.now(),
+                                            y: 8
+                                        });
+                                        dataset[3].data.push({
+                                            x: Date.now(),
+                                            y: 5
+                                        });
+                                        dataset[4].data.push({
+                                            x: Date.now(),
+                                            y: 7
+                                        });
+                                        dataset[5].data.push({
+                                            x: Date.now(),
+                                            y: 6
+                                        });
+                                        dataset[6].data.push({
+                                            x: Date.now(),
+                                            y: 10
                                         });
                                     });   
                                 }
