@@ -57,7 +57,7 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
   <?php
   } ?>
 <?php
-} elseif ($this->uri->segment(1) == "kipaslampu") { ?>
+} elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
   <?php
   if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
     <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
@@ -507,10 +507,10 @@ if ($this->uri->segment(1) == "dashboard") { ?>
   <?php
   } ?>
 <?php
-} elseif ($this->uri->segment(1) == "kipaslampu") { ?>
+} elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
   <script>
     $(document).ready(function() {
-      $("#kipasLampuNav").addClass('active');
+      $("#kipasLampuPompaNav").addClass('active');
     });
 
     function deleteM(url) {
@@ -525,27 +525,27 @@ if ($this->uri->segment(1) == "dashboard") { ?>
   } elseif ($this->uri->segment(2) == "create") { ?>
     <script>
       $(document).ready(function() {
-        $("#kipasLampuNav").addClass('active');
+        $("#kipasLampuPompaNav").addClass('active');
       });
     </script>
   <?php
   } elseif ($this->uri->segment(2) == "update") { ?>
     <script>
       $(document).ready(function() {
-        $("#kipasLampuNav").addClass('active');
+        $("#kipasLampuPompaNav").addClass('active');
       });
     </script>
   <?php
   } elseif ($this->uri->segment(2) == "view") { ?>
     <script>
       $(document).ready(function() {
-        $("#kipasLampuNav").addClass('active');
+        $("#kipasLampuPompaNav").addClass('active');
       });
     </script>
   <?php
   } ?>
 <?php
-} elseif ($this->uri->segment(1) == "pengabdian") { ?>
+} elseif ($this->uri->segment(1) == "profil") { ?>
   <script>
     $(document).ready(function() {
       $("#managePengabdianNav").addClass('active');
@@ -582,311 +582,6 @@ if ($this->uri->segment(1) == "dashboard") { ?>
     </script>
   <?php
   } ?>
-<?php
-} elseif ($this->uri->segment(1) == "wirausaha") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageWirausahaNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageWirausahaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageWirausahaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageWirausahaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "rekognisi") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageRekognisiNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageRekognisiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageRekognisiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageRekognisiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "beasiswa") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageBeasiswaNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageBeasiswaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageBeasiswaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageBeasiswaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "proker") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageProkerNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageProkerNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageProkerNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageProkerNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "konservasi") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageKonservasiNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKonservasiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKonservasiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKonservasiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "komunitas") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageKomunitasNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKomunitasNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKomunitasNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKomunitasNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "user") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageUserNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageUserNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageUserNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageUserNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "group") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageGroupNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageGroupNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageGroupNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageGroupNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-
 <?php
 } ?>
 

@@ -71,7 +71,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <?php
     } ?>
   <?php
-  } elseif ($this->uri->segment(1) == "kipaslampu") { ?>
+  } elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
 
     <?php
     if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>

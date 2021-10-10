@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
       <li id="suhuKelembabanNav"><a class="nav-link" href="<?php echo base_url(); ?>suhukelembaban"><i class="fas fa-thermometer-three-quarters"></i> <span>Suhu dan Kelembaban</span></a></li>
 
-      <li id="kipasLampuNav"><a class="nav-link" href="<?php echo base_url(); ?>kipaslampu"><i class="fas fa-wind"></i> <span>Kipas, Lampu dan Pompa</span></a></li>
+      <li id="kipasLampuPompaNav"><a class="nav-link" href="<?php echo base_url(); ?>kipaslampupompa"><i class="fas fa-wind"></i> <span>Kipas, Lampu dan Pompa</span></a></li>
 
       <li id="profilNav"><a class="nav-link" href="<?php echo base_url(); ?>profil"><i class="fas fa-user-circle"></i> <span>Profil</span></a></li>
 
