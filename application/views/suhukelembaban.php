@@ -13,15 +13,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="card-header">
                             <h4>Sensor Suhu</h4>
                             <div class="card-header-action">
-                                <form class="card-header-form" id="date-picker" action="<?php base_url('suhukelembaban'); ?>" method="POST">
-                                    <div class="input-group">
+                                <!-- <form class="card-header-form" id="date-picker" action="<?php // base_url('suhukelembaban'); ?>" method="POST">
+                                    <div class="input-group"> -->
                                         <!-- <input type="text" name="search" id="search" class="form-control" placeholder="Tahun (contoh: 2020)"> -->
-                                        <input type="text" class="form-control datepicker" name="dates" id="dates">
+                                        <!-- <input type="text" class="form-control datepicker" name="dates" id="dates">
                                         <div class="input-group-btn">
                                             <input class="btn btn-primary btn-icon" type="submit" value="Cari" id="cari">
-                                        </div>
-                                    </div>
-                                </form>
+                                        </div> -->
+                                    <!-- </div>
+                                </form> -->
                             </div>
                         </div>
                         <div class="card-body">
@@ -151,7 +151,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
     </section>
 </div>
-<script type="text/javascript">
+<!-- 
     // show all data chart
 
     // setup block  
@@ -217,9 +217,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
     // getjson with realtime chart ASC / DESC
     // DESC is running and show ticks data from right to left, but ASC is stopped at the lastest array
 
-    var progress = document.getElementById('initialProgress');
-    let base_url = "<?php echo base_url(); ?>";
-
     // function reloadChart() {
     //     let labelServer = [];
     //     let dataS1 = [];
@@ -269,210 +266,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
     // setInterval(function() {
     //     reloadChart()
     // }, 10000);
-
-    function reloadChart1() {
-        let label = [];
-        let dataS1 = [];
-        let dataS2 = [];
-        let dataS3 = [];
-        let dataS4 = [];
-        let dataS5 = [];
-        let dataS6 = [];
-        let dataSetPoint = [];
-
-        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
-            $.each(data, function(key, val) {
-                label.unshift(val.waktu);
-                dataS1.unshift(val.suhu);
-                dataS2.unshift(val.suhu1);
-                dataS3.unshift(val.suhu2);
-                dataS4.unshift(val.suhu3);
-                dataS5.unshift(val.suhu4);
-                dataS6.unshift(val.suhuLuar);
-                dataSetPoint.unshift(val.setPointSuhu)
-            });
-            const dataChart = {
-                labels: label,
-                datasets: [{
-                        label: 'Suhu 1',
-                        data: dataS1,
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Suhu 2',
-                        data: dataS2,
-                        backgroundColor: 'rgba(125, 109, 12, 0.2)',
-                        borderColor: 'rgba(125, 109, 12, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Suhu 3',
-                        data: dataS3,
-                        backgroundColor: 'rgba(207, 0, 15, 0.2)',
-                        borderColor: 'rgba(207, 0, 15, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Suhu 4',
-                        data: dataS4,
-                        backgroundColor: 'rgba(34, 167, 240, 0.2)',
-                        borderColor: 'rgba(34, 167, 240, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Suhu 5',
-                        data: dataS5,
-                        backgroundColor: 'rgba(42, 187, 155, 0.2)',
-                        borderColor: 'rgba(42, 187, 155, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Suhu Luar',
-                        data: dataS6,
-                        backgroundColor: 'rgba(247, 202, 24, 0.2)',
-                        borderColor: 'rgba(247, 202, 24, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Set Point Suhu',
-                        data: dataSetPoint,
-                        backgroundColor: 'rgba(0, 0, 0, 0.2)',
-                        borderColor: 'rgba(0, 0, 0, 1)',
-                        borderDash: [5, 2],
-                        tension: 0.2
-                    }
-                ]
-            };
-
-            let config1 = {
-                type: 'line',
-                data: dataChart,
-                options: {
-                    animation: false,
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                    }
-                },
-                interaction: {
-                    mode: 'index',
-                    intersect: false
-                },
-            };
-
-            if (window.myLine1 !== undefined) {
-                window.myLine1.destroy();
-            }
-            let ctx = document.getElementById("myChart1").getContext("2d");
-            window.myLine1 = new Chart(ctx, config1);
-        });
-    }
-
-    function reloadChart2() {
-        let label = [];
-        let dataK1 = [];
-        let dataK2 = [];
-        let dataK3 = [];
-        let dataK4 = [];
-        let dataK5 = [];
-        let dataK6 = [];
-        let dataSetPoint = [];
-
-        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
-            $.each(data, function(key, val) {
-                label.unshift(val.waktu);
-                dataK1.unshift(val.kelembaban);
-                dataK2.unshift(val.kelembaban1);
-                dataK3.unshift(val.kelembaban2);
-                dataK4.unshift(val.kelembaban3);
-                dataK5.unshift(val.kelembaban4);
-                dataK6.unshift(val.kelembabanLuar);
-                dataSetPoint.unshift(val.setPointKelembaban)
-            });
-            const dataChart = {
-                labels: label,
-                datasets: [{
-                        label: 'Kelembaban 1',
-                        data: dataK1,
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Kelembaban 2',
-                        data: dataK2,
-                        backgroundColor: 'rgba(125, 109, 12, 0.2)',
-                        borderColor: 'rgba(125, 109, 12, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Kelembaban 3',
-                        data: dataK3,
-                        backgroundColor: 'rgba(207, 0, 15, 0.2)',
-                        borderColor: 'rgba(207, 0, 15, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Kelembaban 4',
-                        data: dataK4,
-                        backgroundColor: 'rgba(34, 167, 240, 0.2)',
-                        borderColor: 'rgba(34, 167, 240, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Kelembaban 5',
-                        data: dataK5,
-                        backgroundColor: 'rgba(42, 187, 155, 0.2)',
-                        borderColor: 'rgba(42, 187, 155, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Kelembaban Luar',
-                        data: dataK6,
-                        backgroundColor: 'rgba(247, 202, 24, 0.2)',
-                        borderColor: 'rgba(247, 202, 24, 1)',
-                        tension: 0.2
-                    },
-                    {
-                        label: 'Set Point Kelembaban',
-                        data: dataSetPoint,
-                        backgroundColor: 'rgba(0, 0, 0, 0.2)',
-                        borderColor: 'rgba(0, 0, 0, 1)',
-                        borderDash: [5, 2],
-                        tension: 0.2
-                    }
-                ]
-            };
-
-            let config2 = {
-                type: 'line',
-                data: dataChart,
-                options: {
-                    animation: false,
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                    }
-                },
-                interaction: {
-                    mode: 'index',
-                    intersect: false
-                },
-            };
-
-            if (window.myLine2 !== undefined) {
-                window.myLine2.destroy();
-            }
-            let ctx = document.getElementById("myChart2").getContext("2d");
-            window.myLine2 = new Chart(ctx, config2);
-        });
-    }
 
     // function reloadChart3() {
     //     // let label = [];
@@ -626,33 +419,4 @@ defined('BASEPATH') or exit('No direct script access allowed');
     //         let ctx = document.getElementById("myChart3").getContext("2d");
     //         window.myLine3 = new Chart(ctx, config3);
     //     // });
-    // }
-    
-    setInterval(function() {
-        reloadChart1();
-        reloadChart2();
-    }, 60000);
-    // reloadChart3();
-    
-    function startTimer(duration, display) {
-        var timer = duration,
-            minutes, seconds;
-        setInterval(function() {
-            minutes = parseInt(timer / 60, 10)
-            seconds = parseInt(timer % 60, 10);
-
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-
-            display.textContent = minutes + ":" + seconds;
-
-            if (--timer < 0) {
-                timer = duration;
-            }
-        }, 1000);
-    }
-
-    var oneMinutes = 60 * 1,
-        display = document.querySelector('#time');
-    startTimer(oneMinutes, display);
-</script>
+    // } -->

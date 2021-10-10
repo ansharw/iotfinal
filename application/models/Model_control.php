@@ -18,7 +18,6 @@ class Model_control extends CI_Model
 
     public function getAllData()
     {
-        // tambahin outLampu, outKipas, outPompa
         $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, setPointSuhu, setPointKelembaban, outLampu, outKipas, outPompa, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY waktu DESC LIMIT 20";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -85,15 +84,15 @@ class Model_control extends CI_Model
         // return $query->result_array();
     }
 
-    public function getLampuKipas($id = null)
+    public function getLampu($id = null)
     {
         if ($id) {
-            $sql = "SELECT outLampu, outKipas, waktu FROM SensorData WHERE id = ? LIMIT 10";
+            $sql = "SELECT outLampu, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ?";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT outLampu, outKipas, waktu FROM SensorData ORDER BY id DESC LIMIT 10";
+        $sql = "SELECT outLampu, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC";
         $query = $this->db->query($sql);
         return $query->result_array();
         
@@ -109,15 +108,41 @@ class Model_control extends CI_Model
         // return $query->result_array();
     }
 
-    public function getSetPoint($id = null)
+    public function getKipas($id = null)
     {
         if ($id) {
-            $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData WHERE id = ? LIMIT 10";
+            $sql = "SELECT outKipas, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ?";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
-        $sql = "SELECT setPointSuhu, setPointKelembaban FROM SensorData ORDER BY id DESC LIMIT 10";
+        $sql = "SELECT outKipas, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    
+    public function getPompa($id = null)
+    {
+        if ($id) {
+            $sql = "SELECT outPompa, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ?";
+            $query = $this->db->query($sql, array($id));
+            return $query->row_array();
+        }
+
+        $sql = "SELECT outPompa, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function getSetPoint($id = null)
+    {
+        if ($id) {
+            $sql = "SELECT setPointSuhu, setPointKelembaban, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData WHERE id = ?";
+            $query = $this->db->query($sql, array($id));
+            return $query->row_array();
+        }
+
+        $sql = "SELECT setPointSuhu, setPointKelembaban, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY id DESC";
         $query = $this->db->query($sql);
         return $query->result_array();
         
