@@ -141,7 +141,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                         </div>
                         <div>
-
+                            <div class="card-body">
+                                <canvas id="myChart3"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -472,11 +474,166 @@ defined('BASEPATH') or exit('No direct script access allowed');
         });
     }
 
+    function reloadChart3() {
+        // let label = [];
+        // let dataS1 = [];
+        // let dataS2 = [];
+        // let dataS3 = [];
+        // let dataS4 = [];
+        // let dataS5 = [];
+        // let dataS6 = [];
+        // let dataSetPoint = [];
+
+        // $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+        //     $.each(data, function(key, val) {
+        //         label.unshift(val.waktu);
+        //         dataS1.unshift(val.suhu);
+        //         dataS2.unshift(val.suhu1);
+        //         dataS3.unshift(val.suhu2);
+        //         dataS4.unshift(val.suhu3);
+        //         dataS5.unshift(val.suhu4);
+        //         dataS6.unshift(val.suhuLuar);
+        //         dataSetPoint.unshift(val.setPointSuhu)
+        //     });
+            const dataChart = {
+                // labels: label,
+                datasets: [{
+                        label: 'Suhu 1',
+                        data: [],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Suhu 2',
+                        data: [],
+                        backgroundColor: 'rgba(125, 109, 12, 0.2)',
+                        borderColor: 'rgba(125, 109, 12, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Suhu 3',
+                        data: [],
+                        backgroundColor: 'rgba(207, 0, 15, 0.2)',
+                        borderColor: 'rgba(207, 0, 15, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Suhu 4',
+                        data: [],
+                        backgroundColor: 'rgba(34, 167, 240, 0.2)',
+                        borderColor: 'rgba(34, 167, 240, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Suhu 5',
+                        data: [],
+                        backgroundColor: 'rgba(42, 187, 155, 0.2)',
+                        borderColor: 'rgba(42, 187, 155, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Suhu Luar',
+                        data: [],
+                        backgroundColor: 'rgba(247, 202, 24, 0.2)',
+                        borderColor: 'rgba(247, 202, 24, 1)',
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Set Point Suhu',
+                        data: [],
+                        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                        borderColor: 'rgba(0, 0, 0, 1)',
+                        borderDash: [5, 2],
+                        tension: 0.2
+                    }
+                ]
+            };
+
+            let config3 = {
+                type: 'line',
+                data: dataChart,
+                options: {
+                    // animation: false,
+                    // responsive: true,
+                    // plugins: {
+                    //     legend: {
+                    //         position: 'top',
+                    //     },
+                    // },
+                    scales: {
+                        x: {
+                            type: 'realtime',
+                            realtime: {
+                                delay: 3000,
+                                onRefresh: chart => {
+                                    chart.data.datasets[0].forEach(dataset => {
+                                        dataset.data.push({
+                                            x: Date.now(),
+                                            y: Math.random() * 3
+                                        });
+                                    });
+                                    chart.data.datasets[1].forEach(dataset => {
+                                        dataset.data.push({
+                                            x: Date.now(),
+                                            y: Math.random() * 2
+                                        });
+                                    }); 
+                                    chart.data.datasets[2].forEach(dataset => {
+                                        dataset.data.push({
+                                            x: Date.now(),
+                                            y: Math.random() * 4
+                                        });
+                                    }); 
+                                    chart.data.datasets[3].forEach(dataset => {
+                                        dataset.data.push({
+                                            x: Date.now(),
+                                            y: Math.random() * 5
+                                        });
+                                    });  
+                                    chart.data.datasets[4].forEach(dataset => {
+                                        dataset.data.push({
+                                            x: Date.now(),
+                                            y: Math.random() * 7
+                                        });
+                                    });  
+                                    chart.data.datasets[5].forEach(dataset => {
+                                        dataset.data.push({
+                                            x: Date.now(),
+                                            y: Math.random() * 8
+                                        });
+                                    }); 
+                                    chart.data.datasets[6].forEach(dataset => {
+                                        dataset.data.push({
+                                            x: Date.now(),
+                                            y: Math.random() * 9
+                                        });
+                                    });     
+                                }
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
+            };
+
+            if (window.myLine3 !== undefined) {
+                window.myLine3.destroy();
+            }
+            let ctx = document.getElementById("myChart3").getContext("2d");
+            window.myLine3 = new Chart(ctx, config3);
+        // });
+    }
+    
     setInterval(function() {
         reloadChart1();
         reloadChart2();
     }, 60000);
-
+    reloadChart3();
+    
     function startTimer(duration, display) {
         var timer = duration,
             minutes, seconds;
@@ -495,6 +652,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         }, 1000);
     }
 
-    var oneMinutes = 60 * 1, display = document.querySelector('#time');
-    startTimer(oneMinutes, display);    
+    var oneMinutes = 60 * 1,
+        display = document.querySelector('#time');
+    startTimer(oneMinutes, display);
 </script>
