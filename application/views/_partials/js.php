@@ -22,7 +22,6 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
   <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
 <?php
-
 } elseif ($this->uri->segment(1) == "suhukelembaban") { ?>
   <?php
   if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
@@ -35,32 +34,76 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
     <!-- toast fitur -->
     <script src="<?php echo base_url(); ?>assets/modules/izitoast/js/iziToast.min.js"></script>
     <!-- bates -->
+  <?php
+  } elseif ($this->uri->segment(2) == "create") { ?>
+    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <?php
+  } elseif ($this->uri->segment(2) == "update") { ?>
+    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <?php
+  } elseif ($this->uri->segment(2) == "view") { ?>
+    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <?php
+  } ?>
+<?php
+} elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
+  <?php
+  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
+    <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script> -->
+    <!-- toast fitur -->
+    <script src="<?php echo base_url(); ?>assets/modules/izitoast/js/iziToast.min.js"></script>
+    <!-- bates -->
+  <?php
+  } elseif ($this->uri->segment(2) == "create") { ?>
+    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <?php
+  } elseif ($this->uri->segment(2) == "update") { ?>
+    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <?php
+  } elseif ($this->uri->segment(2) == "view") { ?>
+    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <?php
+  } ?>
+<?php
+} elseif ($this->uri->segment(1) == "profil") { ?>
+  <?php
+  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
+    <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-                     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script> -->
-
-    <!-- <script>
-          // Your web app's Firebase configuration
-          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-          var firebaseConfig = {
-            apiKey: "AIzaSyC0n3BR8aR1owo0ntSeFQorP0uJWdakIsY",
-            authDomain: "brooding-598d9.firebaseapp.com",
-            databaseURL: "https://brooding-598d9-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "brooding-598d9",
-            storageBucket: "brooding-598d9.appspot.com",
-            messagingSenderId: "421806965706",
-            appId: "1:421806965706:web:15f9a087a597cb595f0533",
-            measurementId: "G-SRHHF0W04L"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
-          firebase.analytics();
-        </script> -->
-
+    <!-- toast fitur -->
+    <script src="<?php echo base_url(); ?>assets/modules/izitoast/js/iziToast.min.js"></script>
+    <!-- bates -->
   <?php
   } elseif ($this->uri->segment(2) == "create") { ?>
     <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
@@ -80,291 +123,6 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
     <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "pertukaran") { ?>
-
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "pengabdian") { ?>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "wirausaha") { ?>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "rekognisi") { ?>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "beasiswa") { ?>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "proker") { ?>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "konservasi") { ?>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "komunitas") { ?>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "user") { ?>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "edit") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "user") { ?>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <?php
-  } elseif ($this->uri->segment(2) == "edit") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/select2/dist/js/select2.full.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
   <?php
   } ?>
@@ -394,81 +152,209 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 
       var base_url = "<?php echo base_url(); ?>";
 
-      // $("#cari").click(function() {
-      //   let from_date = $(".datepicker").val();
-      //   if (from_date != '') {
-      //     console.log(from_date);
-      //     $.ajax({
-      //       url: base_url + 'fetchdata',
-      //       data: {
-      //         from_date: from_date
-      //       },
-      //       success: function(data) {
-      //         console.log(data[0]);
-      //         console.log(data[1]);
-      //         console.log(data[2]);
-      //         console.log(data[3]);
-      //         console.log(data[4]);
-      //         console.log(data[5]);
-      //         console.log(data[6]);
-      //         console.log(data[7]);
-      //         console.log(data[8]);
-      //         console.log(data[9]);
-      //         console.log(data[10]);
-      //         console.log(data[11]);
-      //         console.log(data[12]);
-      //         let time = data[0].waktu;
-      //         let setps = data[0].setPointSuhu;
+      function reloadChart1() {
+        let label = [];
+        let dataS1 = [];
+        let dataS2 = [];
+        let dataS3 = [];
+        let dataS4 = [];
+        let dataS5 = [];
+        let dataS6 = [];
+        let dataSetPoint = [];
 
-      //         const datas = {
-      //           datasets: [{
-      //             label: 'set point suhu',
-      //             data: [{
-      //               x: time,
-      //               y: setps
-      //             }],
-      //             borderDash: [5, 2],
-      //             backgroundColor: 'rgba(0, 0, 0, 0.2)',
-      //             borderColor: 'rgba(0, 0, 0, 1)',
-      //             borderWidth: 2
-      //           }, ]
-      //         };
-      //         const config = {
-      //           type: 'line',
-      //           data: datas,
-      //           options: {
-      //             showLines: true,
-      //             animation: {
-      //               duration: 0
-      //             },
-      //             scales: {
-      //               x: {
-      //                 type: 'timeseries',
-      //                 time: {
-      //                   unit: 'hour'
-      //                 }
-      //               },
-      //               y: {
-      //                 title: {
-      //                   display: true,
-      //                   text: 'Suhu'
-      //                 }
-      //               }
-      //             },
-      //             interaction: {
-      //               intersect: false
-      //             },
+        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+          $.each(data, function(key, val) {
+            label.unshift(val.waktu);
+            dataS1.unshift(val.suhu);
+            dataS2.unshift(val.suhu1);
+            dataS3.unshift(val.suhu2);
+            dataS4.unshift(val.suhu3);
+            dataS5.unshift(val.suhu4);
+            dataS6.unshift(val.suhuLuar);
+            dataSetPoint.unshift(val.setPointSuhu)
+          });
+          const dataChart = {
+            labels: label,
+            datasets: [{
+                label: 'Suhu 1',
+                data: dataS1,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Suhu 2',
+                data: dataS2,
+                backgroundColor: 'rgba(125, 109, 12, 0.2)',
+                borderColor: 'rgba(125, 109, 12, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Suhu 3',
+                data: dataS3,
+                backgroundColor: 'rgba(207, 0, 15, 0.2)',
+                borderColor: 'rgba(207, 0, 15, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Suhu 4',
+                data: dataS4,
+                backgroundColor: 'rgba(34, 167, 240, 0.2)',
+                borderColor: 'rgba(34, 167, 240, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Suhu 5',
+                data: dataS5,
+                backgroundColor: 'rgba(42, 187, 155, 0.2)',
+                borderColor: 'rgba(42, 187, 155, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Suhu Luar',
+                data: dataS6,
+                backgroundColor: 'rgba(247, 202, 24, 0.2)',
+                borderColor: 'rgba(247, 202, 24, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Set Point Suhu',
+                data: dataSetPoint,
+                backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                borderColor: 'rgba(0, 0, 0, 1)',
+                borderDash: [5, 2],
+                tension: 0.2
+              }
+            ]
+          };
 
-      //           }
-      //         };
-      //         // render init block
-      //         const myChart = new Chart(document.getElementById('myChart'), config);
-      //       }
-      //     })
-      //   } else {
-      //     alert("Please Select Date");
-      //   }
-      // });
+          let config1 = {
+            type: 'line',
+            data: dataChart,
+            options: {
+              animation: false,
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: 'top',
+                },
+              }
+            },
+            interaction: {
+              mode: 'index',
+              intersect: false
+            },
+          };
+
+          if (window.myLine1 !== undefined) {
+            window.myLine1.destroy();
+          }
+          let ctx = document.getElementById("myChart1").getContext("2d");
+          window.myLine1 = new Chart(ctx, config1);
+        });
+      }
+
+      function reloadChart2() {
+        let label = [];
+        let dataK1 = [];
+        let dataK2 = [];
+        let dataK3 = [];
+        let dataK4 = [];
+        let dataK5 = [];
+        let dataK6 = [];
+        let dataSetPoint = [];
+
+        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+          $.each(data, function(key, val) {
+            label.unshift(val.waktu);
+            dataK1.unshift(val.kelembaban);
+            dataK2.unshift(val.kelembaban1);
+            dataK3.unshift(val.kelembaban2);
+            dataK4.unshift(val.kelembaban3);
+            dataK5.unshift(val.kelembaban4);
+            dataK6.unshift(val.kelembabanLuar);
+            dataSetPoint.unshift(val.setPointKelembaban)
+          });
+          const dataChart = {
+            labels: label,
+            datasets: [{
+                label: 'Kelembaban 1',
+                data: dataK1,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban 2',
+                data: dataK2,
+                backgroundColor: 'rgba(125, 109, 12, 0.2)',
+                borderColor: 'rgba(125, 109, 12, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban 3',
+                data: dataK3,
+                backgroundColor: 'rgba(207, 0, 15, 0.2)',
+                borderColor: 'rgba(207, 0, 15, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban 4',
+                data: dataK4,
+                backgroundColor: 'rgba(34, 167, 240, 0.2)',
+                borderColor: 'rgba(34, 167, 240, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban 5',
+                data: dataK5,
+                backgroundColor: 'rgba(42, 187, 155, 0.2)',
+                borderColor: 'rgba(42, 187, 155, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban Luar',
+                data: dataK6,
+                backgroundColor: 'rgba(247, 202, 24, 0.2)',
+                borderColor: 'rgba(247, 202, 24, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Set Point Kelembaban',
+                data: dataSetPoint,
+                backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                borderColor: 'rgba(0, 0, 0, 1)',
+                borderDash: [5, 2],
+                tension: 0.2
+              }
+            ]
+          };
+
+          let config2 = {
+            type: 'line',
+            data: dataChart,
+            options: {
+              animation: false,
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: 'top',
+                },
+              }
+            },
+            interaction: {
+              mode: 'index',
+              intersect: false
+            },
+          };
+
+          if (window.myLine2 !== undefined) {
+            window.myLine2.destroy();
+          }
+          let ctx = document.getElementById("myChart2").getContext("2d");
+          window.myLine2 = new Chart(ctx, config2);
+        });
+      }
 
       $("#table1").DataTable({
         "processing": true,
@@ -477,10 +363,6 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           [0, "desc"]
         ],
       });
-      setInterval(function() {
-        $("#table1").DataTable().draw();
-      }, 60000);
-      
       $("#table2").DataTable({
         "processing": true,
         // "serverSide": true,
@@ -489,10 +371,109 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         ],
       });
       setInterval(function() {
+        $("#table1").DataTable().draw();
         $("#table2").DataTable().draw();
       }, 60000);
     });
 
+    function startTimer(duration, display) {
+      var timer = duration,
+        minutes, seconds;
+      setInterval(function() {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = duration;
+        }
+      }, 1000);
+    }
+
+    var oneMinutes = 60 * 1,
+      display = document.querySelector('#time');
+    startTimer(oneMinutes, display);
+
+    // $("#cari").click(function() {
+    //   let from_date = $(".datepicker").val();
+    //   if (from_date != '') {
+    //     console.log(from_date);
+    //     $.ajax({
+    //       url: base_url + 'fetchdata',
+    //       data: {
+    //         from_date: from_date
+    //       },
+    //       success: function(data) {
+    //         console.log(data[0]);
+    //         console.log(data[1]);
+    //         console.log(data[2]);
+    //         console.log(data[3]);
+    //         console.log(data[4]);
+    //         console.log(data[5]);
+    //         console.log(data[6]);
+    //         console.log(data[7]);
+    //         console.log(data[8]);
+    //         console.log(data[9]);
+    //         console.log(data[10]);
+    //         console.log(data[11]);
+    //         console.log(data[12]);
+    //         let time = data[0].waktu;
+    //         let setps = data[0].setPointSuhu;
+
+    //         const datas = {
+    //           datasets: [{
+    //             label: 'set point suhu',
+    //             data: [{
+    //               x: time,
+    //               y: setps
+    //             }],
+    //             borderDash: [5, 2],
+    //             backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    //             borderColor: 'rgba(0, 0, 0, 1)',
+    //             borderWidth: 2
+    //           }, ]
+    //         };
+    //         const config = {
+    //           type: 'line',
+    //           data: datas,
+    //           options: {
+    //             showLines: true,
+    //             animation: {
+    //               duration: 0
+    //             },
+    //             scales: {
+    //               x: {
+    //                 type: 'timeseries',
+    //                 time: {
+    //                   unit: 'hour'
+    //                 }
+    //               },
+    //               y: {
+    //                 title: {
+    //                   display: true,
+    //                   text: 'Suhu'
+    //                 }
+    //               }
+    //             },
+    //             interaction: {
+    //               intersect: false
+    //             },
+
+    //           }
+    //         };
+    //         // render init block
+    //         const myChart = new Chart(document.getElementById('myChart'), config);
+    //       }
+    //     })
+    //   } else {
+    //     alert("Please Select Date");
+    //   }
+    // });
+
     function deleteM(url) {
       $('#btn-delete').attr('href', url);
       $('#removeModal').modal();
@@ -526,10 +507,10 @@ if ($this->uri->segment(1) == "dashboard") { ?>
   <?php
   } ?>
 <?php
-} elseif ($this->uri->segment(1) == "kipaslampu") { ?>
+} elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
   <script>
     $(document).ready(function() {
-      $("#kipasLampuNav").addClass('active');
+      $("#kipasLampuPompaNav").addClass('active');
     });
 
     function deleteM(url) {
@@ -544,27 +525,27 @@ if ($this->uri->segment(1) == "dashboard") { ?>
   } elseif ($this->uri->segment(2) == "create") { ?>
     <script>
       $(document).ready(function() {
-        $("#kipasLampuNav").addClass('active');
+        $("#kipasLampuPompaNav").addClass('active');
       });
     </script>
   <?php
   } elseif ($this->uri->segment(2) == "update") { ?>
     <script>
       $(document).ready(function() {
-        $("#kipasLampuNav").addClass('active');
+        $("#kipasLampuPompaNav").addClass('active');
       });
     </script>
   <?php
   } elseif ($this->uri->segment(2) == "view") { ?>
     <script>
       $(document).ready(function() {
-        $("#kipasLampuNav").addClass('active');
+        $("#kipasLampuPompaNav").addClass('active');
       });
     </script>
   <?php
   } ?>
 <?php
-} elseif ($this->uri->segment(1) == "pengabdian") { ?>
+} elseif ($this->uri->segment(1) == "profil") { ?>
   <script>
     $(document).ready(function() {
       $("#managePengabdianNav").addClass('active');
@@ -601,311 +582,6 @@ if ($this->uri->segment(1) == "dashboard") { ?>
     </script>
   <?php
   } ?>
-<?php
-} elseif ($this->uri->segment(1) == "wirausaha") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageWirausahaNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageWirausahaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageWirausahaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageWirausahaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "rekognisi") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageRekognisiNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageRekognisiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageRekognisiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageRekognisiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "beasiswa") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageBeasiswaNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageBeasiswaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageBeasiswaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageBeasiswaNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "proker") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageProkerNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageProkerNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageProkerNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageProkerNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "konservasi") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageKonservasiNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKonservasiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKonservasiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKonservasiNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "komunitas") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageKomunitasNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKomunitasNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKomunitasNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageKomunitasNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "user") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageUserNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageUserNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageUserNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageUserNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-<?php
-} elseif ($this->uri->segment(1) == "group") { ?>
-  <script>
-    $(document).ready(function() {
-      $("#manageGroupNav").addClass('active');
-    });
-
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
-  </script>
-  <?php
-  if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-
-  <?php
-  } elseif ($this->uri->segment(2) == "create") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageGroupNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "update") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageGroupNav").addClass('active');
-      });
-    </script>
-  <?php
-  } elseif ($this->uri->segment(2) == "view") { ?>
-    <script>
-      $(document).ready(function() {
-        $("#manageGroupNav").addClass('active');
-      });
-    </script>
-  <?php
-  } ?>
-
 <?php
 } ?>
 
