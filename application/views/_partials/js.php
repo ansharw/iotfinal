@@ -528,7 +528,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
             labels: label,
             datasets: [{
                 label: 'Output Kipas',
-                data: dataKp1,
+                data: dataKp,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 tension: 0.2
@@ -566,7 +566,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         let label = [];
         let dataL = [];
 
-        $.getJSON(base_url + "kipaspompalampu/ambildata", function(data) {
+        $.getJSON(base_url + "kipaslampupompa/ambildata", function(data) {
           $.each(data, function(key, val) {
             label.unshift(val.waktu);
             dataL.unshift(val.outLampu);
@@ -613,7 +613,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         let label = [];
         let dataP = [];
 
-        $.getJSON(base_url + "kipaspompalampu/ambildata", function(data) {
+        $.getJSON(base_url + "kipaslampupompa/ambildata", function(data) {
           $.each(data, function(key, val) {
             label.unshift(val.waktu);
             dataP.unshift(val.outPompa);
