@@ -38,7 +38,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <tbody>
                                         <?php if (empty($kipas)) : ?>
                                             <tr>
-                                                <td colspan="7">
+                                                <td colspan="2">
                                                     <div class="alert alert-danger">
                                                         <div class="alert-title">Data tidak ditemukan</div>
                                                         <b>Data tidak ditemukan, silahkan cek kembali koneksi dan internet</b>
@@ -89,7 +89,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <tbody>
                                         <?php if (empty($lampu)) : ?>
                                             <tr>
-                                                <td colspan="7">
+                                                <td colspan="2">
                                                     <div class="alert alert-danger">
                                                         <div class="alert-title">Data tidak ditemukan</div>
                                                         <b>Data tidak ditemukan, silahkan cek kembali koneksi dan internet</b>
@@ -117,7 +117,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <h4>Pompa</h4>
                         </div>
                         <div class="card-body">
-                            <canvas id="myChart2" height="130px"></canvas>
+                            <canvas id="myChart3" height="130px"></canvas>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-striped" id="table2">
+                                <table class="table table-striped" id="table3">
                                     <thead>
                                         <tr>
                                             <th>Waktu</th>
@@ -140,7 +140,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <tbody>
                                         <?php if (empty($pompa)) : ?>
                                             <tr>
-                                                <td colspan="7">
+                                                <td colspan="2">
                                                     <div class="alert alert-danger">
                                                         <div class="alert-title">Data tidak ditemukan</div>
                                                         <b>Data tidak ditemukan, silahkan cek kembali koneksi dan internet</b>
