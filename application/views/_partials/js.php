@@ -371,6 +371,8 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         ],
       });
       setInterval(function() {
+        reloadChart1();
+        reloadChart2();
         $("#table1").DataTable().draw();
         $("#table2").DataTable().draw();
       }, 60000);
@@ -511,6 +513,177 @@ if ($this->uri->segment(1) == "dashboard") { ?>
   <script>
     $(document).ready(function() {
       $("#kipasLampuPompaNav").addClass('active');
+      var base_url = "<?php echo base_url(); ?>";
+
+      function reloadChart1() {
+        let label = [];
+        let dataKp = [];
+
+        $.getJSON(base_url + "kipaspompalampu/ambildata", function(data) {
+          $.each(data, function(key, val) {
+            label.unshift(val.waktu);
+            dataKp.unshift(val.outKipas);
+          });
+          const dataChart = {
+            labels: label,
+            datasets: [{
+                label: 'Suhu 1',
+                data: dataS1,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                tension: 0.2
+              },
+            ]
+          };
+
+          let config1 = {
+            type: 'line',
+            data: dataChart,
+            options: {
+              animation: false,
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: 'top',
+                },
+              }
+            },
+            interaction: {
+              mode: 'index',
+              intersect: false
+            },
+          };
+
+          if (window.myLine1 !== undefined) {
+            window.myLine1.destroy();
+          }
+          let ctx = document.getElementById("myChart1").getContext("2d");
+          window.myLine1 = new Chart(ctx, config1);
+        });
+      }
+
+      function reloadChart2() {
+        let label = [];
+        let dataK1 = [];
+        let dataK2 = [];
+        let dataK3 = [];
+        let dataK4 = [];
+        let dataK5 = [];
+        let dataK6 = [];
+        let dataSetPoint = [];
+
+        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+          $.each(data, function(key, val) {
+            label.unshift(val.waktu);
+            dataK1.unshift(val.kelembaban);
+            dataK2.unshift(val.kelembaban1);
+            dataK3.unshift(val.kelembaban2);
+            dataK4.unshift(val.kelembaban3);
+            dataK5.unshift(val.kelembaban4);
+            dataK6.unshift(val.kelembabanLuar);
+            dataSetPoint.unshift(val.setPointKelembaban)
+          });
+          const dataChart = {
+            labels: label,
+            datasets: [{
+                label: 'Kelembaban 1',
+                data: dataK1,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban 2',
+                data: dataK2,
+                backgroundColor: 'rgba(125, 109, 12, 0.2)',
+                borderColor: 'rgba(125, 109, 12, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban 3',
+                data: dataK3,
+                backgroundColor: 'rgba(207, 0, 15, 0.2)',
+                borderColor: 'rgba(207, 0, 15, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban 4',
+                data: dataK4,
+                backgroundColor: 'rgba(34, 167, 240, 0.2)',
+                borderColor: 'rgba(34, 167, 240, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban 5',
+                data: dataK5,
+                backgroundColor: 'rgba(42, 187, 155, 0.2)',
+                borderColor: 'rgba(42, 187, 155, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Kelembaban Luar',
+                data: dataK6,
+                backgroundColor: 'rgba(247, 202, 24, 0.2)',
+                borderColor: 'rgba(247, 202, 24, 1)',
+                tension: 0.2
+              },
+              {
+                label: 'Set Point Kelembaban',
+                data: dataSetPoint,
+                backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                borderColor: 'rgba(0, 0, 0, 1)',
+                borderDash: [5, 2],
+                tension: 0.2
+              }
+            ]
+          };
+
+          let config2 = {
+            type: 'line',
+            data: dataChart,
+            options: {
+              animation: false,
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: 'top',
+                },
+              }
+            },
+            interaction: {
+              mode: 'index',
+              intersect: false
+            },
+          };
+
+          if (window.myLine2 !== undefined) {
+            window.myLine2.destroy();
+          }
+          let ctx = document.getElementById("myChart2").getContext("2d");
+          window.myLine2 = new Chart(ctx, config2);
+        });
+      }
+
+      $("#table1").DataTable({
+        "processing": true,
+        // "serverSide": true,
+        "order": [
+          [0, "desc"]
+        ],
+      });
+      $("#table2").DataTable({
+        "processing": true,
+        // "serverSide": true,
+        "order": [
+          [0, "desc"]
+        ],
+      });
+      setInterval(function() {
+        reloadChart1();
+        reloadChart2();
+        $("#table1").DataTable().draw();
+        $("#table2").DataTable().draw();
+      }, 60000);
     });
 
     function deleteM(url) {
