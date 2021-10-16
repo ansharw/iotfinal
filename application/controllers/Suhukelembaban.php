@@ -25,20 +25,38 @@ class Suhukelembaban extends Admin_Controller
         $this->render_template('suhukelembaban', $this->data);
     }
 
-    public function fetchData()
+    // public function fetchData()
+    // {
+    //     $result = [];
+
+    //     $dates = $this->input->post('dates');
+    //     $data = $this->model_control->get_data_tanggal($dates);
+
+    //     foreach ($data as $key => $value) {
+    //         $result[$key] = [
+    //             $value['waktu'],
+    //             $value['setPointSuhu']
+    //         ];
+    //     }
+    //     echo json_encode($result);
+    // }
+
+    public function datatableS()
     {
-        $result = [];
+        $postData = $this->input->post();
 
-        $dates = $this->input->post('dates');
-        $data = $this->model_control->get_data_tanggal($dates);
+        $data = $this->model_control->getDataS($postData);
 
-        foreach ($data as $key => $value) {
-            $result[$key] = [
-                $value['waktu'],
-                $value['setPointSuhu']
-            ];
-        }
-        echo json_encode($result);
+        echo json_encode($data);
+    }
+
+    public function datatableK()
+    {
+        $postData = $this->input->post();
+
+        $data = $this->model_control->getDataK($postData);
+
+        echo json_encode($data);
     }
     
     public function ambilData()

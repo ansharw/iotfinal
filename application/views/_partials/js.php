@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!-- General JS Scripts -->
 <!-- <script src="<?php echo base_url(); ?>assets/modules/jquery.min.js"></script> -->
-<script src="<?php echo base_url(); ?>assets/modules/jquery-3.3.1.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/modules/jquery-3.3.1.min.js"></script> -->
 <script src="<?php echo base_url(); ?>assets/modules/popper.js"></script>
 <script src="<?php echo base_url(); ?>assets/modules/tooltip.js"></script>
 <script src="<?php echo base_url(); ?>assets/modules/bootstrap/js/bootstrap.min.js"></script>
@@ -25,9 +25,9 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
 } elseif ($this->uri->segment(1) == "suhukelembaban") { ?>
   <?php
   if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script> -->
     <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 
@@ -60,9 +60,9 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
 } elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
   <?php
   if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script> -->
     <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 
@@ -95,11 +95,11 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
 } elseif ($this->uri->segment(1) == "profil") { ?>
   <?php
   if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-    <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script> -->
 
     <!-- toast fitur -->
     <script src="<?php echo base_url(); ?>assets/modules/izitoast/js/iziToast.min.js"></script>
@@ -136,6 +136,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 <?php
 } elseif ($this->uri->segment(1) == "suhukelembaban") { ?>
   <script>
+    let tabel1, tabel2;
     $(document).ready(function() {
       $("#suhuKelembabanNav").addClass('active');
 
@@ -162,7 +163,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         let dataS6 = [];
         let dataSetPoint = [];
 
-        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+        $.getJSON(base_url + "data-suhu-kelembaban", function(data) {
           $.each(data, function(key, val) {
             label.unshift(val.waktu);
             dataS1.unshift(val.suhu);
@@ -264,7 +265,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         let dataK6 = [];
         let dataSetPoint = [];
 
-        $.getJSON(base_url + "suhukelembaban/ambildata", function(data) {
+        $.getJSON(base_url + "data-suhu-kelembaban", function(data) {
           $.each(data, function(key, val) {
             label.unshift(val.waktu);
             dataK1.unshift(val.kelembaban);
@@ -356,25 +357,70 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         });
       }
 
-      $("#table1").DataTable({
+      // $("#table1").DataTable({
+      //   "processing": true,
+      //   // "serverSide": true,
+      //   "order": [
+      //     [0, "desc"]
+      //   ],
+      // });
+      // $("#table2").DataTable({
+      //   "processing": true,
+      //   // "serverSide": true,
+      //   "order": [
+      //     [0, "desc"]
+      //   ],
+      // });
+
+      tabel1 = $('#table1').DataTable({
         "processing": true,
-        // "serverSide": true,
-        "order": [
-          [0, "desc"]
-        ],
+        "serverSide": true,
+        "ordering": true,
+        "order": [[ 0, 'desc' ]],
+        "ajax": {
+          "url": base_url + 'suhukelembaban/datatableS',
+          "type": "POST"
+        },
+        "deferRender": true,
+        "columns": [
+             { data: "waktu" },
+             { data: "suhu" },
+             { data: "suhu1" },
+             { data: "suhu2" },
+             { data: "suhu3" },
+             { data: "suhu4" },
+             { data: "suhuLuar" },
+          ],
       });
-      $("#table2").DataTable({
+
+      tabel2 = $('#table2').DataTable({
         "processing": true,
-        // "serverSide": true,
-        "order": [
-          [0, "desc"]
-        ],
+        "serverSide": true,
+        "ordering": true,
+        "order": [[ 0, 'desc' ]],
+        "ajax": {
+          "url": base_url + 'suhukelembaban/datatableK',
+          "type": "POST"
+        },
+        "deferRender": true,
+        "columns": [
+             { data: "waktu" },
+             { data: "kelembaban" },
+             { data: "kelembaban1" },
+             { data: "kelembaban2" },
+             { data: "kelembaban3" },
+             { data: "kelembaban4" },
+             { data: "kelembabanLuar" },
+          ],
       });
+
       setInterval(function() {
         reloadChart1();
         reloadChart2();
-        $("#table1").DataTable().draw();
-        $("#table2").DataTable().draw();
+        tabel1.ajax.reload();
+        tabel2.ajax.reload();
+        // $("#table1").DataTable().draw();
+        // $("#table2").DataTable().draw();
       }, 60000);
     });
 
@@ -476,10 +522,10 @@ if ($this->uri->segment(1) == "dashboard") { ?>
     //   }
     // });
 
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
-    }
+    // function deleteM(url) {
+    //   $('#btn-delete').attr('href', url);
+    //   $('#removeModal').modal();
+    // }
   </script>
 
   <?php
@@ -519,7 +565,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         let label = [];
         let dataKp = [];
 
-        $.getJSON(base_url + "kipaslampupompa/ambildata", function(data) {
+        $.getJSON(base_url + "data-kipas-lampu-pompa", function(data) {
           $.each(data, function(key, val) {
             label.unshift(val.waktu);
             dataKp.unshift(val.outKipas);
@@ -566,7 +612,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         let label = [];
         let dataL = [];
 
-        $.getJSON(base_url + "kipaslampupompa/ambildata", function(data) {
+        $.getJSON(base_url + "data-kipas-lampu-pompa", function(data) {
           $.each(data, function(key, val) {
             label.unshift(val.waktu);
             dataL.unshift(val.outLampu);
@@ -613,7 +659,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         let label = [];
         let dataP = [];
 
-        $.getJSON(base_url + "kipaslampupompa/ambildata", function(data) {
+        $.getJSON(base_url + "data-kipas-lampu-pompa", function(data) {
           $.each(data, function(key, val) {
             label.unshift(val.waktu);
             dataP.unshift(val.outPompa);
@@ -623,8 +669,8 @@ if ($this->uri->segment(1) == "dashboard") { ?>
             datasets: [{
                 label: 'Output Pompa',
                 data: dataP,
-                backgroundColor: 'rgba(207, 0, 15, 0.2)',
-                borderColor: 'rgba(207, 0, 15, 1)',
+                backgroundColor: 'rgba(34, 167, 240, 0.2)',
+                borderColor: 'rgba(34, 167, 240, 1)',
                 tension: 0.2
               },
             ]

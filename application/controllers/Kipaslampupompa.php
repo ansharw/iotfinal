@@ -8,7 +8,7 @@ class Kipaslampupompa extends Admin_Controller
     {
         parent::__construct();
         $this->not_logged_in();
-        $this->data['title'] = 'Fan, Lamp and Pump';
+        $this->data['title'] = 'Kipas, Lampu dan Pompa';
         $this->load->model('model_control');
     }
 
