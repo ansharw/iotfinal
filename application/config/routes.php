@@ -54,4 +54,6 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['post-data'] = 'data/sendData';
-$route['fetchdata'] = 'suhukelembaban/fetchData';
+$route['data-suhu-kelembaban'] = 'suhukelembaban/ambilData';
+$route['data-kipas-lampu-pompa'] = 'kipaslampupompa/ambilData';
+// $route['fetchdata'] = 'suhukelembaban/fetchData';
