@@ -14,8 +14,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/all.min.css">
   <!-- <script src="<?php echo base_url(); ?>assets/modules/canvasjs.min.js"></script> -->
-  <script src="<?php echo base_url(); ?>assets/modules/jquery-3.3.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2"></script>
+  <script src="<?php echo base_url(); ?>assets/modules/jquery-3.3.1.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script> -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script> -->
@@ -46,6 +46,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!-- datatable -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+    <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
