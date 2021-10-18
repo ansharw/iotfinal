@@ -228,6 +228,20 @@ if ($this->uri->segment(1) == "dashboard") { ?>
                   position: 'top',
                 },
               },
+              scales: {
+                x: {
+                  type: 'time',
+                  time: {
+                    tooltipFormat: 'dd MMM y hh:mm'
+                  },
+                },
+                y: {
+                  title: {
+                    display: true,
+                    text: 'Suhu Dalam Satuan Celcius (°C)'
+                  }
+                }
+              }
             },
             interaction: {
               mode: 'index',
