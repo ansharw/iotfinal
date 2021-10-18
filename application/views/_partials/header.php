@@ -10,10 +10,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <title><?php echo $title; ?> &mdash; KANTIS</title>
   <link rel="icon" href="<?= base_url('assets/image/'); ?>favicon.ico" type="image/x-icon">
 
-  <!-- General CSS Files -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/all.min.css">
-  <!-- CSS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2"></script>
+  <script src="<?php echo base_url(); ?>assets/modules/jquery-3.3.1.min.js"></script>
+
   <?php
   if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
@@ -21,6 +22,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <?php
   } elseif ($this->uri->segment(1) == "suhukelembaban") { ?>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
+    <!-- datatable -->
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
@@ -54,6 +56,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     } ?>
   <?php
   } elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
     <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
