@@ -15,9 +15,9 @@ class Suhukelembaban extends Admin_Controller
     {
         // $this->data['suhu'] = $this->model_control->getSuhu($suhu_id);
         $this->data['suhu'] = $this->model_control->getSuhu($suhu_id);
-        $this->data['setpointsuhu'] = $this->model_control->getSetPointChart($setpoint_id);
+        // $this->data['setpointsuhu'] = $this->model_control->getSetPointChart($setpoint_id);
         $this->data['kelembaban'] = $this->model_control->getKelembaban($kelembaban_id);  
-        $this->data['all'] = $this->model_control->getAllData();
+        // $this->data['all'] = $this->model_control->getAllData();
 
         // $dates = $this->input->post('search');
         // $this->data['tanggal'] = $this->model_control->get_data_tanggal($dates, $datesf);

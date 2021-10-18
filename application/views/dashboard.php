@@ -9,7 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <div class="section-body">
             <div class="row">
-                <div class="col-md-8 col-lg-8">
+                <div class="col-md-8 col-lg-8 col-sm-8">
                     <div class="card">
                         <div class="card-header">
                             <h4>Rancangan Sistem</h4>
@@ -48,7 +48,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="card">
                         <div class="card-header">
                             <h4>Keterangan Gambar</h4>
@@ -60,13 +60,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-kandang" role="tab">Slide 1 &rsaquo; Desain kandang ayam</a>
                                         <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-alat" role="tab">Slide 2 &rsaquo; Integrasi sistem</a>
                                         <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-diagram" role="tab">Slide 3 &rsaquo; Desain Sistem</a>
-                                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-foto" role="tab">Slide 4 &rsaquo; Activity Diagram</a>
+                                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-activity" role="tab">Slide 4 &rsaquo; Activity Diagram</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <h2 class="section-title">Realtime Conditions</h2>
+            <p class="section-lead">
+                Berikut merupakan keadaan suhu, kelembaban, kipas, pompa dan lampu pada kandang saat ini dalam rentang waktu <b>1 menit</b> sekali
+            </p>
+            <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card card-hero">
                         <div class="card-header">
@@ -278,8 +284,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 </div>
 <script type="text/javascript">
-
 </script>

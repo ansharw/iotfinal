@@ -8,20 +8,77 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
         <div class="section-body">
             <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Letak sensor suhu</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-2">Berikut adalah letak sensor suhu (DHT22) pada kandang ayam tertutup (closed house) yang ditunjukkan pada bentuk kotak merah berlabel S dan urutan sensornya (example: S1)</div>
+                            <div class="chocolat-parent">
+                                <a href="<?php echo base_url(); ?>assets/image/kandangsuhu.png" class="chocolat-image" title="Just an example">
+                                    <div>
+                                        <img alt="image" src="<?php echo base_url(); ?>assets/image/kandangsuhu.png" class="img-fluid">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Letak sensor kelembaban</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-2">Berikut adalah letak sensor kelembaban (DHT22) pada kandang ayam tertutup (closed house) yang ditunjukkan pada bentuk kotak merah berlabel S dan urutan sensornya (example: K1)</div>
+                            <div class="chocolat-parent">
+                                <a href="<?php echo base_url(); ?>assets/image/kandangkelembaban.png" class="chocolat-image" title="Just an example">
+                                    <div>
+                                        <img alt="image" src="<?php echo base_url(); ?>assets/image/kandangkelembaban.png" class="img-fluid">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="section-title mt-0">Set Point Suhu dan Kelembaban Selama 14 Hari</div>
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <?php for ($i = 1; $i <= 14; $i++) : ?>
+                                            <th scope="col">Hari <?php echo $i; ?></th>
+                                        <?php endfor; ?>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <?php for ($j = 1; $j <= 14; ++$j) : ?>
+                                            <?php $y = 33;
+                                            while ($j <= 14) : ?>
+                                                <?php $j++; ?>
+                                                <td>
+                                                    <b><?php echo $y -= 0.5 ?> &degC<br>
+                                                        60-70 %</b>
+                                                </td>
+                                            <?php endwhile; ?>
+                                        <?php endfor; ?>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                     <div class="card">
                         <div class="card-header">
                             <h4>Sensor Suhu</h4>
-                            <div class="card-header-action">
-                                <!-- <form class="card-header-form" id="date-picker" action="<?php // base_url('suhukelembaban'); ?>" method="POST">
-                                    <div class="input-group"> -->
-                                        <!-- <input type="text" name="search" id="search" class="form-control" placeholder="Tahun (contoh: 2020)"> -->
-                                        <!-- <input type="text" class="form-control datepicker" name="dates" id="dates">
-                                        <div class="input-group-btn">
-                                            <input class="btn btn-primary btn-icon" type="submit" value="Cari" id="cari">
-                                        </div> -->
-                                    <!-- </div>
-                                </form> -->
+                            <div class="card-header-action" style="text-align: right;">
+                                Data Terakhir Masuk: <b><?= date("d M Y") ?></b><br>
+                                <b>Keterangan</b> : <b>a.m</b> = 12.00 Siang - 12.00 Malam, <b>p.m</b> = 12.00 Malam - 12.00 Siang
                             </div>
                         </div>
                         <div class="card-body">
@@ -35,7 +92,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Tabel Sensor Suhu</h4>
+                            <h4>Tabel Sensor Suhu (Dalam satuan Celcius)</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -85,10 +142,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="card">
                         <div class="card-header">
                             <h4>Sensor Kelembaban</h4>
+                            <div class="card-header-action" style="text-align: right;">
+                                Data Terakhir Masuk: <b><?= date("d M Y") ?></b><br>
+                                <b>Keterangan</b> : <b>a.m</b> = 12.00 Siang - 12.00 Malam, <b>p.m</b> = 12.00 Malam - 12.00 Siang
+                            </div>
                         </div>
-                        <!-- <div class="card-body" id="chart2" style="height: 400px;">
-                        </div> -->
                         <div class="card-body">
+                            <div id="clear">Tunggu sebentar <span id="time">01:00</span></div>
                             <canvas id="myChart2" height="130px"></canvas>
                         </div>
                     </div>
@@ -98,7 +158,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Tabel Sensor Kelembaban</h4>
+                            <h4>Tabel Sensor Kelembaban (Dalam satuan %)</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -138,11 +198,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-body">
-                                <canvas id="myChart3"></canvas>
                             </div>
                         </div>
                     </div>

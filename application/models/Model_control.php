@@ -315,5 +315,182 @@ class Model_control extends CI_Model
 
         return $response;
     }
+
+    public function getDataKp($postData = null)
+    {
+        $response = array();
+        // read value
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; // Rows display per page
+        $columnIndex = $postData['order'][0]['column']; // Column index
+        $columnName = $postData['columns'][$columnIndex]['data']; // Column name
+        $columnSortOrder = $postData['order'][0]['dir']; // asc or desc
+        $searchValue = $postData['search']['value']; // Search value
+
+        ## Search 
+        $searchQuery = "";
+        if ($searchValue != '') {
+            $searchQuery = " (waktu like '%" . $searchValue . "%' or outKipas like '%" . $searchValue . "%') ";
+        }
+
+        ## Total number of records without filtering
+        $this->db->select('count(*) as allcount');
+        $records = $this->db->get('SensorData')->result();
+        $totalRecords = $records[0]->allcount;
+
+        ## Total number of record with filtering
+        $this->db->select('count(*) as allcount');
+        if ($searchQuery != '')
+            $this->db->where($searchQuery);
+        $records = $this->db->get('SensorData')->result();
+        $totalRecordwithFilter = $records[0]->allcount;
+
+        ## Fetch records
+        $this->db->select('outKipas, date_format(waktu, "%Y-%m-%e %H:%i") as waktu');
+        if ($searchQuery != '')
+            $this->db->where($searchQuery);
+        $this->db->order_by($columnName, $columnSortOrder);
+        $this->db->limit($rowperpage, $start);
+        $records = $this->db->get('SensorData')->result();
+
+        $data = array();
+
+        foreach ($records as $record) {
+
+            $data[] = array(
+                "waktu" => $record->waktu,
+                "outKipas" => $record->outKipas,
+            );
+        }
+
+        ## Response
+        $response = array(
+            "draw" => intval($draw),
+            "recordsTotal" => $totalRecords,
+            "recordsFiltered" => $totalRecordwithFilter,
+            "data" => $data
+        );
+
+        return $response;
+    }
+
+    public function getDataLm($postData = null)
+    {
+        $response = array();
+        // read value
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; // Rows display per page
+        $columnIndex = $postData['order'][0]['column']; // Column index
+        $columnName = $postData['columns'][$columnIndex]['data']; // Column name
+        $columnSortOrder = $postData['order'][0]['dir']; // asc or desc
+        $searchValue = $postData['search']['value']; // Search value
+
+        ## Search 
+        $searchQuery = "";
+        if ($searchValue != '') {
+            $searchQuery = " (waktu like '%" . $searchValue . "%' or outLampu like '%" . $searchValue . "%') ";
+        }
+
+        ## Total number of records without filtering
+        $this->db->select('count(*) as allcount');
+        $records = $this->db->get('SensorData')->result();
+        $totalRecords = $records[0]->allcount;
+
+        ## Total number of record with filtering
+        $this->db->select('count(*) as allcount');
+        if ($searchQuery != '')
+            $this->db->where($searchQuery);
+        $records = $this->db->get('SensorData')->result();
+        $totalRecordwithFilter = $records[0]->allcount;
+
+        ## Fetch records
+        $this->db->select('outLampu, date_format(waktu, "%Y-%m-%e %H:%i") as waktu');
+        if ($searchQuery != '')
+            $this->db->where($searchQuery);
+        $this->db->order_by($columnName, $columnSortOrder);
+        $this->db->limit($rowperpage, $start);
+        $records = $this->db->get('SensorData')->result();
+
+        $data = array();
+
+        foreach ($records as $record) {
+
+            $data[] = array(
+                "waktu" => $record->waktu,
+                "outLampu" => $record->outKipas,
+            );
+        }
+
+        ## Response
+        $response = array(
+            "draw" => intval($draw),
+            "recordsTotal" => $totalRecords,
+            "recordsFiltered" => $totalRecordwithFilter,
+            "data" => $data
+        );
+
+        return $response;
+    }
+
+    public function getDataPm($postData = null)
+    {
+        $response = array();
+        // read value
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; // Rows display per page
+        $columnIndex = $postData['order'][0]['column']; // Column index
+        $columnName = $postData['columns'][$columnIndex]['data']; // Column name
+        $columnSortOrder = $postData['order'][0]['dir']; // asc or desc
+        $searchValue = $postData['search']['value']; // Search value
+
+        ## Search 
+        $searchQuery = "";
+        if ($searchValue != '') {
+            $searchQuery = " (waktu like '%" . $searchValue . "%' or outPompa like '%" . $searchValue . "%') ";
+        }
+
+        ## Total number of records without filtering
+        $this->db->select('count(*) as allcount');
+        $records = $this->db->get('SensorData')->result();
+        $totalRecords = $records[0]->allcount;
+
+        ## Total number of record with filtering
+        $this->db->select('count(*) as allcount');
+        if ($searchQuery != '')
+            $this->db->where($searchQuery);
+        $records = $this->db->get('SensorData')->result();
+        $totalRecordwithFilter = $records[0]->allcount;
+
+        ## Fetch records
+        $this->db->select('outPompa, date_format(waktu, "%Y-%m-%e %H:%i") as waktu');
+        if ($searchQuery != '')
+            $this->db->where($searchQuery);
+        $this->db->order_by($columnName, $columnSortOrder);
+        $this->db->limit($rowperpage, $start);
+        $records = $this->db->get('SensorData')->result();
+
+        $data = array();
+
+        foreach ($records as $record) {
+
+            $data[] = array(
+                "waktu" => $record->waktu,
+                "outPompa" => $record->outPompa,
+            );
+        }
+
+        ## Response
+        $response = array(
+            "draw" => intval($draw),
+            "recordsTotal" => $totalRecords,
+            "recordsFiltered" => $totalRecordwithFilter,
+            "data" => $data
+        );
+
+        return $response;
+    }
 }
 ?>

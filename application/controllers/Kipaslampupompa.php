@@ -26,4 +26,31 @@ class Kipaslampupompa extends Admin_Controller
         header('Content-Type: application/json');
         echo json_encode($data); 
     }
+
+    public function datatableKp()
+    {
+        $postData = $this->input->post();
+
+        $data = $this->model_control->getDataKp($postData);
+
+        echo json_encode($data);
+    }
+
+    public function datatableLm()
+    {
+        $postData = $this->input->post();
+
+        $data = $this->model_control->getDataLm($postData);
+
+        echo json_encode($data);
+    }
+
+    public function datatablePm()
+    {
+        $postData = $this->input->post();
+
+        $data = $this->model_control->getDataPm($postData);
+
+        echo json_encode($data);
+    }
 }

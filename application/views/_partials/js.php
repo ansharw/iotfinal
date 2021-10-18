@@ -139,18 +139,6 @@ if ($this->uri->segment(1) == "dashboard") { ?>
     let tabel1, tabel2;
     $(document).ready(function() {
       $("#suhuKelembabanNav").addClass('active');
-
-      if (jQuery().daterangepicker) {
-        if ($(".datepicker").length) {
-          $('.datepicker').daterangepicker({
-            locale: {
-              format: 'YYYY-MM-DD'
-            },
-            singleDatePicker: true,
-          });
-        }
-      };
-
       var base_url = "<?php echo base_url(); ?>";
 
       function reloadChart1() {
@@ -239,7 +227,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
                 legend: {
                   position: 'top',
                 },
-              }
+              },
             },
             interaction: {
               mode: 'index',
@@ -557,6 +545,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 <?php
 } elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
   <script>
+    let tabel1, tabel2, tabel3;
     $(document).ready(function() {
       $("#kipasLampuPompaNav").addClass('active');
       var base_url = "<?php echo base_url(); ?>";
@@ -702,41 +691,85 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         });
       }
 
-      $("#table1").DataTable({
+      tabel1 = $('#table1').DataTable({
         "processing": true,
-        // "serverSide": true,
-        "order": [
-          [0, "desc"]
-        ],
+        "serverSide": true,
+        "ordering": true,
+        "order": [[ 0, 'desc' ]],
+        "ajax": {
+          "url": base_url + 'kipaslampupompa/datatableKp',
+          "type": "POST"
+        },
+        "deferRender": true,
+        "columns": [
+             { data: "waktu" },
+             { data: "outKipas" },
+          ],
       });
-      $("#table2").DataTable({
+
+      tabel2 = $('#table2').DataTable({
         "processing": true,
-        // "serverSide": true,
-        "order": [
-          [0, "desc"]
-        ],
+        "serverSide": true,
+        "ordering": true,
+        "order": [[ 0, 'desc' ]],
+        "ajax": {
+          "url": base_url + 'kipaslampupompa/datatableLm',
+          "type": "POST"
+        },
+        "deferRender": true,
+        "columns": [
+             { data: "waktu" },
+             { data: "outLampu" },
+          ],
       });
-      $("#table3").DataTable({
+
+      tabel3 = $('#table3').DataTable({
         "processing": true,
-        // "serverSide": true,
-        "order": [
-          [0, "desc"]
-        ],
+        "serverSide": true,
+        "ordering": true,
+        "order": [[ 0, 'desc' ]],
+        "ajax": {
+          "url": base_url + 'kipaslampupompa/datatablePm',
+          "type": "POST"
+        },
+        "deferRender": true,
+        "columns": [
+             { data: "waktu" },
+             { data: "outPompa" },
+          ],
       });
+
       setInterval(function() {
         reloadChart1();
         reloadChart2();
         reloadChart3();
-        $("#table1").DataTable().draw();
-        $("#table2").DataTable().draw();
-        $("#table3").DataTable().draw();
+        tabel1.ajax.reload();
+        tabel2.ajax.reload();
+        tabel3.ajax.reload();
       }, 60000);
     });
 
-    function deleteM(url) {
-      $('#btn-delete').attr('href', url);
-      $('#removeModal').modal();
+    function startTimer(duration, display) {
+      var timer = duration,
+        minutes, seconds;
+      setInterval(function() {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = duration;
+        }
+      }, 1000);
     }
+
+    var oneMinutes = 60 * 1,
+      display = document.querySelector('#time');
+    startTimer(oneMinutes, display);
   </script>
   <?php
   if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
