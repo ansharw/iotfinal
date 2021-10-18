@@ -16,9 +16,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <!-- <script src="<?php echo base_url(); ?>assets/modules/canvasjs.min.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2"></script>
   <script src="<?php echo base_url(); ?>assets/modules/jquery-3.3.1.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script> -->
 
 
