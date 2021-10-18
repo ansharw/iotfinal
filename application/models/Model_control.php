@@ -419,7 +419,7 @@ class Model_control extends CI_Model
 
             $data[] = array(
                 "waktu" => $record->waktu,
-                "outLampu" => $record->outKipas,
+                "outLampu" => $record->outLampu,
             );
         }
 
