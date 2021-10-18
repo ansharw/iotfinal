@@ -329,6 +329,20 @@ if ($this->uri->segment(1) == "dashboard") { ?>
                 legend: {
                   position: 'top',
                 },
+              },
+              scales: {
+                x: {
+                  type: 'time',
+                  time: {
+                    tooltipFormat: 'dd MMM y hh:mm'
+                  },
+                },
+                y: {
+                  title: {
+                    display: true,
+                    text: 'Kelembaban Dalam Persen (%)'
+                  }
+                }
               }
             },
             interaction: {
@@ -344,21 +358,6 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           window.myLine2 = new Chart(ctx, config2);
         });
       }
-
-      // $("#table1").DataTable({
-      //   "processing": true,
-      //   // "serverSide": true,
-      //   "order": [
-      //     [0, "desc"]
-      //   ],
-      // });
-      // $("#table2").DataTable({
-      //   "processing": true,
-      //   // "serverSide": true,
-      //   "order": [
-      //     [0, "desc"]
-      //   ],
-      // });
 
       tabel1 = $('#table1').DataTable({
         "processing": true,
@@ -407,8 +406,6 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         reloadChart2();
         tabel1.ajax.reload();
         tabel2.ajax.reload();
-        // $("#table1").DataTable().draw();
-        // $("#table2").DataTable().draw();
       }, 60000);
     });
 
@@ -437,87 +434,6 @@ if ($this->uri->segment(1) == "dashboard") { ?>
     var oneMinutes = 60 * 1,
       display = document.querySelector('#time2');
     startTimer(oneMinutes, display);
-
-    // $("#cari").click(function() {
-    //   let from_date = $(".datepicker").val();
-    //   if (from_date != '') {
-    //     console.log(from_date);
-    //     $.ajax({
-    //       url: base_url + 'fetchdata',
-    //       data: {
-    //         from_date: from_date
-    //       },
-    //       success: function(data) {
-    //         console.log(data[0]);
-    //         console.log(data[1]);
-    //         console.log(data[2]);
-    //         console.log(data[3]);
-    //         console.log(data[4]);
-    //         console.log(data[5]);
-    //         console.log(data[6]);
-    //         console.log(data[7]);
-    //         console.log(data[8]);
-    //         console.log(data[9]);
-    //         console.log(data[10]);
-    //         console.log(data[11]);
-    //         console.log(data[12]);
-    //         let time = data[0].waktu;
-    //         let setps = data[0].setPointSuhu;
-
-    //         const datas = {
-    //           datasets: [{
-    //             label: 'set point suhu',
-    //             data: [{
-    //               x: time,
-    //               y: setps
-    //             }],
-    //             borderDash: [5, 2],
-    //             backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    //             borderColor: 'rgba(0, 0, 0, 1)',
-    //             borderWidth: 2
-    //           }, ]
-    //         };
-    //         const config = {
-    //           type: 'line',
-    //           data: datas,
-    //           options: {
-    //             showLines: true,
-    //             animation: {
-    //               duration: 0
-    //             },
-    //             scales: {
-    //               x: {
-    //                 type: 'timeseries',
-    //                 time: {
-    //                   unit: 'hour'
-    //                 }
-    //               },
-    //               y: {
-    //                 title: {
-    //                   display: true,
-    //                   text: 'Suhu'
-    //                 }
-    //               }
-    //             },
-    //             interaction: {
-    //               intersect: false
-    //             },
-
-    //           }
-    //         };
-    //         // render init block
-    //         const myChart = new Chart(document.getElementById('myChart'), config);
-    //       }
-    //     })
-    //   } else {
-    //     alert("Please Select Date");
-    //   }
-    // });
-
-    // function deleteM(url) {
-    //   $('#btn-delete').attr('href', url);
-    //   $('#removeModal').modal();
-    // }
   </script>
 
   <?php
@@ -585,6 +501,14 @@ if ($this->uri->segment(1) == "dashboard") { ?>
                 legend: {
                   position: 'top',
                 },
+              },
+              scales: {
+                x: {
+                  type: 'time',
+                  time: {
+                    tooltipFormat: 'dd MMM y hh:mm'
+                  },
+                },
               }
             },
             interaction: {
@@ -632,6 +556,14 @@ if ($this->uri->segment(1) == "dashboard") { ?>
                 legend: {
                   position: 'top',
                 },
+              },
+              scales: {
+                x: {
+                  type: 'time',
+                  time: {
+                    tooltipFormat: 'dd MMM y hh:mm'
+                  },
+                },
               }
             },
             interaction: {
@@ -678,6 +610,14 @@ if ($this->uri->segment(1) == "dashboard") { ?>
               plugins: {
                 legend: {
                   position: 'top',
+                },
+              },
+              scales: {
+                x: {
+                  type: 'time',
+                  time: {
+                    tooltipFormat: 'dd MMM y hh:mm'
+                  },
                 },
               }
             },
@@ -773,6 +713,14 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 
     var oneMinutes = 60 * 1,
       display = document.querySelector('#time');
+    startTimer(oneMinutes, display);
+
+    var oneMinutes = 60 * 1,
+      display = document.querySelector('#time2');
+    startTimer(oneMinutes, display);
+
+    var oneMinutes = 60 * 1,
+      display = document.querySelector('#time3');
     startTimer(oneMinutes, display);
   </script>
   <?php

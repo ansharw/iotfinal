@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Kipas, dan Pompa</h1>
+            <h1>Kipas, Lampu dan Pompa</h1>
         </div>
         <div class="section-body">
             <div class="row">
@@ -110,7 +110,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                         </div>
                         <div class="card-body">
-                            <div id="clear">Tunggu sebentar <span id="time">01:00</span></div>
+                            <div id="clear">Tunggu sebentar <span id="time2">01:00</span></div>
                             <canvas id="myChart2" height="130px"></canvas>
                         </div>
                     </div>
@@ -166,7 +166,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                         </div>
                         <div class="card-body">
-                            <div id="clear">Tunggu sebentar <span id="time">01:00</span></div>
+                            <div id="clear">Tunggu sebentar <span id="time3">01:00</span></div>
                             <canvas id="myChart3" height="130px"></canvas>
                         </div>
                     </div>
