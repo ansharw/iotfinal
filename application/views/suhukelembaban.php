@@ -78,7 +78,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <h4>Sensor Suhu</h4>
                             <div class="card-header-action" style="text-align: right;">
                                 Data Terakhir Masuk: <b><?= date("d M Y") ?></b><br>
-                                <b>Keterangan</b> : <b>a.m</b> = 12.00 Siang - 12.00 Malam, <b>p.m</b> = 12.00 Malam - 12.00 Siang
+                                <b>Keterangan</b> : <b>p.m</b> = 12.00 Siang - 12.00 Malam, <b>a.m</b> = 12.00 Malam - 12.00 Siang
                             </div>
                         </div>
                         <div class="card-body">
@@ -144,7 +144,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <h4>Sensor Kelembaban</h4>
                             <div class="card-header-action" style="text-align: right;">
                                 Data Terakhir Masuk: <b><?= date("d M Y") ?></b><br>
-                                <b>Keterangan</b> : <b>a.m</b> = 12.00 Siang - 12.00 Malam, <b>p.m</b> = 12.00 Malam - 12.00 Siang
+                                <b>Keterangan</b> : <b>p.m</b> = 12.00 Siang - 12.00 Malam, <b>a.m</b> = 12.00 Malam - 12.00 Siang
                             </div>
                         </div>
                         <div class="card-body">
