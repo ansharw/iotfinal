@@ -148,7 +148,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                         </div>
                         <div class="card-body">
-                            <div id="clear">Tunggu sebentar <span id="time">01:00</span></div>
+                            <div id="clear">Tunggu sebentar <span id="time2">01:00</span></div>
                             <canvas id="myChart2" height="130px"></canvas>
                         </div>
                     </div>

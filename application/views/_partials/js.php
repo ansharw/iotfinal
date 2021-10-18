@@ -434,6 +434,10 @@ if ($this->uri->segment(1) == "dashboard") { ?>
       display = document.querySelector('#time');
     startTimer(oneMinutes, display);
 
+    var oneMinutes = 60 * 1,
+      display = document.querySelector('#time2');
+    startTimer(oneMinutes, display);
+
     // $("#cari").click(function() {
     //   let from_date = $(".datepicker").val();
     //   if (from_date != '') {
