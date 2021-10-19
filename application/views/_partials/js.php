@@ -148,7 +148,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         });
       }
       setInterval(function() {
-        recentS.ajax.reload();
+        recentS();
       }, 30000);
     });
   </script>
