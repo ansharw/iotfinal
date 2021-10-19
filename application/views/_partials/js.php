@@ -147,8 +147,6 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           $('#suhu1').html(htmlContent1);
         });
       }
-
-      recentS = recentS();
       setInterval(function() {
         recentS.ajax.reload();
       }, 30000);
