@@ -147,10 +147,10 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           $('#suhu1').html(htmlContent1);
         });
       }
-    });
-    setInterval(function() {
+      setInterval(function() {
         recentS();
-      }, 60000);
+      }, 5000);
+    });
   </script>
 
 <?php
