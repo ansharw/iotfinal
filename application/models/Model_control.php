@@ -23,6 +23,13 @@ class Model_control extends CI_Model
         return $query->result_array();
     }
 
+    public function getRecentAll()
+    {
+        $sql = "SELECT suhu, kelembaban, outLampu, outKipas, outPompa, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY waktu DESC LIMIT 3";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function getSuhu($id = null)
     {
         if ($id) {

@@ -86,10 +86,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="tickets-list">
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h3>20 &degC</h3>
+                                        <h3 id="suhu"></h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>1 menit yang lalu</div>
+                                        <div id="suhu1"></div>
                                     </div>
                                 </a>
                                 <a href="#" class="ticket-item">
@@ -108,7 +108,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
-                                <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
+                                <a href="<?php echo base_url(); ?>suhukelembaban#myChart1" class="ticket-item ticket-more">
                                     View All <i class="fas fa-chevron-right"></i>
                                 </a>
                             </div>
@@ -150,7 +150,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
-                                <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
+                                <a href="<?php echo base_url(); ?>suhukelembaban#myChart2" class="ticket-item ticket-more">
                                     View All <i class="fas fa-chevron-right"></i>
                                 </a>
                             </div>
@@ -192,7 +192,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
-                                <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
+                                <a href="<?php echo base_url(); ?>kipaslampupompa#myChart1" class="ticket-item ticket-more">
                                     View All <i class="fas fa-chevron-right"></i>
                                 </a>
                             </div>
@@ -234,7 +234,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
-                                <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
+                                <a href="<?php echo base_url(); ?>kipaslampupompa#myChart3" class="ticket-item ticket-more">
                                     View All <i class="fas fa-chevron-right"></i>
                                 </a>
                             </div>
@@ -276,7 +276,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
-                                <a href="<?php echo base_url(); ?>dist/features_tickets" class="ticket-item ticket-more">
+                                <a href="<?php echo base_url(); ?>kipaslampupompa#myChart2" class="ticket-item ticket-more">
                                     View All <i class="fas fa-chevron-right"></i>
                                 </a>
                             </div>
@@ -287,5 +287,3 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
     </section>
 </div>
-<script type="text/javascript">
-</script>

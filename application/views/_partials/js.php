@@ -131,7 +131,30 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
 <!-- Page Specific JS File -->
 <?php
 if ($this->uri->segment(1) == "dashboard") { ?>
-  <script src="<?php echo base_url(); ?>assets/js/page/modules-dashboard.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#dashboardNav").addClass('active');
+      let base_url = "<?php echo base_url(); ?>";
+
+      function recentS() {
+        let dataS = [];
+        let waktu = [];
+
+        $.getJSON(base_url + "dashboard/recent-activity", function(data) {
+          let latestData = data[data.length-1];
+          let htmlContent = '';
+          let htmlContent1 = '';
+          htmlContent += latestData.suhu + ' &degC';
+          htmlContent1 += latestData.waktu;
+          $('#suhu').html(htmlContent);
+          $('#suhu1').html(htmlContent1);
+        });
+      }
+      setInterval(function() {
+        recentS();
+      }, 60000);
+    });
+  </script>
 
 <?php
 } elseif ($this->uri->segment(1) == "suhukelembaban") { ?>

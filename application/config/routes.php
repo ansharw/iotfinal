@@ -56,4 +56,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['post-data'] = 'data/sendData';
 $route['data-suhu-kelembaban'] = 'suhukelembaban/ambilData';
 $route['data-kipas-lampu-pompa'] = 'kipaslampupompa/ambilData';
-// $route['fetchdata'] = 'suhukelembaban/fetchData';
+$route['suhu-kelembaban'] = 'suhukelembaban';
+$route['kipas-lampu-pompa'] = 'kipaslampupompa';
+$route['dashboard/recent-activity'] = 'dashboard/recentData';
