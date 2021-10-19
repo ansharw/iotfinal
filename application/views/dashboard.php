@@ -94,18 +94,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </a>
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h3>21 &degC</h3>
+                                        <h3 id="suhus2"></h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>2 menit yang lalu</div>
+                                        <div id="suhu2"></div>
                                     </div>
                                 </a>
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h3>22 &degC</h3>
+                                        <h3 id="suhus3"></h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>3 menit yang lalu</div>
+                                        <div id="suhu3"></div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>suhukelembaban#myChart1" class="ticket-item ticket-more">
@@ -134,22 +134,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div>1 menit yang lalu</div>
                                     </div>
                                 </a>
-                                <a href="#" class="ticket-item">
-                                    <div class="ticket-title">
-                                        <h3>61 %</h3>
-                                    </div>
-                                    <div class="ticket-info">
-                                        <div>2 menit yang lalu</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="ticket-item">
-                                    <div class="ticket-title">
-                                        <h3>62 %</h3>
-                                    </div>
-                                    <div class="ticket-info">
-                                        <div>3 menit yang lalu</div>
-                                    </div>
-                                </a>
                                 <a href="<?php echo base_url(); ?>suhukelembaban#myChart2" class="ticket-item ticket-more">
                                     View All <i class="fas fa-chevron-right"></i>
                                 </a>
@@ -174,22 +158,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     </div>
                                     <div class="ticket-info">
                                         <div>1 menit yang lalu</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="ticket-item">
-                                    <div class="ticket-title">
-                                        <h3>123</h3>
-                                    </div>
-                                    <div class="ticket-info">
-                                        <div>2 menit yang lalu</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="ticket-item">
-                                    <div class="ticket-title">
-                                        <h3>104</h3>
-                                    </div>
-                                    <div class="ticket-info">
-                                        <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>kipaslampupompa#myChart1" class="ticket-item ticket-more">
@@ -218,22 +186,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div>1 menit yang lalu</div>
                                     </div>
                                 </a>
-                                <a href="#" class="ticket-item">
-                                    <div class="ticket-title">
-                                        <h3>120</h3>
-                                    </div>
-                                    <div class="ticket-info">
-                                        <div>2 menit yang lalu</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="ticket-item">
-                                    <div class="ticket-title">
-                                        <h3>110</h3>
-                                    </div>
-                                    <div class="ticket-info">
-                                        <div>3 menit yang lalu</div>
-                                    </div>
-                                </a>
                                 <a href="<?php echo base_url(); ?>kipaslampupompa#myChart3" class="ticket-item ticket-more">
                                     View All <i class="fas fa-chevron-right"></i>
                                 </a>
@@ -258,22 +210,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     </div>
                                     <div class="ticket-info">
                                         <div>1 menit yang lalu</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="ticket-item">
-                                    <div class="ticket-title">
-                                        <h3>120</h3>
-                                    </div>
-                                    <div class="ticket-info">
-                                        <div>2 menit yang lalu</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="ticket-item">
-                                    <div class="ticket-title">
-                                        <h3>110</h3>
-                                    </div>
-                                    <div class="ticket-info">
-                                        <div>3 menit yang lalu</div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>kipaslampupompa#myChart2" class="ticket-item ticket-more">

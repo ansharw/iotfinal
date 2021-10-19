@@ -138,13 +138,27 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 
       function recentS() {
         $.getJSON(base_url + "dashboard/recent-activity", function(data) {
-          let latestData = data[data.length-1];
+          let latestData = data[data.length-3];
+          let secndData = data[data.length-2];
+          let firstData = data[data.length-1];
           let htmlContent = '';
           let htmlContent1 = '';
+          let htmlContent2 = '';
+          let htmlContent3 = '';
+          let htmlContent4 = '';
+          let htmlContent5 = '';
           htmlContent += latestData.suhu + ' &degC';
           htmlContent1 += latestData.waktu;
+          htmlContent2 += secndData.suhu + ' &degC';
+          htmlContent3 += secndData.waktu;
+          htmlContent4 += firstData.suhu + ' &degC';
+          htmlContent5 += firstData.waktu;
           $('#suhu').html(htmlContent);
           $('#suhu1').html(htmlContent1);
+          $('#suhus2').html(htmlContent2);
+          $('#suhu2').html(htmlContent3);
+          $('#suhus3').html(htmlContent4);
+          $('#suhu3').html(htmlContent5);
         });
       }
       setInterval(function() {
