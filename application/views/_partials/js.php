@@ -149,7 +149,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
       }
       setInterval(function() {
         recentS();
-      }, 5000);
+      }, 60000);
     });
   </script>
 
