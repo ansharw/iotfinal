@@ -137,9 +137,6 @@ if ($this->uri->segment(1) == "dashboard") { ?>
       let base_url = "<?php echo base_url(); ?>";
 
       function recentS() {
-        let dataS = [];
-        let waktu = [];
-
         $.getJSON(base_url + "dashboard/recent-activity", function(data) {
           let latestData = data[data.length-1];
           let htmlContent = '';
