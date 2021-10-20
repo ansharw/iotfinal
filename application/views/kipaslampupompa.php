@@ -43,6 +43,111 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
+            <h2 class="section-title">Keterangan Hasil Fuzzy</h2>
+            <p class="section-lead">
+                Berikut adalah table keterangan dari angka yang dihasilkan oleh fuzzy yang berupa nilai dari lampu, pompa dan kipas. seperti redup, terang, nyala ataupun mati.
+            </p>
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-4">
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h4>Fuzzy Kipas</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <tr>
+                                        <th>Nilai</th>
+                                        <th>Keterangan</th>
+                                    </tr>
+                                    <tr>
+                                        <td>0 - 63.75</td>
+                                        <td>Sangat Pelan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0 - 127.5</td>
+                                        <td>Pelan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>63.75 - 191.25</td>
+                                        <td>Netral</td>
+                                    </tr>
+                                    <tr>
+                                        <td>127.5 - 255</td>
+                                        <td>Kencang</td>
+                                    </tr>
+                                    <tr>
+                                        <td>191.25 - 255</td>
+                                        <td>Sangat Kencang</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4">
+                    <div class="card card-warning">
+                        <div class="card-header">
+                            <h4>Fuzzy Lampu</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <tr>
+                                        <th>Nilai</th>
+                                        <th>Keterangan</th>
+                                    </tr>
+                                    <tr>
+                                        <td>0 - 63.75</td>
+                                        <td>Sangat Redup</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0 - 127.5</td>
+                                        <td>Redup</td>
+                                    </tr>
+                                    <tr>
+                                        <td>63.75 - 191.25</td>
+                                        <td>Netral</td>
+                                    </tr>
+                                    <tr>
+                                        <td>127.5 - 255</td>
+                                        <td>Terang</td>
+                                    </tr>
+                                    <tr>
+                                        <td>191.25 - 255</td>
+                                        <td>Sangat Terang</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h4>Fuzzy Pompa</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <tr>
+                                        <th>Nilai</th>
+                                        <th>Keterangan</th>
+                                    </tr>
+                                    <tr>
+                                        <td>255</td>
+                                        <td>Nyala</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>Mati</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
