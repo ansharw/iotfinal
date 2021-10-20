@@ -128,10 +128,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="tickets-list">
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h3>60 %</h3>
+                                        <h3 id="kelembaban"></h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>1 menit yang lalu</div>
+                                        <div id="kelembaban1"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3 id="kelembabans2"></h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div id="kelembaban2"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3 id="kelembabans3"></h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div id="kelembaban3"></div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>suhukelembaban#myChart2" class="ticket-item ticket-more">
@@ -154,10 +170,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="tickets-list">
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h3>112</h3>
+                                        <h3 id="kipas"></h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>1 menit yang lalu</div>
+                                        <div id="kipas1"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3 id="kipass2"></h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div id="kipas2"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3 id="kipass3"></h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div id="kipas3"></div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>kipaslampupompa#myChart1" class="ticket-item ticket-more">
@@ -180,10 +212,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="tickets-list">
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h3>100</h3>
+                                        <h3 id="pompa"></h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>1 menit yang lalu</div>
+                                        <div id="pompa1"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3 id="pompas2"></h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div id="pompa2"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3 id="pompas3"></h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div id="pompa3"></div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>kipaslampupompa#myChart3" class="ticket-item ticket-more">
@@ -206,10 +254,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="tickets-list">
                                 <a href="#" class="ticket-item">
                                     <div class="ticket-title">
-                                        <h3>100</h3>
+                                        <h3 id="lampu"></h3>
                                     </div>
                                     <div class="ticket-info">
-                                        <div>1 menit yang lalu</div>
+                                        <div id="lampu1"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3 id="lampus2"></h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div id="lampu2"></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="ticket-item">
+                                    <div class="ticket-title">
+                                        <h3 id="lampus3"></h3>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div id="lampu3"></div>
                                     </div>
                                 </a>
                                 <a href="<?php echo base_url(); ?>kipaslampupompa#myChart2" class="ticket-item ticket-more">

@@ -147,12 +147,15 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           let htmlContent3 = '';
           let htmlContent4 = '';
           let htmlContent5 = '';
+          let datenow1 = moment(latestData.waktu).fromNow();
+          let datenow2 = moment(secndData.waktu).fromNow();
+          let datenow3 = moment(firstData.waktu).fromNow();
           htmlContent += latestData.suhu + ' &degC';
-          htmlContent1 += latestData.waktu;
+          htmlContent1 += latestData.waktu + ' (' + datenow1 + ')';
           htmlContent2 += secndData.suhu + ' &degC';
-          htmlContent3 += secndData.waktu;
+          htmlContent3 += secndData.waktu + ' (' + datenow2 + ')';
           htmlContent4 += firstData.suhu + ' &degC';
-          htmlContent5 += firstData.waktu;
+          htmlContent5 += firstData.waktu + ' (' + datenow3 + ')';
           $('#suhu').html(htmlContent);
           $('#suhu1').html(htmlContent1);
           $('#suhus2').html(htmlContent2);
@@ -161,8 +164,159 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           $('#suhu3').html(htmlContent5);
         });
       }
+
+      function recentK() {
+        $.getJSON(base_url + "dashboard/recent-activity", function(data) {
+          let latestData = data[data.length-3];
+          let secndData = data[data.length-2];
+          let firstData = data[data.length-1];
+          let htmlContent = '';
+          let htmlContent1 = '';
+          let htmlContent2 = '';
+          let htmlContent3 = '';
+          let htmlContent4 = '';
+          let htmlContent5 = '';
+          let datenow1 = moment(latestData.waktu).fromNow();
+          let datenow2 = moment(secndData.waktu).fromNow();
+          let datenow3 = moment(firstData.waktu).fromNow();
+          htmlContent += latestData.kelembaban + ' %';
+          htmlContent1 += latestData.waktu + ' (' + datenow1 + ')';
+          htmlContent2 += secndData.kelembaban + ' %';
+          htmlContent3 += secndData.waktu + ' (' + datenow2 + ')';
+          htmlContent4 += firstData.kelembaban + ' %';
+          htmlContent5 += firstData.waktu + ' (' + datenow3 + ')';
+          $('#kelembaban').html(htmlContent);
+          $('#kelembaban1').html(htmlContent1);
+          $('#kelembabans2').html(htmlContent2);
+          $('#kelembaban2').html(htmlContent3);
+          $('#kelembabans3').html(htmlContent4);
+          $('#kelembaban3').html(htmlContent5);
+        });
+      }
+
+      function recentKp() {
+        $.getJSON(base_url + "dashboard/recent-activity", function(data) {
+          let latestData = data[data.length-3];
+          let secndData = data[data.length-2];
+          let firstData = data[data.length-1];
+          let htmlContent = '';
+          let htmlContent1 = '';
+          let htmlContent2 = '';
+          let htmlContent3 = '';
+          let htmlContent4 = '';
+          let htmlContent5 = '';
+          let datenow1 = moment(latestData.waktu).fromNow();
+          let datenow2 = moment(secndData.waktu).fromNow();
+          let datenow3 = moment(firstData.waktu).fromNow();
+          let ketr;
+          if (latestData.outKipas <= 63.75 || secndData.outKipas <= 63.75 || firstData.outKipas <= 63.75) {
+            ketr = "sangat pelan";
+          } else if(latestData.outKipas <= 127.50 || secndData.outKipas <= 127.50 || firstData.outKipas <=  127.5){
+            ketr = "pelan";
+          } else if(latestData.outKipas >= 63.75 || latestData.outKipas <= 191.25 || secndData.outKipas >= 63.75 || secndData.outKipas <= 191.25 || firstData.outKipas >= 63.75 || firstData.outKipas <= 191.25) {
+            ketr = "netral";
+          } else if(latestData.outKipas >= 127.5 ||  latestData.outKipas <= 255 || secndData.outKipas >= 127.5 ||  secndData.outKipas <= 255 || firstData.outKipas >= 127.5 ||  firstData.outKipas <= 255){
+            ketr = "kencang";
+          } else if(latestData.outKipas >= 191.25 || latestData.outKipas <= 255 || secndData.outKipas >= 191.25 || secndData.outKipas <= 255 || firstData.outKipas >= 191.25 || firstData.outKipas <= 255){
+            ketr = "sangat kencang";
+          }
+          htmlContent += latestData.outKipas + ketr;
+          htmlContent1 += latestData.waktu + ' (' + datenow1 + ')';
+          htmlContent2 += secndData.outKipas + ketr;
+          htmlContent3 += secndData.waktu + ' (' + datenow2 + ')';
+          htmlContent4 += firstData.outKipas + ketr;
+          htmlContent5 += firstData.waktu + ' (' + datenow3 + ')';
+          $('#kipas').html(htmlContent);
+          $('#kipas1').html(htmlContent1);
+          $('#kipass2').html(htmlContent2);
+          $('#kipas2').html(htmlContent3);
+          $('#kipass3').html(htmlContent4);
+          $('#kipas3').html(htmlContent5);
+        });
+      }
+
+      function recentL() {
+        $.getJSON(base_url + "dashboard/recent-activity", function(data) {
+          let latestData = data[data.length-3];
+          let secndData = data[data.length-2];
+          let firstData = data[data.length-1];
+          let htmlContent = '';
+          let htmlContent1 = '';
+          let htmlContent2 = '';
+          let htmlContent3 = '';
+          let htmlContent4 = '';
+          let htmlContent5 = '';
+          let datenow1 = moment(latestData.waktu).fromNow();
+          let datenow2 = moment(secndData.waktu).fromNow();
+          let datenow3 = moment(firstData.waktu).fromNow();
+          let ketr;
+          if (latestData.outLampu <= 63.75 || secndData.outLampu <= 63.75 || firstData.outLampu <= 63.75) {
+            ketr = "sangat redup";
+          } else if(latestData.outLampu <= 127.50 || secndData.outLampu <= 127.50 || firstData.outLampu <=  127.5){
+            ketr = "redup";
+          } else if(latestData.outLampu >= 63.75 || latestData.outLampu <= 191.25 || secndData.outLampu >= 63.75 || secndData.outLampu <= 191.25 || firstData.outLampu >= 63.75 || firstData.outLampu <= 191.25) {
+            ketr = "netral";
+          } else if(latestData.outLampu >= 127.5 ||  latestData.outLampu <= 255 || secndData.outLampu >= 127.5 ||  secndData.outLampu <= 255 || firstData.outLampu >= 127.5 ||  firstData.outLampu <= 255){
+            ketr = "terang";
+          } else if(latestData.outLampu >= 191.25 || latestData.outLampu <= 255 || secndData.outLampu >= 191.25 || secndData.outLampu <= 255 || firstData.outLampu >= 191.25 || firstData.outLampu <= 255){
+            ketr = "sangat terang";
+          }
+          htmlContent += latestData.outLampu + ketr;
+          htmlContent1 += latestData.waktu + ' (' + datenow1 + ')';
+          htmlContent2 += secndData.outLampu + ketr;
+          htmlContent3 += secndData.waktu + ' (' + datenow2 + ')';
+          htmlContent4 += firstData.outLampu + ketr;
+          htmlContent5 += firstData.waktu + ' (' + datenow3 + ')';
+          $('#lampu').html(htmlContent);
+          $('#lampu1').html(htmlContent1);
+          $('#lampus2').html(htmlContent2);
+          $('#lampu2').html(htmlContent3);
+          $('#lampus3').html(htmlContent4);
+          $('#lampu3').html(htmlContent5);
+        });
+      }
+
+      function recentP() {
+        $.getJSON(base_url + "dashboard/recent-activity", function(data) {
+          let latestData = data[data.length-3];
+          let secndData = data[data.length-2];
+          let firstData = data[data.length-1];
+          let htmlContent = '';
+          let htmlContent1 = '';
+          let htmlContent2 = '';
+          let htmlContent3 = '';
+          let htmlContent4 = '';
+          let htmlContent5 = '';
+          let datenow1 = moment(latestData.waktu).fromNow();
+          let datenow2 = moment(secndData.waktu).fromNow();
+          let datenow3 = moment(firstData.waktu).fromNow();
+          let ketr;
+          if (latestData.outPompa == 255 || secndData.outPompa == 255 || firstData.outPompa == 255) {
+            ketr = "Nyala";
+          } else if(latestData.outPompa == 0 || secndData.outPompa == 0 || firstData.outPompa == 0) {
+            ketr = "Mati";
+          }
+          htmlContent += latestData.outPompa + ketr;
+          htmlContent1 += latestData.waktu + ' (' + datenow1 + ')';
+          htmlContent2 += secndData.outPompa + ketr;
+          htmlContent3 += secndData.waktu + ' (' + datenow2 + ')';
+          htmlContent4 += firstData.outPompa + ketr;
+          htmlContent5 += firstData.waktu + ' (' + datenow3 + ')';
+          $('#pompa').html(htmlContent);
+          $('#pompa1').html(htmlContent1);
+          $('#pompas2').html(htmlContent2);
+          $('#pompa2').html(htmlContent3);
+          $('#pompas3').html(htmlContent4);
+          $('#pompa3').html(htmlContent5);
+        });
+      }
+
       setInterval(function() {
         recentS();
+        recentK();
+        recentL();
+        recentKp();
+        recentP();
       }, 60000);
     });
   </script>
