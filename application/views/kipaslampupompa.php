@@ -154,7 +154,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="card-header">
                             <h4>Fuzzy Kipas</h4>
                             <div class="card-header-action" style="text-align: right;">
-                                Data Terakhir Masuk: <b><?= date("d M Y") ?></b><br>
+                                Data Terakhir Masuk: <b><?= $tanggal ?></b><br>
                                 <b>Keterangan</b> : <b>p.m</b> = 12.00 Siang - 12.00 Malam, <b>a.m</b> = 12.00 Malam - 12.00 Siang
                             </div>
                         </div>
@@ -196,21 +196,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             <tr>
                                                 <td><?= $row['waktu'] ?></td>
                                                 <td><?= $row['outKipas'] ?></td>
-                                                <td>
-                                                    <?php
-                                                    if ($row['outKipas'] <= 63.75) {
-                                                        echo "sangat pelan";
-                                                      } else if($row['outKipas'] <= 127.5){
-                                                        echo "pelan";
-                                                      } else if($row['outKipas'] >= 63.75 && $row['outKipas'] <= 191.25) {
-                                                        echo "netral";
-                                                      } else if($row['outKipas'] >= 127.5 && $row['outKipas'] < 255){
-                                                        echo "kencang";
-                                                      } else if($row['outKipas'] >= 191.25 && $row['outKipas'] >= 255 && $row['outKipas'] == 255){
-                                                        echo "sangat kencang";
-                                                      }
-                                                    ?>
-                                                </td>
+                                                <td></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
@@ -268,21 +254,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             <tr>
                                                 <td><?= $row['waktu'] ?></td>
                                                 <td><?= $row['outLampu'] ?></td>
-                                                <td>
-                                                    <?php
-                                                    if ($row['outLampu'] <= 63.75) {
-                                                        echo "sangat redup";
-                                                      } else if($row['outLampu'] <= 127.5){
-                                                        echo "redup";
-                                                      } else if($row['outLampu'] >= 63.75 && $row['outLampu'] <= 191.25) {
-                                                        echo "netral";
-                                                      } else if($row['outLampu'] >= 127.5 && $row['outLampu'] < 255){
-                                                        echo "terang";
-                                                      } else if($row['outLampu'] >= 191.25 && $row['outLampu'] >= 255 && $row['outLampu'] == 255){
-                                                        echo "sangat terang";
-                                                      }
-                                                    ?>
-                                                </td>
+                                                <td></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
@@ -340,11 +312,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             <tr>
                                                 <td><?= $row['waktu'] ?></td>
                                                 <td><?= $row['outPompa'] ?></td>
-                                                <td><?php if ($row['outPompa'] == 255) {
-                                                    echo "nyala";
-                                                } else if($row['outPompa'] == 0){
-                                                    echo "mati";
-                                                } ?></td>
+                                                <td></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

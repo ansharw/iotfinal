@@ -16,6 +16,13 @@ class Model_control extends CI_Model
     //     }
     // }
 
+    public function getLatestDate()
+    {
+        $sql = "SELECT date_format(waktu, '%d %M %Y') as waktu FROM SensorData ORDER BY waktu DESC LIMIT 1";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function getAllData()
     {
         $sql = "SELECT suhu, suhu1, suhu2, suhu3, suhu4, suhuLuar, kelembaban, kelembaban1, kelembaban2, kelembaban3, kelembaban4, kelembabanLuar, setPointSuhu, setPointKelembaban, outLampu, outKipas, outPompa, date_format(waktu, '%Y-%m-%e %H:%i') as waktu FROM SensorData ORDER BY waktu DESC LIMIT 20";
