@@ -195,6 +195,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             <tr>
                                                 <td><?= $row['waktu'] ?></td>
                                                 <td><?= $row['outKipas'] ?></td>
+                                                <td>
+                                                    <?php
+                                                    if ($row['outKipas'] <= 63.75) {
+                                                        echo "sangat pelan";
+                                                      } else if($row['outKipas'] <= 127.5){
+                                                        echo "pelan";
+                                                      } else if($row['outKipas'] >= 63.75 && $row['outKipas'] <= 191.25) {
+                                                        echo "netral";
+                                                      } else if($row['outKipas'] >= 127.5 && $row['outKipas'] <= 255){
+                                                        echo "kencang";
+                                                      } else if($row['outKipas'] >= 191.25 && $row['outKipas'] >= 255){
+                                                        echo "sangat kencang";
+                                                      }
+                                                    ?>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
@@ -251,6 +266,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             <tr>
                                                 <td><?= $row['waktu'] ?></td>
                                                 <td><?= $row['outLampu'] ?></td>
+                                                <td>
+                                                    <?php
+                                                    if ($row['outKipas'] <= 63.75) {
+                                                        echo "sangat redup";
+                                                      } else if($row['outKipas'] <= 127.5){
+                                                        echo "redup";
+                                                      } else if($row['outKipas'] >= 63.75 && $row['outKipas'] <= 191.25) {
+                                                        echo "netral";
+                                                      } else if($row['outKipas'] >= 127.5 && $row['outKipas'] <= 255){
+                                                        echo "terang";
+                                                      } else if($row['outKipas'] >= 191.25 && $row['outKipas'] >= 255){
+                                                        echo "sangat terang";
+                                                      }
+                                                    ?>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
@@ -307,6 +337,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             <tr>
                                                 <td><?= $row['waktu'] ?></td>
                                                 <td><?= $row['outPompa'] ?></td>
+                                                <td><?php if ($row['outPompa'] == 255) {
+                                                    echo "nyala";
+                                                } else if($row['outPompa'] == 0){
+                                                    echo "mati";
+                                                } ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
