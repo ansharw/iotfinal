@@ -48,7 +48,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="card-header">
                             <h4>Keterangan Gambar</h4>
