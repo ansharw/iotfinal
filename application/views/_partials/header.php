@@ -8,6 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title><?php echo $title; ?> &mdash; KANTIS</title>
+  <link rel="shortcut icon" href="<?= base_url('assets/image/'); ?>favicon.ico" type="image/x-icon">
   <link rel="icon" href="<?= base_url('assets/image/'); ?>favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap/css/bootstrap.min.css">
