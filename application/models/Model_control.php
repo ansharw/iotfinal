@@ -20,7 +20,7 @@ class Model_control extends CI_Model
     {
         $sql = "SELECT date_format(waktu, '%d %M %Y') as waktu FROM SensorData ORDER BY waktu DESC LIMIT 1";
         $query = $this->db->query($sql);
-        return $query->result_array();
+        return $query->result();
     }
 
     public function getAllData()
