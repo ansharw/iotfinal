@@ -14,9 +14,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <!-- JS Libraies -->
 <?php
 if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
-  <script src="<?php echo base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
 <?php
@@ -738,6 +735,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         "columns": [
              { data: "waktu" },
              { data: "outKipas" },
+             { data: ""}
           ],
       });
 
@@ -754,6 +752,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         "columns": [
              { data: "waktu" },
              { data: "outLampu" },
+             { data: ""}
           ],
       });
 
@@ -770,6 +769,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         "columns": [
              { data: "waktu" },
              { data: "outPompa" },
+             { data: ""}
           ],
       });
 
