@@ -178,6 +178,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <tr>
                                             <th>Waktu</th>
                                             <th>Fuzzy Kipas</th>
+                                            <th>Keterangan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -249,6 +250,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <tr>
                                             <th>Waktu</th>
                                             <th>Fuzzy Lampu</th>
+                                            <th>Keterangan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -320,6 +322,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <tr>
                                             <th>Waktu</th>
                                             <th>Pompa</th>
+                                            <th>Keterangan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
