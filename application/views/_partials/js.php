@@ -119,7 +119,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
             ketr = " netral";
           } else if(latestData.outKipas >= 127.5 &&  latestData.outKipas <= 255 || secndData.outKipas >= 127.5 && secndData.outKipas <= 255 || firstData.outKipas >= 127.5 && firstData.outKipas <= 255){
             ketr = " kencang";
-          } else if(latestData.outKipas >= 191.25 && latestData.outKipas <= 255 || secndData.outKipas >= 191.25 && secndData.outKipas <= 255 || firstData.outKipas >= 191.25 && firstData.outKipas <= 255){
+          } else if(latestData.outKipas >= 191.25 && latestData.outKipas >= 255 || secndData.outKipas >= 191.25 && secndData.outKipas >= 255 || firstData.outKipas >= 191.25 && firstData.outKipas >= 255){
             ketr = " sangat kencang";
           }
           htmlContent += latestData.outKipas + ketr;
@@ -160,7 +160,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
             ketr = " netral";
           } else if(latestData.outLampu >= 127.5 && latestData.outLampu <= 255 || secndData.outLampu >= 127.5 && secndData.outLampu <= 255 || firstData.outLampu >= 127.5 && firstData.outLampu <= 255){
             ketr = " terang";
-          } else if(latestData.outLampu >= 191.25 && latestData.outLampu <= 255 || secndData.outLampu >= 191.25 && secndData.outLampu <= 255 || firstData.outLampu >= 191.25 && firstData.outLampu <= 255){
+          } else if(latestData.outLampu >= 191.25 && latestData.outLampu >= 255 || secndData.outLampu >= 191.25 && secndData.outLampu >= 255 || firstData.outLampu >= 191.25 && firstData.outLampu >= 255){
             ketr = " sangat terang";
           }
           htmlContent += latestData.outLampu + ketr;
