@@ -736,9 +736,8 @@ if ($this->uri->segment(1) == "dashboard") { ?>
              { data: "waktu" },
              { data: "outKipas" },
              { data: null, render: function(data) {
-               if (outKipas) {
-                 console.log(outKipas);
-               }
+               let cekdata = data[0];
+               console.log(cekdata.outKipas);
              }, defaultContent: ""}
           ],
       });
