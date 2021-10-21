@@ -17,7 +17,7 @@ class Kipaslampupompa extends Admin_Controller
         $this->data['kipas'] = $this->model_control->getKipas($kipas_id);
         $this->data['lampu'] = $this->model_control->getLampu($lampu_id);
         $this->data['pompa'] = $this->model_control->getPompa($pompa_id);
-        $this->data['tanggal'] = $this->model_control->getLatestDate();
+        $this->data['tanggal'] = $this->model_control->getLatestDate()->result();
         $this->render_template('kipaslampupompa', $this->data);
     }
 

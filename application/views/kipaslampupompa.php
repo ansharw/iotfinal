@@ -154,7 +154,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="card-header">
                             <h4>Fuzzy Kipas</h4>
                             <div class="card-header-action" style="text-align: right;">
-                                Data Terakhir Masuk: <b><?= $tanggal ?></b><br>
+                                Data Terakhir Masuk: <b><?php foreach ($tanggal as $tgl) {
+                                    echo $tgl->waktu;
+                                } ?></b><br>
                                 <b>Keterangan</b> : <b>p.m</b> = 12.00 Siang - 12.00 Malam, <b>a.m</b> = 12.00 Malam - 12.00 Siang
                             </div>
                         </div>

@@ -18,9 +18,7 @@ class Model_control extends CI_Model
 
     public function getLatestDate()
     {
-        $sql = "SELECT date_format(waktu, '%d %M %Y') as waktu FROM SensorData ORDER BY waktu DESC LIMIT 1";
-        $query = $this->db->query($sql);
-        return $query->result();
+        return $this->db->select('date_format(waktu, "%d %M %Y") as waktu')->from('SensorData')->order_by('waktu','DESC')->limit(1)->get();
     }
 
     public function getAllData()

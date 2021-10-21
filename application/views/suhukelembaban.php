@@ -77,7 +77,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="card-header">
                             <h4>Sensor Suhu</h4>
                             <div class="card-header-action" style="text-align: right;">
-                                Data Terakhir Masuk: <b><?= date("d M Y") ?></b><br>
+                                Data Terakhir Masuk: <b><?php foreach ($tanggal as $tgl) {
+                                    echo $tgl->waktu;
+                                } ?></b><br>
                                 <b>Keterangan</b> : <b>p.m</b> = 12.00 Siang - 12.00 Malam, <b>a.m</b> = 12.00 Malam - 12.00 Siang
                             </div>
                         </div>
@@ -143,7 +145,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="card-header">
                             <h4>Sensor Kelembaban</h4>
                             <div class="card-header-action" style="text-align: right;">
-                                Data Terakhir Masuk: <b><?= date("d M Y") ?></b><br>
+                                Data Terakhir Masuk: <b><?php foreach ($tanggal as $tgl) {
+                                    echo $tgl->waktu;
+                                } ?></b><br>
                                 <b>Keterangan</b> : <b>p.m</b> = 12.00 Siang - 12.00 Malam, <b>a.m</b> = 12.00 Malam - 12.00 Siang
                             </div>
                         </div>
