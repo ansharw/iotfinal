@@ -21,25 +21,25 @@ if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
 
 <?php
 } elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
-  
+
 <?php
 } elseif ($this->uri->segment(1) == "profil") { ?>
-  
+
 <?php
 } ?>
 <!-- Page Specific JS File -->
 <?php
 if ($this->uri->segment(1) == "dashboard") { ?>
   <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
       $("#dashboardNav").addClass('active');
       let base_url = "<?php echo base_url(); ?>";
 
       function recentS() {
         $.getJSON(base_url + "dashboard/recent-activity", function(data) {
-          let latestData = data[data.length-3];
-          let secndData = data[data.length-2];
-          let firstData = data[data.length-1];
+          let latestData = data[data.length - 3];
+          let secndData = data[data.length - 2];
+          let firstData = data[data.length - 1];
           let htmlContent = '';
           let htmlContent1 = '';
           let htmlContent2 = '';
@@ -66,9 +66,9 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 
       function recentK() {
         $.getJSON(base_url + "dashboard/recent-activity", function(data) {
-          let latestData = data[data.length-3];
-          let secndData = data[data.length-2];
-          let firstData = data[data.length-1];
+          let latestData = data[data.length - 3];
+          let secndData = data[data.length - 2];
+          let firstData = data[data.length - 1];
           let htmlContent = '';
           let htmlContent1 = '';
           let htmlContent2 = '';
@@ -95,9 +95,9 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 
       function recentKp() {
         $.getJSON(base_url + "dashboard/recent-activity", function(data) {
-          let latestData = data[data.length-3];
-          let secndData = data[data.length-2];
-          let firstData = data[data.length-1];
+          let latestData = data[data.length - 3];
+          let secndData = data[data.length - 2];
+          let firstData = data[data.length - 1];
           let htmlContent = '';
           let htmlContent1 = '';
           let htmlContent2 = '';
@@ -110,13 +110,13 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           let ketr;
           if (latestData.outKipas <= 63.75 || secndData.outKipas <= 63.75 || firstData.outKipas <= 63.75) {
             ketr = " sangat pelan";
-          } else if(latestData.outKipas <= 127.50 || secndData.outKipas <= 127.50 || firstData.outKipas <=  127.5){
+          } else if (latestData.outKipas <= 127.50 || secndData.outKipas <= 127.50 || firstData.outKipas <= 127.5) {
             ketr = " pelan";
-          } else if(latestData.outKipas >= 63.75 && latestData.outKipas <= 191.25 || secndData.outKipas >= 63.75 && secndData.outKipas <= 191.25 || firstData.outKipas >= 63.75 && firstData.outKipas <= 191.25) {
+          } else if (latestData.outKipas >= 63.75 && latestData.outKipas <= 191.25 || secndData.outKipas >= 63.75 && secndData.outKipas <= 191.25 || firstData.outKipas >= 63.75 && firstData.outKipas <= 191.25) {
             ketr = " netral";
-          } else if(latestData.outKipas >= 127.5 &&  latestData.outKipas <= 255 || secndData.outKipas >= 127.5 && secndData.outKipas <= 255 || firstData.outKipas >= 127.5 && firstData.outKipas <= 255){
+          } else if (latestData.outKipas >= 127.5 && latestData.outKipas <= 255 || secndData.outKipas >= 127.5 && secndData.outKipas <= 255 || firstData.outKipas >= 127.5 && firstData.outKipas <= 255) {
             ketr = " kencang";
-          } else if(latestData.outKipas >= 191.25 && latestData.outKipas >= 255 || secndData.outKipas >= 191.25 && secndData.outKipas >= 255 || firstData.outKipas >= 191.25 && firstData.outKipas >= 255){
+          } else if (latestData.outKipas >= 191.25 && latestData.outKipas >= 255 || secndData.outKipas >= 191.25 && secndData.outKipas >= 255 || firstData.outKipas >= 191.25 && firstData.outKipas >= 255) {
             ketr = " sangat kencang";
           }
           htmlContent += latestData.outKipas + ketr;
@@ -136,9 +136,9 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 
       function recentL() {
         $.getJSON(base_url + "dashboard/recent-activity", function(data) {
-          let latestData = data[data.length-3];
-          let secndData = data[data.length-2];
-          let firstData = data[data.length-1];
+          let latestData = data[data.length - 3];
+          let secndData = data[data.length - 2];
+          let firstData = data[data.length - 1];
           let htmlContent = '';
           let htmlContent1 = '';
           let htmlContent2 = '';
@@ -151,13 +151,13 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           let ketr;
           if (latestData.outLampu <= 63.75 || secndData.outLampu <= 63.75 || firstData.outLampu <= 63.75) {
             ketr = " sangat redup";
-          } else if(latestData.outLampu <= 127.50 || secndData.outLampu <= 127.50 || firstData.outLampu <=  127.5){
+          } else if (latestData.outLampu <= 127.50 || secndData.outLampu <= 127.50 || firstData.outLampu <= 127.5) {
             ketr = " redup";
-          } else if(latestData.outLampu >= 63.75 && latestData.outLampu <= 191.25 || secndData.outLampu >= 63.75 && secndData.outLampu <= 191.25 || firstData.outLampu >= 63.75 || firstData.outLampu <= 191.25) {
+          } else if (latestData.outLampu >= 63.75 && latestData.outLampu <= 191.25 || secndData.outLampu >= 63.75 && secndData.outLampu <= 191.25 || firstData.outLampu >= 63.75 || firstData.outLampu <= 191.25) {
             ketr = " netral";
-          } else if(latestData.outLampu >= 127.5 && latestData.outLampu <= 255 || secndData.outLampu >= 127.5 && secndData.outLampu <= 255 || firstData.outLampu >= 127.5 && firstData.outLampu <= 255){
+          } else if (latestData.outLampu >= 127.5 && latestData.outLampu <= 255 || secndData.outLampu >= 127.5 && secndData.outLampu <= 255 || firstData.outLampu >= 127.5 && firstData.outLampu <= 255) {
             ketr = " terang";
-          } else if(latestData.outLampu >= 191.25 && latestData.outLampu >= 255 || secndData.outLampu >= 191.25 && secndData.outLampu >= 255 || firstData.outLampu >= 191.25 && firstData.outLampu >= 255){
+          } else if (latestData.outLampu >= 191.25 && latestData.outLampu >= 255 || secndData.outLampu >= 191.25 && secndData.outLampu >= 255 || firstData.outLampu >= 191.25 && firstData.outLampu >= 255) {
             ketr = " sangat terang";
           }
           htmlContent += latestData.outLampu + ketr;
@@ -177,9 +177,9 @@ if ($this->uri->segment(1) == "dashboard") { ?>
 
       function recentP() {
         $.getJSON(base_url + "dashboard/recent-activity", function(data) {
-          let latestData = data[data.length-3];
-          let secndData = data[data.length-2];
-          let firstData = data[data.length-1];
+          let latestData = data[data.length - 3];
+          let secndData = data[data.length - 2];
+          let firstData = data[data.length - 1];
           let htmlContent = '';
           let htmlContent1 = '';
           let htmlContent2 = '';
@@ -192,7 +192,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           let ketr;
           if (latestData.outPompa == 255 || secndData.outPompa == 255 || firstData.outPompa == 255) {
             ketr = "Nyala";
-          } else if(latestData.outPompa == 0 || secndData.outPompa == 0 || firstData.outPompa == 0) {
+          } else if (latestData.outPompa == 0 || secndData.outPompa == 0 || firstData.outPompa == 0) {
             ketr = "Mati";
           }
           htmlContent += latestData.outPompa + ketr;
@@ -477,42 +477,72 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         "processing": true,
         "serverSide": true,
         "ordering": true,
-        "order": [[ 0, 'desc' ]],
+        "order": [
+          [0, 'desc']
+        ],
         "ajax": {
           "url": base_url + 'suhukelembaban/datatableS',
           "type": "POST"
         },
         "deferRender": true,
-        "columns": [
-             { data: "waktu" },
-             { data: "suhu" },
-             { data: "suhu1" },
-             { data: "suhu2" },
-             { data: "suhu3" },
-             { data: "suhu4" },
-             { data: "suhuLuar" },
-          ],
+        "columns": [{
+            data: "waktu"
+          },
+          {
+            data: "suhu"
+          },
+          {
+            data: "suhu1"
+          },
+          {
+            data: "suhu2"
+          },
+          {
+            data: "suhu3"
+          },
+          {
+            data: "suhu4"
+          },
+          {
+            data: "suhuLuar"
+          },
+        ],
       });
 
       tabel2 = $('#table2').DataTable({
         "processing": true,
         "serverSide": true,
         "ordering": true,
-        "order": [[ 0, 'desc' ]],
+        "order": [
+          [0, 'desc']
+        ],
         "ajax": {
           "url": base_url + 'suhukelembaban/datatableK',
           "type": "POST"
         },
         "deferRender": true,
-        "columns": [
-             { data: "waktu" },
-             { data: "kelembaban" },
-             { data: "kelembaban1" },
-             { data: "kelembaban2" },
-             { data: "kelembaban3" },
-             { data: "kelembaban4" },
-             { data: "kelembabanLuar" },
-          ],
+        "columns": [{
+            data: "waktu"
+          },
+          {
+            data: "kelembaban"
+          },
+          {
+            data: "kelembaban1"
+          },
+          {
+            data: "kelembaban2"
+          },
+          {
+            data: "kelembaban3"
+          },
+          {
+            data: "kelembaban4"
+          },
+          {
+            data: "kelembabanLuar"
+          },
+        ],
       });
 
       setInterval(function() {
@@ -569,13 +599,12 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           const dataChart = {
             labels: label,
             datasets: [{
-                label: 'Output Kipas',
-                data: dataKp,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                tension: 0.2
-              },
-            ]
+              label: 'Output Kipas',
+              data: dataKp,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              tension: 0.2
+            }, ]
           };
 
           let config1 = {
@@ -624,13 +653,12 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           const dataChart = {
             labels: label,
             datasets: [{
-                label: 'Output Lampu',
-                data: dataL,
-                backgroundColor: 'rgba(125, 109, 12, 0.2)',
-                borderColor: 'rgba(125, 109, 12, 1)',
-                tension: 0.2
-              },
-            ]
+              label: 'Output Lampu',
+              data: dataL,
+              backgroundColor: 'rgba(125, 109, 12, 0.2)',
+              borderColor: 'rgba(125, 109, 12, 1)',
+              tension: 0.2
+            }, ]
           };
 
           let config2 = {
@@ -679,13 +707,12 @@ if ($this->uri->segment(1) == "dashboard") { ?>
           const dataChart = {
             labels: label,
             datasets: [{
-                label: 'Output Pompa',
-                data: dataP,
-                backgroundColor: 'rgba(34, 167, 240, 0.2)',
-                borderColor: 'rgba(34, 167, 240, 1)',
-                tension: 0.2
-              },
-            ]
+              label: 'Output Pompa',
+              data: dataP,
+              backgroundColor: 'rgba(34, 167, 240, 0.2)',
+              borderColor: 'rgba(34, 167, 240, 1)',
+              tension: 0.2
+            }, ]
           };
 
           let config3 = {
@@ -726,54 +753,111 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         "processing": true,
         "serverSide": true,
         "ordering": true,
-        "order": [[ 0, 'desc' ]],
+        "order": [
+          [0, 'desc']
+        ],
         "ajax": {
           "url": base_url + 'kipaslampupompa/datatableKp',
           "type": "POST"
         },
         "deferRender": true,
-        "columns": [
-             { data: "waktu" },
-             { data: "outKipas" },
-             { data: null, render: function(data) {
-               let cekdata = data[data["outKipas"]];
-               console.log(cekdata);
-             }, defaultContent: ""}
-          ],
+        "columns": [{
+            data: "waktu"
+          },
+          {
+            data: "outKipas"
+          },
+          {
+            data: null,
+            render: function(data) {
+              let datakipas = data["outKipas"];
+              if (datakipas <= 63.75) {
+                return 'Sangat pelan';
+              } else if (datakipas <= 127.5) {
+                return 'Pelan';
+              } else if (datakipas >= 63.75 && datakipas <= 191.25) {
+                return 'Netral';
+              } else if (datakipas >= 127.5 && datakipas < 255) {
+                return 'Kencang';
+              } else if (datakipas >= 191.25 && datakipas >= 255 && datakipas == 255) {
+                return 'Sangat kencang';
+              }
+            },
+            defaultContent: ""
+          }
+        ],
       });
 
       tabel2 = $('#table2').DataTable({
         "processing": true,
         "serverSide": true,
         "ordering": true,
-        "order": [[ 0, 'desc' ]],
+        "order": [
+          [0, 'desc']
+        ],
         "ajax": {
           "url": base_url + 'kipaslampupompa/datatableLm',
           "type": "POST"
         },
         "deferRender": true,
-        "columns": [
-             { data: "waktu" },
-             { data: "outLampu" },
-             { data: null, defaultContent: ""}
-          ],
+        "columns": [{
+            data: "waktu"
+          },
+          {
+            data: "outLampu"
+          },
+          {
+            data: null,
+            render: function(data) {
+              let datalampu = data["outLampu"];
+              if (datalampu <= 63.75) {
+                return 'Sangat redup';
+              } else if (datalampu <= 127.5) {
+                return 'Redup';
+              } else if (datalampu >= 63.75 && datalampu <= 191.25) {
+                return 'Netral';
+              } else if (datalampu >= 127.5 && datalampu < 255) {
+                return 'Terang';
+              } else if (datalampu >= 191.25 && datalampu >= 255 && datalampu == 255) {
+                return 'Sangat terang';
+              }
+            },
+            defaultContent: ""
+          }
+        ],
       });
 
       tabel3 = $('#table3').DataTable({
         "processing": true,
         "serverSide": true,
         "ordering": true,
-        "order": [[ 0, 'desc' ]],
+        "order": [
+          [0, 'desc']
+        ],
         "ajax": {
           "url": base_url + 'kipaslampupompa/datatablePm',
           "type": "POST"
         },
         "deferRender": true,
-        "columns": [
-             { data: "waktu" },
-             { data: "outPompa" },
-             { data: null, defaultContent: ""}
-          ],
+        "columns": [{
+            data: "waktu"
+          },
+          {
+            data: "outPompa"
+          },
+          {
+            data: null,
+            render: function(data) {
+              let datapompa = data["outPompa"];
+              if (datapompa == 255) {
+                return 'Nyala';
+              } else if (datapompa == 0) {
+                return 'Mati';
+              }
+            },
+            defaultContent: ""
+          }
+        ],
       });
 
       setInterval(function() {
