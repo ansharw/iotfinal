@@ -32,28 +32,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap-daterangepicker/daterangepicker.css">
-    <?php
-    if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/select2/dist/css/select2.min.css">
-    <?php
-    } elseif ($this->uri->segment(2) == "create") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/select2/dist/css/select2.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-    <?php
-    } elseif ($this->uri->segment(2) == "update") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/select2/dist/css/select2.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/assets/owl.carousel.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/assets/owl.theme.default.min.css">
-    <?php
-    } elseif ($this->uri->segment(2) == "view") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/assets/owl.carousel.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/owlcarousel2/dist/assets/owl.theme.default.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/prism/prism.css">
-    <?php
-    } ?>
   <?php
   } elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
@@ -65,43 +43,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <script src="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
-    <?php
-    if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/select2/dist/css/select2.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-    <?php
-    } elseif ($this->uri->segment(2) == "create") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/select2/dist/css/select2.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-    <?php
-    } elseif ($this->uri->segment(2) == "update") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/select2/dist/css/select2.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-    <?php
-    } elseif ($this->uri->segment(2) == "view") { ?>
-
-    <?php
-    } ?>
   <?php
   } elseif ($this->uri->segment(1) == "profil") { ?>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-    <?php
-    if ($this->uri->segment(2) == "" || $this->uri->segment(2) == "index") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/select2/dist/css/select2.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-    <?php
-    } elseif ($this->uri->segment(2) == "create") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/select2/dist/css/select2.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-    <?php
-    } elseif ($this->uri->segment(2) == "update") { ?>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/select2/dist/css/select2.min.css">
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
-    <?php
-    } elseif ($this->uri->segment(2) == "view") { ?>
-
-    <?php
-    } ?>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap-social/bootstrap-social.css">
   <?php
   } ?>
 

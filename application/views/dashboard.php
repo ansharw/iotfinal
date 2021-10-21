@@ -9,7 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <div class="section-body">
             <div class="row">
-                <div class="col-md-8 col-lg-8 col-sm-8">
+                <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
                             <h4>Rancangan Sistem</h4>
@@ -57,12 +57,45 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="row">
                                 <div class="col-12">
                                     <div class="list-group" id="list-tab" role="tablist">
-                                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-kandang" role="tab">Slide 1 &rsaquo; Desain kandang ayam</a>
-                                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-alat" role="tab">Slide 2 &rsaquo; Integrasi sistem</a>
-                                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-diagram" role="tab">Slide 3 &rsaquo; Desain Sistem</a>
-                                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-activity" role="tab">Slide 4 &rsaquo; Activity Diagram</a>
+                                        <a class="list-group-item list-group-item-action active" id="desain-list" data-toggle="list" href="#list-kandang" role="tab">Slide 1 &rsaquo; Desain kandang ayam</a>
+                                        <a class="list-group-item list-group-item-action" id="integrasi-list" data-toggle="list" href="#list-alat" role="tab">Slide 2 &rsaquo; Integrasi sistem</a>
+                                        <a class="list-group-item list-group-item-action" id="sistem-list" data-toggle="list" href="#list-diagram" role="tab">Slide 3 &rsaquo; Desain Sistem</a>
+                                        <a class="list-group-item list-group-item-action" id="diagram-list" data-toggle="list" href="#list-activity" role="tab">Slide 4 &rsaquo; Activity Diagram</a>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="section-title mt-0">Penelitian Selama 14 Hari</div>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-striped">
+                                    <thead>
+                                        <tr>
+                                            <?php for ($i = 1; $i <= 14; $i++) : ?>
+                                                <th scope="col">Hari <?php echo $i; ?></th>
+                                            <?php endfor; ?>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <?php for ($j = 1; $j <= 14; ++$j) : ?>
+                                                <?php $y = 12;
+                                                while ($j <= 14) : ?>
+                                                    <?php $j++; ?>
+                                                    <td>
+                                                        <b><?php echo $y++ ?> Oktober 2021</b>
+                                                    </td>
+                                                <?php endwhile; ?>
+                                            <?php endfor; ?>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

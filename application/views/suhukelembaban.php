@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
         <div class="section-body">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="card-header">
                             <h4>Letak sensor suhu</h4>
@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="card-body">
                             <div class="mb-2">Berikut adalah letak sensor suhu (DHT22) pada kandang ayam tertutup (closed house) yang ditunjukkan pada bentuk kotak merah berlabel S dan urutan sensornya (example: S1)</div>
                             <div class="chocolat-parent">
-                                <a href="<?php echo base_url(); ?>assets/image/kandangsuhu.png" class="chocolat-image" title="Just an example">
+                                <a href="<?php echo base_url(); ?>assets/image/kandangsuhu.png" class="chocolat-image" title="Letak Sensor Suhu">
                                     <div>
                                         <img alt="image" src="<?php echo base_url(); ?>assets/image/kandangsuhu.png" class="img-fluid">
                                     </div>
@@ -25,7 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="card-header">
                             <h4>Letak sensor kelembaban</h4>
@@ -33,7 +33,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="card-body">
                             <div class="mb-2">Berikut adalah letak sensor kelembaban (DHT22) pada kandang ayam tertutup (closed house) yang ditunjukkan pada bentuk kotak merah berlabel S dan urutan sensornya (example: K1)</div>
                             <div class="chocolat-parent">
-                                <a href="<?php echo base_url(); ?>assets/image/kandangkelembaban.png" class="chocolat-image" title="Just an example">
+                                <a href="<?php echo base_url(); ?>assets/image/kandangkelembaban.png" class="chocolat-image" title="Letak Sensor Kelembaban">
                                     <div>
                                         <img alt="image" src="<?php echo base_url(); ?>assets/image/kandangkelembaban.png" class="img-fluid">
                                     </div>

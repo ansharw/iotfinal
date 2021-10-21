@@ -19,7 +19,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Akun</div>
-              <a href="<?php echo base_url(); ?>user/profile" class="dropdown-item has-icon">
+              <a href="<?php echo base_url(); ?>profil" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profil
               </a>
               <div class="dropdown-divider"></div>
