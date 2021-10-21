@@ -203,7 +203,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                         echo "pelan";
                                                       } else if($row['outKipas'] >= 63.75 && $row['outKipas'] <= 191.25) {
                                                         echo "netral";
-                                                      } else if($row['outKipas'] >= 127.5 && $row['outKipas'] <= 255){
+                                                      } else if($row['outKipas'] >= 127.5 && $row['outKipas'] < 255){
                                                         echo "kencang";
                                                       } else if($row['outKipas'] >= 191.25 && $row['outKipas'] >= 255 && $row['outKipas'] == 255){
                                                         echo "sangat kencang";
@@ -274,7 +274,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                         echo "redup";
                                                       } else if($row['outLampu'] >= 63.75 && $row['outLampu'] <= 191.25) {
                                                         echo "netral";
-                                                      } else if($row['outLampu'] >= 127.5 && $row['outLampu'] <= 255){
+                                                      } else if($row['outLampu'] >= 127.5 && $row['outLampu'] < 255){
                                                         echo "terang";
                                                       } else if($row['outLampu'] >= 191.25 && $row['outLampu'] >= 255 && $row['outLampu'] == 255){
                                                         echo "sangat terang";
