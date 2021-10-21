@@ -735,7 +735,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         "columns": [
              { data: "waktu" },
              { data: "outKipas" },
-             { data: ""}
+             { data: null, "defaultContent": ""}
           ],
       });
 
@@ -752,7 +752,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         "columns": [
              { data: "waktu" },
              { data: "outLampu" },
-             { data: ""}
+             { data: null, "defaultContent": ""}
           ],
       });
 
@@ -769,7 +769,7 @@ if ($this->uri->segment(1) == "dashboard") { ?>
         "columns": [
              { data: "waktu" },
              { data: "outPompa" },
-             { data: ""}
+             { data: null, "defaultContent": ""}
           ],
       });
 
