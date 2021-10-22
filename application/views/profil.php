@@ -64,7 +64,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto1.png" alt="Third slide" id="list-kandang">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto3.png" alt="Third slide" id="list-kandang">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Kandang Ayam</h5>
                                         </div>
