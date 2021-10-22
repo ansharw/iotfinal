@@ -335,7 +335,7 @@
   margin-bottom: 10px;
 }
 .chat-box .chat-content .chat-item.chat-typing .chat-details .chat-text {
-  background-image: url("../img/typing.svg");
+  background-image: url("../image/typing.svg");
   height: 40px;
   width: 60px;
   background-position: center;
@@ -418,7 +418,7 @@ table.dataTable.no-footer {
 
 div.dataTables_wrapper div.dataTables_processing {
   font-size: 0 !important;
-  background-image: url("../img/spinner.svg") !important;
+  background-image: url("../image/spinner.svg") !important;
   background-color: #fff;
   background-size: 100%;
   width: 50px !important;
