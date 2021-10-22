@@ -52,19 +52,31 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto1.png" alt="First slide" id="list-kandang">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto1.png" alt="First slide" id="list-mega">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Arduino Mega</h5>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto2.png" alt="Second slide" id="list-alat">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto2.png" alt="Second slide" id="list-esp">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>ESP32 Dev kit v1</h5>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto3.png" alt="Third slide" id="list-alat">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto3.png" alt="Third slide" id="list-kandang">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Kandang Ayam</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto4.png" alt="Third slide" id="list-website1">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 style="color:black;">Website Monitoring</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="<?php echo base_url(); ?>assets/image/foto5.png" alt="Third slide" id="list-website2">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5 style="color:black;">Website Monitoring</h5>
                                         </div>
