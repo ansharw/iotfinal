@@ -7,23 +7,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title><?php echo $title; ?> &mdash; KANTIS</title>
   <link rel="shortcut icon" href="<?= base_url('assets/image/'); ?>favicon.ico" type="image/x-icon">
   <link rel="icon" href="<?= base_url('assets/image/'); ?>favicon.ico" type="image/x-icon">
-
+  <title><?php echo $title; ?> &mdash; KANTIS</title>
+  <script src="<?php echo base_url(); ?>assets/modules/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2"></script>
-  <script src="<?php echo base_url(); ?>assets/modules/jquery-3.3.1.min.js"></script>
 
   <?php
   if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
   <?php
   } elseif ($this->uri->segment(1) == "suhukelembaban") { ?>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jquery-selectric/selectric.css">
     <!-- datatable -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
@@ -35,6 +33,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/chocolat/dist/css/chocolat.css">
   <?php
   } elseif ($this->uri->segment(1) == "kipaslampupompa") { ?>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>

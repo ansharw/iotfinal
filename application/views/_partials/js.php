@@ -14,8 +14,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <!-- JS Libraies -->
 <?php
 if ($this->uri->segment(1) == "" || $this->uri->segment(1) == "dashboard") { ?>
-  <script src="<?php echo base_url(); ?>assets/modules/jquery-ui/jquery-ui.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+  
 <?php
 } elseif ($this->uri->segment(1) == "suhukelembaban") { ?>
 
