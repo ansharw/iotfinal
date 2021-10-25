@@ -26,6 +26,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                             Ansharullah Widiansyah is a students name in Universitas Negeri Semarang. He is interested with Informatic Technologies in electrical engineering department. So, i use my skill for make something real and IoT system is Magic. Did you know ? this system is magic! based on PHP, Jquery, Ajax, bootstrap, Codeigniter, DataTables, Chartjs and many more. The last, Thanks for visiting and rate my IoT system. Made by ♥
                         </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled user-progress list-unstyled-border list-unstyled-noborder">
+                                <li class="media">
+                                    <img alt="Dr. Ir. Ulfah Mediaty Arief, M. T., IPM" class="mr-3 rounded-circle" width="70" src="<?php echo base_url(); ?>assets/image/dosbing.png">
+                                    <div class="media-body">
+                                        <div class="media-title">Dr. Ir. Ulfah Mediaty Arief, M. T., IPM</div>
+                                        <div class="text-job text-muted">Dosen Pembimbing</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                         <div class="card-footer text-center">
                             <div class="font-weight-bold mb-2">Follow Anshar On</div>
                             <a href="https://github.com/ansharw" class="btn btn-social-icon btn-github mr-1">
